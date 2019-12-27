@@ -1,0 +1,14 @@
+i3:
+  from:
+    ~/.config/i3/
+  to:
+    i3/
+  files:
+    - config
+    - init
+vim:
+  from:
+    ~/
+  files:
+    - .vimrc
+
