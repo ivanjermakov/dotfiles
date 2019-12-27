@@ -1,0 +1,44 @@
+#!/bin/sh
+
+#xrandr's name for the external monitor connection
+DEFAULT=eDP-1
+MONITOR=HDMI-1
+
+xrdb ~/.Xresources
+
+#attempt to turn external screen on
+#xrandr --output "$MONITOR" --auto
+
+#if monitor found
+if xrandr --query | grep -q "^$MONITOR connected"; then
+	echo "detect ^$MONITOR"
+	xrandr --output "$DEFAULT" --off
+	xrandr --output "$MONITOR" --primary
+else
+	xrandr --output "$MONITOR" --off
+	xrdb ~/.Xresources4k
+fi
+
+# Composer
+compton --config ~/.config/compton.conf -b
+
+# Keyboard mapping
+killall xkeysnail, 1 2> /dev/null
+xkeysnail --watch -q ~/.config/xkeysnail/configs/main.py &
+
+# Set keyboard layout and disable Caps Lock default behavior
+sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:none
+
+# Usb mouse settings
+xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
+
+# Touchpad behavior
+xinput --set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -30, -30
+
+# Disable screen timeout and screensaver
+xset s off
+xset -dpms
+xset s noblank
+
+# Set keyboard delay and repeat
+xset r rate 220 20
