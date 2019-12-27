@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CURRENT="$(cat /sys/class/backlight/intel_backlight/actual_brightness)"
+NEXT=$(($CURRENT+$1))
+
+echo $NEXT
+if [ $NEXT -lt 1 ]; then
+	exit 1
+fi
+echo $NEXT > /sys/class/backlight/intel_backlight/brightness
