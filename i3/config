@@ -21,7 +21,7 @@ bindsym $mod+l focus right
 
 # Exit without asking configrmation
 bindsym $mod+Shift+e exec --no-startup-id i3 exit
-bindsym $mod+Escape exec --no-startup-id dm-tool lock
+bindsym $mod+Escape exec --no-startup-id i3lock
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart

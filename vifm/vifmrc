@@ -215,6 +215,8 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype *.html,*.htm
+        \ {Open with chromium}
+        \ chromium-browser %f &,
         \ {Open with dwb}
         \ dwb %f %i &,
         \ {Open with firefox}
@@ -233,7 +235,7 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
-        \ sxiv %f,
+        \ sxiv %f
         \ {View in gpicview}
         \ gpicview %c,
         \ {View in shotwell}
