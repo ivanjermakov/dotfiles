@@ -1,56 +1,57 @@
-home:
-  from:
-    ~/
-  files:
-    - .Xmodmap
-    - .Xresources
-    - .Xresources4k
-    - .bashrc
-    - .xprofile
-i3:
-  from:
-    ~/.config/i3/
-  to:
-    i3/
-  files:
-    - config
-    - init
-    - polybar.sh
-    - backlight
-vim:
-  from:
-    ~/
-  files:
-    - .vimrc
-htop:
-  from:
-    ~/.config/htop/
-  files:
-    - htoprc
-kbmap:
-  from:
-    ~/.config/kbmap/
-  files:
-    - config.py
-fish:
-  from:
-    ~/.config/fish/
-  files:
-    - config.fish
-polybar:
-  from:
-    ~/.config/polybar/
-  files:
-    - config
-vifm:
-  from:
-    ~/.config/vifm/
-  files:
-    - vifmrc
-    - colors/Default.vifm
-xkeysnail:
-  from:
-    ~/.config/xkeysnail/
-  files:
-    - configs/main.py
+dotfiles/:
+  home:
+    from:
+      ~/
+    files:
+      - .Xmodmap
+      - .Xresources
+      - .Xresources4k
+      - .bashrc
+      - .xprofile
+  i3:
+    from:
+      ~/.config/i3/
+    to:
+      i3/
+    files:
+      - config
+      - init
+      - polybar.sh
+      - backlight
+  vim:
+    from:
+      ~/
+    files:
+      - .vimrc
+  htop:
+    from:
+      ~/.config/htop/
+    files:
+      - htoprc
+  kbmap:
+    from:
+      ~/.config/kbmap/
+    files:
+      - config.py
+  fish:
+    from:
+      ~/.config/fish/
+    files:
+      - config.fish
+  polybar:
+    from:
+      ~/.config/polybar/
+    files:
+      - config
+  vifm:
+    from:
+      ~/.config/vifm/
+    files:
+      - vifmrc
+      - colors/Default.vifm
+  xkeysnail:
+    from:
+      ~/.config/xkeysnail/
+    files:
+      - configs/main.py
 

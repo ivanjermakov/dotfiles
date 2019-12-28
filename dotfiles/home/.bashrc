@@ -11,9 +11,11 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# cd automatically
+shopt -s autocd
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE= HISTFILESIZE=
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -79,10 +81,10 @@ fi
 alias woff='nmcli radio wifi off && wifi turned off'
 alias won='nmcli radio wifi on && wifi turned on'
 
-# main paths
+# paths
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# flutter
 export PATH="$HOME/bin/flutter/bin:$PATH"
+export PATH="$HOME/bin/dotflz:$PATH"
 
