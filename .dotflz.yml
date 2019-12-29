@@ -8,11 +8,14 @@ dotfiles/:
       - .Xresources4k
       - .bashrc
       - .xprofile
+  compton:
+    from:
+      ~/.config/
+    files:
+      compton.conf
   i3:
     from:
       ~/.config/i3/
-    to:
-      i3/
     files:
       - config
       - init

@@ -17,6 +17,14 @@ set shortmess+=A
 " disable c-z because habitly clicking it cause Vim to close
 nnoremap <c-z> <nop>
 
+" system clipboard configuration
+set paste               " Paste from a windows or from vim
+set clipboard=unnamedplus
+
+" store swap files separately
+set backupdir=/tmp//
+set directory=/tmp//
+
 " able to use russian layout in command mode
 map C-х <Esc>
 
@@ -155,7 +163,3 @@ map C-Ь C-M
 map C-Б C-<
 map C-Ю C->
 
-" system clipboard configuration
-set paste               " Paste from a windows or from vim
-set go+=a               " Visual selection automatically copied to the clipboard
-set clipboard^=unnamed
