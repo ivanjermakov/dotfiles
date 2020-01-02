@@ -12,6 +12,7 @@ special = #5294e2
 bottom = true
 
 # height = 
+padding-right = 1
 
 background = ${colors.transparent}
 foreground = ${colors.black}
@@ -33,6 +34,7 @@ dpi = 192
 bottom = true
 
 height = 40
+padding-right = 1
 
 background = ${colors.transparent}
 foreground = ${colors.black}
