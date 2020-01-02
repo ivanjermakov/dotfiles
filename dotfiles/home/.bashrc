@@ -70,12 +70,10 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 
-# use fish instead of bash
-fish
-  fi
-fi
-
 # user settings
+
+# use zsh instead of bash
+chsh -s $(which zsh)
 
 # aliases
 alias woff='nmcli radio wifi off && wifi turned off'

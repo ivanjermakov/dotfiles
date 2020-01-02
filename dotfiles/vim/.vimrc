@@ -14,6 +14,9 @@ set number
 " remove annoyng warning of existing swap files
 set shortmess+=A
 
+" set current command combination
+set showcmd
+
 " disable c-z because habitly clicking it cause Vim to close
 nnoremap <c-z> <nop>
 

@@ -4,6 +4,8 @@ screenchange-reload = true
 [colors]
 black = #000
 white = #fff
+transparent = #ffff
+special = #5294e2
 
 [bar/main]
 
@@ -11,8 +13,8 @@ bottom = true
 
 # height = 
 
-background = ${colors.black}
-foreground = ${colors.white}
+background = ${colors.transparent}
+foreground = ${colors.black}
 
 font-0 = "Consolas:size=12;3"
 font-1 = "Font Awesome 5 Free:pixelsize=12;3"
@@ -32,8 +34,8 @@ bottom = true
 
 height = 40
 
-background = ${colors.black}
-foreground = ${colors.white}
+background = ${colors.transparent}
+foreground = ${colors.black}
 
 font-0 = "Consolas:size=12;6"
 font-1 = "Font Awesome 5 Free:pixelsize=12;7"
@@ -55,8 +57,8 @@ strip-wsnumbers = true{
 index-sort = true
 
 label-focused =  %index%
-label-focused-foreground = ${colors.black}
-label-focused-background = ${colors.white}
+label-focused-foreground = ${colors.special}
+label-focused-background = ${colors.transparent}
 label-focused-padding = 1
 
 label-unfocused = %index%
