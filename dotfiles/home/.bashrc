@@ -72,9 +72,6 @@ if ! shopt -oq posix; then
 
 # user settings
 
-# use zsh instead of bash
-chsh -s $(which zsh)
-
 # aliases
 alias woff='nmcli radio wifi off && wifi turned off'
 alias won='nmcli radio wifi on && wifi turned on'

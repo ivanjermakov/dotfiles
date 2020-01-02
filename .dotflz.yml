@@ -21,6 +21,11 @@ dotfiles/:
       - init
       - polybar.sh
       - backlight
+  zsh:
+    from:
+      ~/
+    files:
+      .zshrc
   vim:
     from:
       ~/
