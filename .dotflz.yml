@@ -41,11 +41,6 @@ dotfiles/:
       ~/.config/kbmap/
     files:
       - config.py
-  fish:
-    from:
-      ~/.config/fish/
-    files:
-      - config.fish
   polybar:
     from:
       ~/.config/polybar/
