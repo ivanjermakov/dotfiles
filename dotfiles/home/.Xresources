@@ -1,4 +1,56 @@
+!! system
 Xcursor.size: 24
 
 Xft.dpi: 96
 
+!! urxvt
+
+! colors
+URxvt.foreground: #000000
+URxvt.background: #ffffff
+
+URxvt.color0: rgb:ff/ff/ff
+URxvt.color1: rgb:CC/00/00
+URxvt.color2: rgb:4E/9A/06
+URxvt.color3: rgb:C4/A0/00
+URxvt.color4: rgb:34/65/A4
+URxvt.color5: rgb:75/50/7B
+URxvt.color6: rgb:06/98/9A
+URxvt.color7: rgb:D3/D7/CF
+URxvt.color8: rgb:55/57/53
+URxvt.color9: rgb:EF/29/29
+URxvt.color10: rgb:8A/E2/34
+URxvt.color11: rgb:FC/E9/4F
+URxvt.color12: rgb:72/9F/CF
+URxvt.color13: rgb:AD/7F/A8
+URxvt.color14: rgb:34/E2/E2
+URxvt.color15: rgb:EE/EE/EC
+URxvt.colorBD: rgb:00/00/00
+
+! appearance
+URxvt.font: xft:Consolas:size=15:antialias=true
+URxvt.boldFont: xft:Consolas:bold:size=15:antialias=true
+URxvt.italicFont: xft:Consolas:italic:size=15:antialias=true
+URxvt.boldItalicFont: xft:Consolas:bold:italic:size=15:antialias=true
+URxvt.letterSpace: 0 
+URxvt.geometry: 92x24
+URxvt.internalBorder: 2 
+URxvt.cursorBlink: true
+URxvt.saveline: 10000
+URxvt.scrollBar: false
+
+! clipboard
+URxvt.keysym.Control-v: eval:paste_clipboard
+URxvt.keysym.Control-c: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! extensions
+URxvt.perl-lib: /home/ivan/.config/urxvt/
+URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.resize-font.smaller: C-s
+URxvt.resize-font.bigger: C-b
+URxvt.resize-font.reset: C-r
+URxvt.bindsym.M-Escape: perl:keyboard-select:activate
