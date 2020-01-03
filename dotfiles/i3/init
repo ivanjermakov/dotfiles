@@ -18,6 +18,10 @@ else
 	xrandr --output "$MONITOR" --off
 	xrandr --output "$DEFAULT" --auto --primary
 	xrdb -merge ~/.Xresources4k
+
+	# Fix GTK3 icon size
+	export GDK_SCALE=2
+	export GDK_DPI_SCALE=0.5
 fi
 
 # Composer

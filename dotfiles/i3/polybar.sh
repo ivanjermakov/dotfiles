@@ -9,4 +9,5 @@ killall -q polybar
 # Launch polybar based on screen
 xrandr | grep 'HDMI-1 connected' && polybar main &
 xrandr | grep 'HDMI-1 disconnected' && polybar main4k &
+#polybar main &
 

@@ -9,23 +9,37 @@ Xft.dpi: 96
 URxvt.foreground: #000000
 URxvt.background: #ffffff
 
-URxvt.color0: rgb:ff/ff/ff
-URxvt.color1: rgb:CC/00/00
-URxvt.color2: rgb:4E/9A/06
-URxvt.color3: rgb:C4/A0/00
-URxvt.color4: rgb:34/65/A4
-URxvt.color5: rgb:75/50/7B
-URxvt.color6: rgb:06/98/9A
-URxvt.color7: rgb:D3/D7/CF
-URxvt.color8: rgb:55/57/53
-URxvt.color9: rgb:EF/29/29
-URxvt.color10: rgb:8A/E2/34
-URxvt.color11: rgb:FC/E9/4F
-URxvt.color12: rgb:72/9F/CF
-URxvt.color13: rgb:AD/7F/A8
-URxvt.color14: rgb:34/E2/E2
-URxvt.color15: rgb:EE/EE/EC
-URxvt.colorBD: rgb:00/00/00
+! black
+*.color0:       #222222
+*.color8:       #666666
+
+! red
+*.color1:       #e84f4f
+*.color9:       #d23d3d
+
+! green
+*.color2:       #b7ce42
+*.color10:      #bde077
+
+! yellow
+*.color3:       #fea63c
+*.color11:      #ffe863
+
+! blue
+*.color4:       #66aabb
+*.color12:      #aaccbb
+
+! magenta
+*.color5:       #b7416e
+*.color13:      #e16a98
+
+! cyan
+*.color6:       #6d878d
+*.color14:      #42717b
+
+! white
+*.color7:       #dddddd
+*.color15:      #cccccc
 
 ! appearance
 URxvt.font: xft:Consolas:size=15:antialias=true
@@ -36,7 +50,7 @@ URxvt.letterSpace: 0
 URxvt.geometry: 92x24
 URxvt.internalBorder: 2 
 URxvt.cursorBlink: true
-URxvt.saveline: 10000
+URxvt.saveLines: 100000
 URxvt.scrollBar: false
 
 ! clipboard
@@ -50,7 +64,11 @@ URxvt.perl-lib: /home/ivan/.config/urxvt/
 URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.resize-font.smaller: C-s
-URxvt.resize-font.bigger: C-b
-URxvt.resize-font.reset: C-r
+URxvt.resize-font.smaller: M-s
+URxvt.resize-font.bigger: M-b
+URxvt.resize-font.reset: M-r
 URxvt.bindsym.M-Escape: perl:keyboard-select:activate
+
+! navigation
+URxvt.keysym.Meta-i: command:\033]720;1\007
+URxvt.keysym.Meta-k: command:\033]721;1\007

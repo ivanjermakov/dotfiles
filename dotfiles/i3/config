@@ -193,5 +193,5 @@ for_window [class="^.*"] border pixel 3
 #exec_always --no-startup-id nitrogen --restore
 
 # update i3
-exec --no-startup-id "i3 restart"
+exec --no-startup-id sleep 1 && i3 restart
 
