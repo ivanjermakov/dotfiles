@@ -16,7 +16,8 @@ if xrandr --query | grep -q "^$MONITOR connected"; then
 	xrandr --output "$MONITOR" --primary
 else
 	xrandr --output "$MONITOR" --off
-	xrdb ~/.Xresources4k
+	xrandr --output "$DEFAULT" --auto --primary
+	xrdb -merge ~/.Xresources4k
 fi
 
 # Composer
