@@ -1,0 +1,28 @@
+set selection-clipboard clipboard
+
+set statusbar-basename true
+set wstatusbar-home-tilde
+set recolor-keephue true
+set smooth-scroll true
+
+set page-padding 4
+
+set font "Consolas 14"
+
+set default-bg "#EEEEEE"
+set default-fg "#000000"
+set inputbar-bg "#FFFFFF"
+set inputbar-fg "#000000"
+set statusbar-bg "#FFFFFF"
+set statusbar-fg "#000000"
+
+unmap j
+map j navigate previous
+map l navigate next
+map i scroll up
+map k scroll down
+map J scroll left
+map L scroll right
+
+map a adjust_window best-fit
+map R recolor

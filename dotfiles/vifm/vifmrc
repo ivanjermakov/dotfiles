@@ -171,7 +171,7 @@ command! reload :write | restart
 
 " Pdf
 filextype *.pdf zathura %f %i
-fileviewer *.pdf pdftotext -nopgbrk %c
+fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz zathura %f
