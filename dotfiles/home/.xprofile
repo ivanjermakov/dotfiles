@@ -9,5 +9,6 @@ if ! xrandr --query | grep -q "^$MONITOR connected"; then
 	export GDK_DPI_SCALE=0.5
 fi
 
-$HOME/.config/i3/init
+$HOME/.config/i3/init &
 
+gnome-terminal &

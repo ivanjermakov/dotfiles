@@ -39,8 +39,8 @@ Xft.dpi: 96
 *.color14:      #2e6f7e
 
 ! white
-*.color7:       #f3f3f3
-*.color15:      #f3f3f3
+*.color7:       #d3d3d3
+*.color15:      #d3d3d3
 
 ! appearance
 URxvt.font: xft:Consolas:size=15:antialias=true

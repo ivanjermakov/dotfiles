@@ -28,6 +28,27 @@ set clipboard=unnamedplus
 set backupdir=/tmp//
 set directory=/tmp//
 
+" set tab to spaces
+set tabstop=4
+
+" search
+set runtimepath^=~/.vim/bundle/incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+highlight Search ctermbg=7*
+
 " able to use russian layout in command mode
 map C-х <Esc>
 

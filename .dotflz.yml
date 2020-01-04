@@ -1,64 +1,64 @@
 dotfiles/:
-	home:
-		from:
-			~/
-		files:
-			- .Xmodmap
-			- .Xresources
-			- .Xresources4k
-			- .bashrc
-			- .xprofile
-	compton:
-		from:
-			~/.config/
-		files:
-			compton.conf
-	i3:
-		from:
-			~/.config/i3/
-		files:
-			- config
-			- init
-			- polybar.sh
-			- backlight
-	zsh:
-		from:
-			~/
-		files:
-			- .zshrc
-	vim:
-		from:
-			~/
-		files:
-			- .vimrc
-	htop:
-		from:
-			~/.config/htop/
-		files:
-			- htoprc
-	kbmap:
-		from:
-			~/.config/kbmap/
-		files:
-			- config.py
-	polybar:
-		from:
-			~/.config/polybar/
-		files:
-			- config
-	vifm:
-		from:
-			~/.config/vifm/
-		files:
-			- vifmrc
-			- colors/Default.vifm
-	xkeysnail:
-		from:
-			~/.config/xkeysnail/
-		files:
-			- configs/main.py
-	zathura:
-		from:
-			~/.config/zathura/
-		files:
-			- zathurarc
+ home:
+  from:
+   ~/
+  files:
+   - .Xmodmap
+   - .Xresources
+   - .Xresources4k
+   - .bashrc
+   - .xprofile
+ compton:
+  from:
+   ~/.config/
+  files:
+   compton.conf
+ i3:
+  from:
+   ~/.config/i3/
+  files:
+   - config
+   - init
+   - polybar.sh
+   - backlight
+ zsh:
+  from:
+   ~/
+  files:
+   - .zshrc
+ vim:
+  from:
+   ~/
+  files:
+   - .vimrc
+ htop:
+  from:
+   ~/.config/htop/
+  files:
+   - htoprc
+ kbmap:
+  from:
+   ~/.config/kbmap/
+  files:
+   - config.py
+ polybar:
+  from:
+   ~/.config/polybar/
+  files:
+   - config
+ vifm:
+  from:
+   ~/.config/vifm/
+  files:
+   - vifmrc
+   - colors/Default.vifm
+ xkeysnail:
+  from:
+   ~/.config/xkeysnail/
+  files:
+   - configs/main.py
+ zathura:
+  from:
+   ~/.config/zathura/
+  files:
+   - zathurarc

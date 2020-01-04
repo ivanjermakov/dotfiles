@@ -135,9 +135,6 @@ focus_follows_mouse no
 exec --no-startup-id thyme-track.sh ~/thyme-track.json ~/thyme-report.html
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
-# before adding new command, think if it better fit to ~/.xprofile 
-exec --no-startup-id ~/.xprofile
-
 ## reload i3
 exec --no-startup-id sleep 1 && i3 restart
 

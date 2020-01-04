@@ -6,9 +6,6 @@ MONITOR=HDMI-1
 
 xrdb ~/.Xresources
 
-#attempt to turn external screen on
-#xrandr --output "$MONITOR" --auto
-
 #if monitor found
 if xrandr --query | grep -q "^$MONITOR connected"; then
 	echo "detect ^$MONITOR"
@@ -38,7 +35,7 @@ sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:
 xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
 
 # Touchpad behavior
-xinput --set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -30, -30
+xinput --set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -50, -50
 
 # Disable screen timeout and screensaver
 xset s off
