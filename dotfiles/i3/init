@@ -1,12 +1,13 @@
 #!/bin/sh
 
-#xrandr's name for the external monitor connection
+# apply xresources
+xrdb ~/.Xresources
+
+# xrandr's name for the external monitor connection
 DEFAULT=eDP-1
 MONITOR=HDMI-1
 
-xrdb ~/.Xresources
-
-#if monitor found
+# if monitor found
 if xrandr --query | grep -q "^$MONITOR connected"; then
 	echo "detect ^$MONITOR"
 	xrandr --output "$DEFAULT" --off
@@ -21,26 +22,29 @@ else
 	export GDK_DPI_SCALE=0.5
 fi
 
-# Composer
+# composer
 compton --config ~/.config/compton.conf -b
 
-# Keyboard mapping
+# keyboard mapping
 killall xkeysnail, 1 2> /dev/null
 xkeysnail --watch -q ~/.config/xkeysnail/configs/main.py &
 
-# Set keyboard layout and disable Caps Lock default behavior
+# set keyboard layout and disable Caps Lock default behavior
 sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:none
 
-# Usb mouse settings
+# usb mouse settings
 xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
 
-# Touchpad behavior
+# touchpad behavior
 xinput --set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -50, -50
 
-# Disable screen timeout and screensaver
+# disable screen timeout and screensaver
 xset s off
 xset -dpms
 xset s noblank
 
-# Set keyboard delay and repeat
+# set keyboard delay and repeat
 xset r rate 220 20
+
+# autostart
+thyme-track.sh ~/thyme-track.json ~/thyme-report.html

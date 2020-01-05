@@ -132,7 +132,6 @@ focus_follows_mouse no
 #exec_always --no-startup-id nitrogen --restore
 
 ## autostart
-exec --no-startup-id thyme-track.sh ~/thyme-track.json ~/thyme-report.html
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
 ## reload i3
