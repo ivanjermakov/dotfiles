@@ -51,7 +51,7 @@ dotfiles/:
    ~/.config/vifm/
   files:
    - vifmrc
-   - colors/Default.vifm
+   - colors/Clean.vifm
  xkeysnail:
   from:
    ~/.config/xkeysnail/
