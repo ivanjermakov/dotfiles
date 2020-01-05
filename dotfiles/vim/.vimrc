@@ -49,6 +49,9 @@ map g# <Plug>(incsearch-nohl-g#)
 
 highlight Search ctermbg=7*
 
+" vim manpager
+set runtimepath^=~/.vim/bundle/vim-manpager
+
 " able to use russian layout in command mode
 map C-х <Esc>
 

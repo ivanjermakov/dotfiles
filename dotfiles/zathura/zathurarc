@@ -1,7 +1,7 @@
 set selection-clipboard clipboard
 
 set statusbar-basename true
-set wstatusbar-home-tilde
+set statusbar-home-tilde
 set recolor-keephue true
 set smooth-scroll true
 
