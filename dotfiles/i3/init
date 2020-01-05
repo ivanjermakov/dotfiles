@@ -27,7 +27,7 @@ compton --config ~/.config/compton.conf -b
 
 # keyboard mapping
 killall xkeysnail, 1 2> /dev/null
-xkeysnail --watch -q ~/.config/xkeysnail/configs/main.py &
+xkeysnail -q ~/.config/xkeysnail/configs/main.py &
 
 # set keyboard layout and disable Caps Lock default behavior
 sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:none
@@ -48,3 +48,5 @@ xset r rate 220 20
 
 # autostart
 thyme-track.sh ~/thyme-track.json ~/thyme-report.html
+
+gnome-terminal &
