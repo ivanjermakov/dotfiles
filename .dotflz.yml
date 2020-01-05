@@ -62,3 +62,8 @@ dotfiles/:
    ~/.config/zathura/
   files:
    - zathurarc
+ feh:
+  from:
+   ~/.config/feh/
+  files:
+   - keys

@@ -47,6 +47,5 @@ xset s noblank
 xset r rate 220 20
 
 # autostart
-thyme-track.sh ~/thyme-track.json ~/thyme-report.html
-
-gnome-terminal &
+killalll thyme, 1 2> /dev/null
+thyme-track.sh ~/thyme-track.json ~/thyme-report.html &
