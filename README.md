@@ -15,6 +15,7 @@ Configuration files for my current machine.
 | USB Hub | Defender USB3.0 |
 | Misc | ASUS USB 2.0 to Ethernet Adapter |
 || DualShock 4 Controller |
+|| Alesis V49 Midi Keyboard |
 
 ### Software
 | Type | Name |
