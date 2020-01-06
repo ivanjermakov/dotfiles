@@ -47,5 +47,4 @@ xset s noblank
 xset r rate 220 20
 
 # autostart
-killalll thyme, 1 2> /dev/null
 thyme-track.sh ~/thyme-track.json ~/thyme-report.html &
