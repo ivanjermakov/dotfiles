@@ -28,6 +28,7 @@ Configuration files for my current machine.
 | Browser | Chromium |
 | File manager | vifm |
 | Pdf viewer | zathura |
+| Image viewer | feh |
 | Keyboard mapper | xkeysnail (own fork) |
 | Time tracker | thyme |
 
