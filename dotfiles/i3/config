@@ -122,7 +122,7 @@ client.urgent           $urgent   $urgent     $black
 hide_edge_borders smart
 
 # borders
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 4
 
 focus_follows_mouse no
 

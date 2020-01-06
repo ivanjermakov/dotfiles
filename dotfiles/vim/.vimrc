@@ -1,11 +1,11 @@
 " remap h to insert and use ijkl for inverse T cursor movement
-noremap h i
-nnoremap h <insert>
+map h i
+noremap h <insert>
 
-map i <Up>
-map j <Left>
-map k <Down>
-map <caps> <esc>
+map i <up>
+map j <left>
+map k <down>
+map l <right>
 
 " use line number for every file opened
 set number
@@ -35,8 +35,8 @@ set runtimepath^=~/.vim/bundle/incsearch.vim
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+map <silent> <esc><esc> :noh<cr>
 set hlsearch
-nnoremap <Esc> :nohlsearch<CR>
 set runtimepath^=~/.vim/bundle/vim-indexed-search
 
 highlight Search ctermbg=7*
