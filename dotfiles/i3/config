@@ -97,6 +97,7 @@ bindsym $mod+d exec rofi -dpi 1 -show run -width 20 -lines 4 -bw 0 -theme Arc -d
 bindsym $mod+Return exec urxvt
 bindsym $mod+c exec chromium-browser
 bindsym $mod+n exec nemo
+bindsym $mod+m exec urxvt -e htop
 
 ## i3 appearance
 font pango:Consolas 12
