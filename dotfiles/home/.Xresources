@@ -65,9 +65,9 @@ URxvt.perl-lib: /home/ivan/.config/urxvt/
 URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.resize-font.smaller: M-s
-URxvt.resize-font.bigger: M-b
-URxvt.resize-font.reset: M-r
+URxvt.resize-font.smaller: M-minus
+URxvt.resize-font.bigger: M-equal
+URxvt.resize-font.reset: M-0
 URxvt.bindsym.M-Escape: perl:keyboard-select:activate
 
 ! navigation
