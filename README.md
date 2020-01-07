@@ -14,22 +14,22 @@ Configuration files for my current machine.
 | Headphones | Sony MDR-XB650BT |
 | USB Hub | Defender USB3.0 |
 | Misc | ASUS USB 2.0 to Ethernet Adapter |
-|| DualShock 4 Controller |
-|| Alesis V49 Midi Keyboard |
+| | DualShock 4 Controller |
+| | Alesis V49 Midi Keyboard |
 
 ### Software
 | Type | Name |
 | --- | --- |
-| OS | Linux Mint 19.3 Tricia|
-| WM | i3 |
-| Theme | Arc |
-| Terminal | urxvt |
-| Shell | zsh |
-| Text editor | vim |
-| Browser | Chromium |
-| File manager | vifm |
-| Pdf viewer | zathura |
-| Image viewer | feh |
-| Keyboard mapper | xkeysnail (own fork) |
-| Time tracker | thyme |
-| Screenshot tool | maim |
+| OS | Linux Mint 19.3 Tricia |
+| WM | [i3](https://github.com/i3/i3) |
+| Theme | [Arc](https://github.com/arc-design/arc-theme) |
+| Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
+| Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
+| Text editor | [vim](https://github.com/vim/vim) |
+| Browser | [Chromium](https://github.com/chromium/chromium) |
+| File manager | [vifm](https://github.com/vifm/vifm) |
+| Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
+| Image viewer | [feh](https://github.com/derf/feh) |
+| Keyboard mapper | [xkeysnail (own fork)](https://github.com/ivanjermakov/xkeysnail) |
+| Time tracker | [thyme](https://github.com/sourcegraph/thyme) |
+| Screenshot tool | [maim](https://github.com/naelstrof/maim) |
