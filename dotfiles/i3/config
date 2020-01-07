@@ -134,7 +134,7 @@ focus_follows_mouse no
 #exec_always --no-startup-id nitrogen --restore
 
 ## reload xprofile
-exec_always --no-startup-id ~/.xprofile
+#exec_always --no-startup-id ~/.xprofile
 
 ## autostart
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
