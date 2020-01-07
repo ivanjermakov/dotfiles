@@ -1,6 +1,6 @@
 " remap h to insert and use ijkl for inverse T cursor movement
-map h i
-noremap h <insert>
+noremap h i
+noremap i h
 
 map i <up>
 map j <left>
