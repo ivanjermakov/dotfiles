@@ -68,7 +68,8 @@ URxvt.matcher.button: 1
 URxvt.resize-font.smaller: M-minus
 URxvt.resize-font.bigger: M-equal
 URxvt.resize-font.reset: M-0
-URxvt.bindsym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-o: perl:keyboard-select:activate
 
 ! navigation
 URxvt.keysym.Meta-i: command:\033]720;1\007

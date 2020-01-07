@@ -30,6 +30,8 @@ set directory=/tmp//
 " set tab to spaces
 set tabstop=4
 
+set scrolloff=6
+
 " search
 set runtimepath^=~/.vim/bundle/incsearch.vim
 map / <Plug>(incsearch-forward)
