@@ -32,4 +32,4 @@ Configuration files for my current machine.
 | Image viewer | feh |
 | Keyboard mapper | xkeysnail (own fork) |
 | Time tracker | thyme |
-
+| Screenshot tool | maim |
