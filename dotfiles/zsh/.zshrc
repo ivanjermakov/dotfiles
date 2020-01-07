@@ -23,6 +23,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+
 # Aliases
 alias ll='ls -alF'
 alias la='ls -A'
