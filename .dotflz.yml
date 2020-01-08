@@ -3,7 +3,6 @@ dotfiles/:
   from:
    ~/
   files:
-   - .Xmodmap
    - .Xresources
    - .Xresources4k
    - .bashrc
@@ -26,6 +25,13 @@ dotfiles/:
    ~/
   files:
    - .zshrc
+ urxvt:
+  from:
+   ~/.config/urxvt/
+  files:
+   - config
+   - themes/light
+   - themes/plant
  vim:
   from:
    ~/
