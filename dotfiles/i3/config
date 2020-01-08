@@ -109,7 +109,7 @@ set $urgent   #E53935
 set $special  #000000
 
 # background color
-exec_always --no-startup-id hsetroot -solid '#ffffff'
+#exec_always --no-startup-id hsetroot -solid '#ffffff'
 exec_always --no-startup-id hsetroot -solid '#000000'
 
 # window colors

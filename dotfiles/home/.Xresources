@@ -6,7 +6,7 @@ Xft.dpi: 96
 !! urxvt
 
 ! theme
-#include ".oh-my-zsh/xresources/themes/plant"
+#include ".oh-my-zsh/xresources/themes/light"
 
 ! appearance
 URxvt.font: xft:Consolas:size=15:antialias=true
