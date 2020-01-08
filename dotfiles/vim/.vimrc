@@ -30,6 +30,7 @@ set directory=/tmp//
 " set tab to spaces
 set tabstop=4
 
+" left lines before/after cursor when scrolling
 set scrolloff=6
 
 " search
