@@ -22,6 +22,7 @@ Configuration files for my current machine.
 | --- | --- |
 | OS | Linux Mint 19.3 Tricia |
 | WM | [i3](https://github.com/i3/i3) |
+| App launcher | [rofi](https://github.com/davatorium/rofi) |
 | Theme | [Arc](https://github.com/arc-design/arc-theme) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
