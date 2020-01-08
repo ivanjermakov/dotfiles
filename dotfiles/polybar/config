@@ -15,7 +15,7 @@ bottom = true
 padding-right = 1
 
 background = ${colors.transparent}
-foreground = ${colors.black}
+foreground = ${colors.white}
 
 font-0 = "Consolas:size=12;3"
 font-1 = "Font Awesome 5 Free:pixelsize=12;3"
@@ -37,7 +37,7 @@ height = 40
 padding-right = 1
 
 background = ${colors.transparent}
-foreground = ${colors.black}
+foreground = ${colors.white}
 
 font-0 = "Consolas:size=12;6"
 font-1 = "Font Awesome 5 Free:pixelsize=12;7"
