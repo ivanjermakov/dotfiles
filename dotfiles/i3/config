@@ -103,13 +103,13 @@ bindsym $mod+m exec urxvt -e htop
 font pango:Consolas 12
 
 set $gray     #e7e8ec
-set $special  #5294e2
+set $special  #75b827
 set $black    #000000
 set $white    #ffffff
 set $urgent   #E53935
 
 # background color
-exec_always --no-startup-id hsetroot -solid '#ffffff'
+#exec_always --no-startup-id hsetroot -solid '#ffffff'
 
 # window colors
 #                       border    background  text   indicator
@@ -127,11 +127,11 @@ for_window [class="^.*"] border pixel 4
 focus_follows_mouse no
 
 # gaps
-#smart_gaps on
-#gaps inner 30
+smart_gaps on
+gaps inner 30
 
 # fix background
-#exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 ## reload xprofile
 #exec_always --no-startup-id ~/.xprofile

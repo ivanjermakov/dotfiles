@@ -1,9 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export ZSH="/home/ivan/.oh-my-zsh"
-
-#ZSH_THEME="simple"
 
 CASE_SENSITIVE="true"
 
@@ -21,7 +16,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# user configuration
+
+# set theme
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
