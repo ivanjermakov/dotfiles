@@ -4,39 +4,4 @@ Xcursor.size: 24
 Xft.dpi: 96
 
 !! urxvt
-
-! theme
-#include ".oh-my-zsh/xresources/themes/light"
-
-! appearance
-URxvt.font: xft:Consolas:size=15:antialias=true
-URxvt.boldFont: xft:Consolas:bold:size=15:antialias=true
-URxvt.italicFont: xft:Consolas:italic:size=15:antialias=true
-URxvt.boldItalicFont: xft:Consolas:bold:italic:size=15:antialias=true
-URxvt.letterSpace: 0 
-URxvt.geometry: 92x24
-URxvt.internalBorder: 2 
-URxvt.cursorBlink: true
-URxvt.saveLines: 100000
-URxvt.scrollBar: false
-
-! clipboard
-URxvt.keysym.Control-v: eval:paste_clipboard
-URxvt.keysym.Control-c: eval:selection_to_clipboard
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
-! extensions
-URxvt.perl-lib: /home/ivan/.config/urxvt/
-URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.resize-font.smaller: M-minus
-URxvt.resize-font.bigger: M-equal
-URxvt.resize-font.reset: M-0
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-o: perl:keyboard-select:activate
-
-! navigation
-URxvt.keysym.Meta-i: command:\033]720;1\007
-URxvt.keysym.Meta-k: command:\033]721;1\007
+#include ".config/urxvt/config"

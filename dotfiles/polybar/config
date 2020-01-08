@@ -11,7 +11,7 @@ special = #5294e2
 
 bottom = true
 
-# height = 
+#height = 
 padding-right = 1
 
 background = ${colors.transparent}
@@ -40,9 +40,9 @@ background = ${colors.transparent}
 foreground = ${colors.white}
 
 font-0 = "Consolas:size=12;6"
-font-1 = "Font Awesome 5 Free:pixelsize=12;7"
 font-2 = "Font Awesome 5 Brands:pixelsize=12;7"
-font-3 = "Font Awesome 5 Free Solid:pixelsize=12;7"
+font-1 = "Font Awesome 5 Free Solid:pixelsize=12;7"
+font-3 = "Font Awesome 5 Free:pixelsize=12;7"
 
 module-margin = 1
 separator = %{F666}|%{F-}
@@ -55,25 +55,27 @@ modules-right=keyboard pulseaudio wireless-network wired-network battery date
 type = internal/i3
 
 pin-workspaces = true
-strip-wsnumbers = true{
+strip-wsnumbers = true
 index-sort = true
 
-label-focused =  %index%
-label-focused-foreground = ${colors.special}
-label-focused-background = ${colors.transparent}
+label-focused = %{T4}%{T-}
+label-focused-foreground = ${colors.white}
 label-focused-padding = 1
 
-label-unfocused = %index%
+label-unfocused = 
+label-unfocused-foreground = ${colors.white}
 label-unfocused-padding = 1
 
-label-visible = %index%
+label-visible = 
 label-visible-padding = 1
+
 
 [module/date]
 type = internal/date
 
 interval = 1.0
 date = %b %d, %H:%M
+
 
 [module/battery]
 type = internal/battery
@@ -90,17 +92,20 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
+
 [module/wired-network]
 type = internal/network
 interface = enx9cebe8202c8d
 
 label-connected = 
 
+
 [module/wireless-network]
 type = internal/network
 interface = wlp2s0
 
 label-connected =  %essid%
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -113,6 +118,7 @@ label-muted = 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+
 
 [module/keyboard]
 type = internal/xkeyboard

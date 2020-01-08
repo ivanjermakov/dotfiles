@@ -102,11 +102,11 @@ bindsym $mod+m exec urxvt -e htop
 ## i3 appearance
 font pango:Consolas 12
 
-set $gray     #e7e8ec
-set $black    #000000
-set $white    #ffffff
-set $urgent   #E53935
-set $special  #000000
+set $gray                          #e7e8ec
+set_from_resource $black    color0 #000000
+set               $white           #ffffff
+set_from_resource $urgent   color1 #E53935
+set_from_resource $special  color5 #000000
 
 # background color
 #exec_always --no-startup-id hsetroot -solid '#ffffff'
@@ -120,7 +120,7 @@ client.focused_inactive $gray     $gray       $white
 client.urgent           $urgent   $urgent     $black         
 
 # edges
-hide_edge_borders smart
+hide_edge_borders both
 
 # borders
 for_window [class="^.*"] border pixel 4
