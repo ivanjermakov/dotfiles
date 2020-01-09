@@ -6,6 +6,7 @@ black = #000
 white = #fff
 transparent = #ffff
 special = #5294e2
+urgent = ${xrdb:color1:#e53935}
 
 [bar/main]
 
@@ -58,6 +59,8 @@ pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
 
+label-mode = 
+
 label-focused = %{T4}%{T-}
 label-focused-foreground = ${colors.white}
 label-focused-padding = 1
@@ -68,6 +71,10 @@ label-unfocused-padding = 1
 
 label-visible = 
 label-visible-padding = 1
+
+label-urgent = 
+label-urgent-foreground = ${colors.urgent}
+label-urgent-padding = 1
 
 
 [module/date]
