@@ -113,14 +113,15 @@ set_from_resource $special  color5 #000000
 exec_always --no-startup-id hsetroot -solid '#000000'
 
 # window colors
-#                       border    background  text   indicator
-client.focused          $special  $special    $white
-client.unfocused        $gray     $gray       $black
-client.focused_inactive $gray     $gray       $white
-client.urgent           $urgent   $urgent     $black         
+#                       border    background  text     indicator
+client.focused          $special  $special    $white   $special
+client.unfocused        $gray     $gray       $black   $gray
+client.focused_inactive $gray     $gray       $white   $gray
+client.urgent           $urgent   $urgent     $black   $urgent        
 
 # edges
-hide_edge_borders both
+hide_edge_borders smart
+binding_mode_indicator no
 
 # borders
 for_window [class="^.*"] border pixel 4
