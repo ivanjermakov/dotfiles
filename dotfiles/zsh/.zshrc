@@ -37,3 +37,6 @@ export PATH="$HOME/bin/flutter/bin:$PATH"
 export PATH="$HOME/bin/dotflz:$PATH"
 
 export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
+
+# autojump
+. /usr/share/autojump/autojump.sh 1, 2> /dev/null
