@@ -31,10 +31,9 @@ alias woff='nmcli radio wifi off && wifi turned off'
 alias won='nmcli radio wifi on && wifi turned on'
 
 # env
-export PATH="$HOME/bin:$PATH"
+export PATH=$PATH$( find $HOME/bin/ -maxdepth 1 -type d -printf ":%p" )
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin/flutter/bin:$PATH"
-export PATH="$HOME/bin/dotflz:$PATH"
 
 export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
 
