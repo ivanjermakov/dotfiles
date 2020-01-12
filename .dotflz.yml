@@ -3,8 +3,7 @@ dotfiles/:
   from:
    ~/
   files:
-   - .Xresources
-   - .Xresources4k
+   - .Xresources*
    - .bashrc
    - .xprofile
  compton:
@@ -16,10 +15,7 @@ dotfiles/:
   from:
    ~/.config/i3/
   files:
-   - config
-   - init
-   - polybar.sh
-   - backlight
+   - "*"
  zsh:
   from:
    ~/
@@ -30,8 +26,7 @@ dotfiles/:
    ~/.config/urxvt/
   files:
    - config
-   - themes/light
-   - themes/plant
+   - themes/*
  vim:
   from:
    ~/
@@ -57,7 +52,7 @@ dotfiles/:
    ~/.config/vifm/
   files:
    - vifmrc
-   - colors/Clean.vifm
+   - colors/*
  xkeysnail:
   from:
    ~/.config/xkeysnail/
