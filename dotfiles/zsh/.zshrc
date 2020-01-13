@@ -27,11 +27,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias woff='nmcli radio wifi off && wifi turned off'
-alias won='nmcli radio wifi on && wifi turned on'
 
 # env
 export PATH=$PATH$( find $HOME/bin/ -maxdepth 2 -type d -printf ":%p" )
+export PATH="$HOME/.script:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
