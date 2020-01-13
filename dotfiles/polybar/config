@@ -9,10 +9,10 @@ special = #5294e2
 urgent = ${xrdb:color1:#e53935}
 
 [bar/main]
+dpi = ${xrdb:Xft.dpi:192}
 
 bottom = true
 
-#height = 
 padding-right = 1
 
 background = ${colors.transparent}
@@ -29,27 +29,16 @@ separator = %{F666}|%{F-}
 modules-left=i3
 modules-right=keyboard pulseaudio wireless-network wired-network battery date
 
-[bar/main4k]
-dpi = 192
 
-bottom = true
+[bar/main4k]
+inherit = bar/main
 
 height = 40
-padding-right = 1
-
-background = ${colors.transparent}
-foreground = ${colors.white}
 
 font-0 = "Consolas:size=12;6"
-font-2 = "Font Awesome 5 Brands:pixelsize=12;7"
-font-1 = "Font Awesome 5 Free Solid:pixelsize=12;7"
-font-3 = "Font Awesome 5 Free:pixelsize=12;7"
-
-module-margin = 1
-separator = %{F666}|%{F-}
-
-modules-left=i3
-modules-right=keyboard pulseaudio wireless-network wired-network battery date
+font-1 = "Font Awesome 5 Free:pixelsize=10;7"
+font-2 = "Font Awesome 5 Brands:pixelsize=10;7"
+font-3 = "Font Awesome 5 Free Solid:pixelsize=10;7"
 
 
 [module/i3]
