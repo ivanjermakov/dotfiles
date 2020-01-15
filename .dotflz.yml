@@ -21,6 +21,11 @@ dotfiles/:
    ~/.config/i3/
   files:
    - "*"
+ rofi:
+  from:
+   ~/.config/rofi/
+  files:
+   - config.rasi
  zsh:
   from:
    ~/

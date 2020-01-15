@@ -1,0 +1,10 @@
+configuration {
+	modi: "run";
+	dpi: 1;
+	width: 20;
+	lines: 4;
+	bw: 0;
+	theme: "Arc";
+	display-run: "";
+}
+
