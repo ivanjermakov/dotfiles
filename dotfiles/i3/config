@@ -85,10 +85,8 @@ bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 
 bindsym $mod+Shift+e exec --no-startup-id i3 exit
-#bindsym XF86PowerOff exec --no-startup-id dm-tool lock && systemctl suspend
-#bindsym $mod+Escape exec --no-startup-id dm-tool lock
-bindsym XF86PowerOff exec --no-startup-id i3lock -c 444444 && systemctl suspend
-bindsym $mod+Escape exec --no-startup-id i3lock -c 444444 
+bindsym XF86PowerOff exec --no-startup-id ~/.config/i3/suspend
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/lock 
 
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload

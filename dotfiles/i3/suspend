@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+systemctl suspend
+i3lock -c 444444 -n
+~/.config/i3/onlog
