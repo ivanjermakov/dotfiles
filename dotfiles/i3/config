@@ -137,7 +137,7 @@ focus_follows_mouse no
 #exec_always --no-startup-id ~/.xprofile
 
 ## autostart
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
+exec_always --no-startup-id ~/.config/i3/polybar &
 
 ## reload i3
 exec --no-startup-id sleep 0.5 && i3 restart
