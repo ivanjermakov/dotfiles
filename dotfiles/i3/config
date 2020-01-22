@@ -91,7 +91,7 @@ bindsym $mod+Escape exec --no-startup-id ~/.config/i3/lock
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 
-bindsym $mod+d exec rofi -show 
+bindsym $mod+d exec rofi -show
 bindsym $mod+Return exec urxvt
 bindsym $mod+c exec chromium-browser
 bindsym $mod+n exec nemo

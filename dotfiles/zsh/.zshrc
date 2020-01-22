@@ -30,6 +30,7 @@ alias l='ls -CF'
 
 # env
 export PATH=$PATH$( find $HOME/bin/ -maxdepth 2 -type d -printf ":%p" )
+export PATH="$HOME/.bin/blender-2.81a-linux-glibc217-x86_64:$PATH"
 export PATH="$HOME/.script:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 

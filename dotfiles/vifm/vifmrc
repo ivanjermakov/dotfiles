@@ -8,6 +8,8 @@ set undolevels=1000
 set novimhelp
 colorscheme Clean
 
+" set syncregs=general
+
 set wildmenu
 set wildstyle=popup
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
