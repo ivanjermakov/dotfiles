@@ -30,7 +30,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+t layout toggle split
 bindsym $mod+space floating toggle
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+Control+space focus mode_toggle
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -104,7 +104,7 @@ set $gray                          #e7e8ec
 set_from_resource $black    color0 #000000
 set               $white           #ffffff
 set_from_resource $urgent   color1 #E53935
-set_from_resource $special  color5 #000000
+set_from_resource $special  color2 #000000
 
 # background color
 #exec_always --no-startup-id hsetroot -solid '#ffffff'
