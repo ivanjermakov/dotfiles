@@ -78,4 +78,9 @@ dotfiles/:
    ~/.config/feh/
   files:
    - keys
-
+ mutt:
+  from:
+   ~/.config/mutt/
+  files:
+   - muttrc
+   - colors
