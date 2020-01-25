@@ -9,6 +9,8 @@ special = #5294e2
 urgent = ${xrdb:color1:#e53935}
 
 [bar/main]
+enable-ipc = true
+
 dpi = ${xrdb:Xft.dpi:192}
 
 bottom = true
