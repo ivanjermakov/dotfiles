@@ -34,3 +34,4 @@ Configuration files for my current machine.
 | Keyboard mapper | [xkeysnail (own fork)](https://github.com/ivanjermakov/xkeysnail) |
 | Time tracker | [thyme](https://github.com/sourcegraph/thyme) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
+| Email client | [neomutt](https://github.com/neomutt/neomutt) |
