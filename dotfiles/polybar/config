@@ -9,6 +9,8 @@ special = #5294e2
 urgent = ${xrdb:color1:#e53935}
 
 [bar/main]
+override-redirect = true
+
 enable-ipc = true
 
 dpi = ${xrdb:Xft.dpi:192}
@@ -17,7 +19,7 @@ bottom = true
 
 padding-right = 1
 
-background = ${colors.transparent}
+background = ${colors.black}
 foreground = ${colors.white}
 
 font-0 = "Consolas:size=12;3"
