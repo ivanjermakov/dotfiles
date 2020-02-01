@@ -84,3 +84,8 @@ dotfiles/:
   files:
    - muttrc
    - colors
+ dunst:
+  from:
+   ~/.config/dunst/
+  files:
+   - dunstrc
