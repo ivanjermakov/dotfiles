@@ -35,3 +35,4 @@ Configuration files for my current machine.
 | Time tracker | [thyme](https://github.com/sourcegraph/thyme) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Email client | [neomutt](https://github.com/neomutt/neomutt) |
+| Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
