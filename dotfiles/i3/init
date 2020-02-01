@@ -26,7 +26,7 @@ fi
 compton --config ~/.config/compton.conf -b
 
 # keyboard mapping
-killall -w -9 xkeysnail, 1 2> /dev/null
+killall -9 xkeysnail
 xkeysnail -q ~/.config/xkeysnail/configs/main.py &
 # set keyboard layout and disable Caps Lock default behavior
 sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:none
