@@ -19,6 +19,9 @@ set showcmd
 " disable c-z because habitly clicking it cause Vim to close
 nnoremap <c-z> <nop>
 
+" enable mouse wheel scrollin
+set mouse=a
+
 " system clipboard configuration
 set paste               " Paste from a windows or from vim
 set clipboard=unnamedplus

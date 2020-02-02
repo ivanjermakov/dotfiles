@@ -29,6 +29,7 @@ URxvt.resize-font.bigger: M-equal
 URxvt.resize-font.reset: M-0
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-o: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
 
 ! navigation
 URxvt.keysym.Meta-i: command:\033]720;1\007
