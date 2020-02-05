@@ -22,6 +22,7 @@ Configuration files for my current machine.
 | --- | --- |
 | OS | Linux Mint 19.3 Tricia |
 | WM | [i3](https://github.com/i3/i3) |
+| Screen locker | [i3lock](https://github.com/i3/i3lock) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
 | Theme | [Arc](https://github.com/arc-design/arc-theme) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
@@ -36,3 +37,4 @@ Configuration files for my current machine.
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Email client | [neomutt](https://github.com/neomutt/neomutt) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
+| Other | [nitrogen](https://github.com/l3ib/nitrogen) |
