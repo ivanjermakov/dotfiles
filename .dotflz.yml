@@ -67,7 +67,7 @@ dotfiles/:
   from:
    ~/.config/xkeysnail/
   files:
-   - configs/main.py
+   - config/main.py
  zathura:
   from:
    ~/.config/zathura/
