@@ -1,10 +1,15 @@
 #!/usr/bin/env sh
 
-if [ `setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}'` = us ] 
-then
-	echo "ru"
-	setxkbmap ru
-else 
-	echo "us"
+current=`setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}'`
+
+case $current in
+ru)
 	setxkbmap us
-fi
+	echo us
+	;;
+us)
+	setxkbmap ru
+	echo ru
+	;;
+esac
+
