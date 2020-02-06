@@ -37,7 +37,8 @@ xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /de
 xinput set-prop "pointer:Compx 2.4G Receiver" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
 
 # touchpad behavior
-xinput --set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" -50, -50
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" "-50, -50"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Tap Action" "0, 0, 0, 0, 1, 3, 3"
 
 # disable screen timeout and screensaver
 xset s off
