@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 
-dotflz verify .dotfilz.yml
+# exit on error
+set -e
+
+dotflz verify .dotflz.yml
 dotflz copy -c .dotflz.yml
 git add .
 git commit -am "update"
