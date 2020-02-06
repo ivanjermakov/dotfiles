@@ -23,7 +23,7 @@ else
 fi
 
 # composer
-compton --config ~/.config/compton.conf -b
+picom --config ~/.config/picom.conf -b
 
 # keyboard mapping
 killall -9 xkeysnail

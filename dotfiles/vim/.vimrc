@@ -7,6 +7,10 @@ map j <left>
 map k <down>
 map l <right>
 
+" enable syntax highlighting
+filetype plugin on
+syntax on
+
 " use line number for every file opened
 set number
 

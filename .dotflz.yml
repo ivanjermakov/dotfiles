@@ -11,11 +11,11 @@ dotfiles/:
    ~/.script/
   files:
    - "*"
- compton:
+ picom:
   from:
    ~/.config/
   files:
-   compton.conf
+   picom.conf
  i3:
   from:
    ~/.config/i3/
@@ -35,8 +35,7 @@ dotfiles/:
   from:
    ~/.config/urxvt/
   files:
-   - config
-   - themes/*
+   - "*"
  vim:
   from:
    ~/
@@ -67,7 +66,7 @@ dotfiles/:
   from:
    ~/.config/xkeysnail/
   files:
-   - config/main.py
+   - main.py
  zathura:
   from:
    ~/.config/zathura/
