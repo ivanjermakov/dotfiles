@@ -88,3 +88,9 @@ dotfiles/:
    ~/.config/dunst/
   files:
    - dunstrc
+ neofetch:
+  from:
+   ~/.config/neofetch/
+  files:
+   - config.conf
+
