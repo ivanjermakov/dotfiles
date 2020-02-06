@@ -28,8 +28,9 @@ picom --config ~/.config/picom.conf -b
 # keyboard mapping
 killall -9 xkeysnail
 xkeysnail -q ~/.config/xkeysnail/main.py &
+
 # set keyboard layout and disable Caps Lock default behavior
-sleep 1 && setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle' -option caps:none
+sleep 1 && setxkbmap -option caps:none
 
 # usb mouse settings
 xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
