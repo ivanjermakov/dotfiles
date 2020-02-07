@@ -23,6 +23,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias cal='cal -m'
 
 # functions
 function d() { du -h --max-depth=1 "$1" 2>/dev/null }
