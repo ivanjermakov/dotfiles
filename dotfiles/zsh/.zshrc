@@ -28,6 +28,9 @@ alias l='ls -CF'
 function d() { du -h --max-depth=1 "$1" 2>/dev/null }
 
 # env
+export EDITOR=vim
+export VISUAL=vim
+
 export PATH=$PATH$( find $HOME/bin/ -maxdepth 2 -type d -printf ":%p" )
 export PATH="$HOME/.script:$PATH"
 export PATH="$HOME/.local/bin:$PATH"

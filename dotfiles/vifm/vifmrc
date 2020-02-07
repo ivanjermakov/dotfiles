@@ -118,7 +118,7 @@ filetype *.7z
 filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f &
 " fileviewer *.doc catdoc %c
 " fileviewer *.docx, docx2txt.pl %f -
-filetype * xdg-open
+filetype * vim %c, xdg-open
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
@@ -148,11 +148,6 @@ nnoremap A cw
 
 " Open console in current directory
 nnoremap ,t :!xterm &<cr>
-
-" Open editor to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
-" Open gvim to edit vifmrc
-nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
@@ -190,8 +185,10 @@ map k <Down>
 
 map <caps> <esc>
 
-map f :file &<cr>
-map o :file &<cr>l
+map f :file <cr>
+map F :file &<cr>
+map o :file <cr>l
+map O :file &<cr>l
 map md :mkdir<space>
 
 " statusline format
