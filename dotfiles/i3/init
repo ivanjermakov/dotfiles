@@ -18,6 +18,9 @@ else
 	xrdb -merge ~/.Xresources4k
 fi
 
+# set default pulseaudio profile
+pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo 
+
 # composer
 picom --config ~/.config/picom.conf -b
 

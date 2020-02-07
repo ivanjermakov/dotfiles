@@ -37,7 +37,7 @@ set directory=/tmp//
 set tabstop=4
 
 " left lines before/after cursor when scrolling
-set scrolloff=6
+set scrolloff=8
 
 " search
 set runtimepath^=~/.vim/bundle/incsearch.vim
