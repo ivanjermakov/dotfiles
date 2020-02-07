@@ -27,7 +27,6 @@ nnoremap <c-z> <nop>
 set mouse=a
 
 " system clipboard configuration
-set paste               " Paste from a windows or from vim
 set clipboard=unnamedplus
 
 " store swap files separately
@@ -50,4 +49,22 @@ set hlsearch
 set runtimepath^=~/.vim/bundle/vim-indexed-search
 
 highlight Search ctermbg=7*
+
+" plugins
+call plug#begin('~/.vim/plugged')
+	Plug 'lervag/vimtex'
+	Plug 'vim-syntastic/syntastic'
+	Plug 'chrisbra/Colorizer'
+	Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_w = 1
+
+highlight SignColumn ctermbg=256
 

@@ -29,13 +29,13 @@ xkeysnail -q ~/.config/xkeysnail/main.py &
 sleep 1 && setxkbmap -option caps:none
 
 # usb mouse settings
-xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
-xinput set-prop "pointer:Compx 2.4G Receiver" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
+xinput set-prop "A4TECH USB Device"               "libinput Accel Profile Enabled" 0, 1 2> /dev/null
+xinput set-prop "pointer:Compx 2.4G Receiver"     "libinput Accel Profile Enabled" 0, 1 2> /dev/null
 
 # touchpad behavior
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Tapping Enabled" "1"
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled" "1"
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Accel Speed" "0.2"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Tapping Enabled" "1"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Natural Scrolling Enabled" "1"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Accel Speed" "0.2"
 
 # disable screen timeout and screensaver
 xset s off

@@ -80,6 +80,8 @@ date = %b %d, %H:%M
 [module/battery]
 type = internal/battery
 
+poll-interval = 5
+
 label-charging =  %percentage%
 label-discharging = %percentage%
 
