@@ -112,7 +112,7 @@ set_from_resource $special  color2 #000000
 
 # background color
 #exec_always --no-startup-id hsetroot -solid '#ffffff'
-exec_always --no-startup-id hsetroot -solid '#000000'
+#exec_always --no-startup-id hsetroot -solid '#000000'
 
 # window colors
 #                       border    background  text     indicator
@@ -131,11 +131,11 @@ for_window [class="^.*"] border pixel 4
 focus_follows_mouse no
 
 # gaps
-#smart_gaps on
-#gaps inner 30
+smart_gaps on
+gaps inner 30
 
 # fix background
-#exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 ## reload xprofile
 #exec_always --no-startup-id ~/.xprofile
