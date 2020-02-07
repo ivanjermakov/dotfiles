@@ -16,10 +16,6 @@ else
 	xrandr --output "$MONITOR" --off
 	xrandr --output "$DEFAULT" --auto --primary
 	xrdb -merge ~/.Xresources4k
-
-	# Fix GTK3 icon size
-	export GDK_SCALE=2
-	export GDK_DPI_SCALE=0.5
 fi
 
 # composer
@@ -37,8 +33,9 @@ xinput set-prop "A4TECH USB Device" "libinput Accel Profile Enabled" 0, 1 2> /de
 xinput set-prop "pointer:Compx 2.4G Receiver" "libinput Accel Profile Enabled" 0, 1 2> /dev/null
 
 # touchpad behavior
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Scrolling Distance" "-50, -50"
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "Synaptics Tap Action" "0, 0, 0, 0, 1, 3, 3"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Tapping Drag Enabled" "1"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled" "1"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Left Handed Enabled" "0.5"
 
 # disable screen timeout and screensaver
 xset s off
