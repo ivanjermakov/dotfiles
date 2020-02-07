@@ -20,7 +20,7 @@ Configuration files for my current machine.
 ### Software
 | Type | Name |
 | --- | --- |
-| OS | Linux Mint 19.3 Tricia |
+| OS | Arch Linux |
 | WM | [i3](https://github.com/i3/i3) |
 | Screen locker | [i3lock](https://github.com/i3/i3lock) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
@@ -32,6 +32,8 @@ Configuration files for my current machine.
 | File manager | [vifm](https://github.com/vifm/vifm) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
 | Image viewer | [feh](https://github.com/derf/feh) |
+| Music player | [moc](https://github.com/jonsafari/mocp) |
+| Video player | [mpv](https://github.com/mpv-player/mpv) |
 | Keyboard mapper | [xkeysnail (own fork)](https://github.com/ivanjermakov/xkeysnail) |
 | Time tracker | [thyme](https://github.com/sourcegraph/thyme) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
