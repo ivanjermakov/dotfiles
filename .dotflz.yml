@@ -93,4 +93,10 @@ dotfiles/:
    ~/.config/neofetch/
   files:
    - config.conf
-
+ moc:
+  from:
+   ~/.moc/
+  files:
+   - config
+   - keymap
+   - themes/theme
