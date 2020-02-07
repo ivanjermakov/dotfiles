@@ -95,7 +95,7 @@ bindcode --release $mod+33 exec --no-startup-id polybar-msg cmd hide
 
 bindcode --release $mod+65 exec --no-startup-id notify-send -u low "Layout: `$HOME/.config/i3/toggle-layout`"
 
-bindcode $mod+40 exec --no-startup-id bash -c "rofi -show run"
+bindcode $mod+40 exec --no-startup-id rofi -show run
 bindcode $mod+54 exec --no-startup-id chromium
 bindcode $mod+57 exec --no-startup-id urxvt -e vifm
 bindcode $mod+58 exec --no-startup-id urxvt -e htop
