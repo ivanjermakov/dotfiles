@@ -1,4 +1,5 @@
 ![Desktop preview](https://sun9-17.userapi.com/c205728/v205728393/60f8e/27JEiXp4dng.jpg)
+![Desktop preview](https://sun9-8.userapi.com/c854128/v854128393/1edfb1/mqwJoUg6K70.jpg)
 
 # Dotfiles
 Configuration files for my current machine.
