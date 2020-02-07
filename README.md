@@ -24,9 +24,10 @@ Configuration files for my current machine.
 | Type | Name |
 | --- | --- |
 | OS | Arch Linux |
-| WM | [i3](https://github.com/i3/i3) |
+| WM | [i3-gaps](https://github.com/i3/i3) |
 | Screen locker | [i3lock](https://github.com/i3/i3lock) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
+| Status bar | [Polybar](https://github.com/polybar/polybar) |
 | Theme | [Arc](https://github.com/arc-design/arc-theme) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
