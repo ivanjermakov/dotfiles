@@ -61,16 +61,3 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# user settings
-
-# aliases
-alias woff='nmcli radio wifi off && wifi turned off'
-alias won='nmcli radio wifi on && wifi turned on'
-
-# paths
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-export PATH="$HOME/bin/flutter/bin:$PATH"
-export PATH="$HOME/bin/dotflz:$PATH"
-

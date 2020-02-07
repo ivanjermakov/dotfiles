@@ -41,7 +41,6 @@ export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
 export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
 export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
 export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
+
 export VIFM="$HOME/.config/vifm"
 
-# autojump
-. /usr/share/autojump/autojump.sh 1, 2> /dev/null
