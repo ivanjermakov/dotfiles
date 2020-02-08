@@ -44,3 +44,4 @@ Configuration files for my current machine.
 | Email client | [neomutt](https://github.com/neomutt/neomutt) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
 | Other | [nitrogen](https://github.com/l3ib/nitrogen) |
+| | [neofetch](https://github.com/dylanaraps/neofetch) |
