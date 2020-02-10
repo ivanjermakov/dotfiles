@@ -59,7 +59,7 @@ set runtimepath^=~/.vim/bundle/incsearch.vim
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-map <silent> <esc><esc> :noh<cr>
+noremap <silent> <esc><esc> :noh<cr>
 set hlsearch
 set runtimepath^=~/.vim/bundle/vim-indexed-search
 
