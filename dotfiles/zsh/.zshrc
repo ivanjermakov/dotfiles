@@ -30,18 +30,4 @@ alias pl='pdflatex -interaction=nonstopmode'
 function d() { du -h --max-depth=1 "$1" 2>/dev/null }
 
 # env
-export EDITOR=vim
-export VISUAL=vim
-
-export PATH=$PATH$( find $HOME/bin/ -maxdepth 2 -type d -printf ":%p" )
-export PATH="$HOME/.script:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH    
-
-export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
-export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
-export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
-
-export VIFM="$HOME/.config/vifm"
-
-export _JAVA_OPTIONS='-Dsun.java2d.uiScale.enabled=false'
+source ~/.env

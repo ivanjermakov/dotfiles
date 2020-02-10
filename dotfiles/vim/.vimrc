@@ -1,11 +1,6 @@
-" remap h to insert and use ijkl for inverse T cursor movement
-noremap h i
-noremap i h
-
-map i <up>
-map j <left>
-map k <down>
-map l <right>
+" reduce delays
+set ttimeoutlen=5
+set timeoutlen=5
 
 " enable syntax highlighting
 filetype plugin on
@@ -19,9 +14,6 @@ set shortmess+=A
 
 " set current command combination
 set showcmd
-
-" disable c-z because habitly clicking it cause Vim to close
-nnoremap <c-z> <nop>
 
 " enable mouse wheel scrollin
 set mouse=a
@@ -38,6 +30,29 @@ set tabstop=4
 
 " left lines before/after cursor when scrolling
 set scrolloff=8
+
+" enable multiline edit
+set virtualedit=all
+
+" disable c-z because habitly clicking it cause Vim to close
+nnoremap <c-z> <nop>
+
+" remap h to insert and use ijkl for inverse T cursor movement
+nnoremap h i
+nnoremap i h
+
+noremap i <up>
+noremap j <left>
+noremap k <down>
+noremap l <right>
+
+" use angle brackets to indent current line
+nnoremap < <<
+nnoremap > >>
+
+" keep selection after indenting
+vmap < <gv
+vmap > >gv
 
 " search
 set runtimepath^=~/.vim/bundle/incsearch.vim

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-export _JAVA_AWT_WM_NONREPARENTING=1
+source ~/.env
 
 # Forced to do this here instead of ~/.config/i3/init since those exports must be in some primary scripts like .xprofile or .bashrc
 MONITOR=HDMI-1
