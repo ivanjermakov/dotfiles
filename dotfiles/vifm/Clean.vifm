@@ -2,7 +2,7 @@ highlight clear
 
 highlight   SuggestBox   cterm=none                ctermfg=8     ctermbg=231
 highlight   Win          cterm=none                ctermfg=8     ctermbg=231
-highlight   Directory    cterm=bold                ctermfg=4     ctermbg=231
+highlight   Directory    cterm=bold                ctermfg=2     ctermbg=231
 highlight   Link         cterm=none                ctermfg=8     ctermbg=231
 
 highlight   BrokenLink   cterm=bold                ctermfg=1     ctermbg=231
