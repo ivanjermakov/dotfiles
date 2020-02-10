@@ -67,4 +67,3 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_w = 1
 
 highlight SignColumn ctermbg=256
-

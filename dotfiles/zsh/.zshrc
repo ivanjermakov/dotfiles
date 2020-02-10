@@ -44,3 +44,4 @@ export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
 
 export VIFM="$HOME/.config/vifm"
 
+export _JAVA_OPTIONS='-Dsun.java2d.uiScale.enabled=false'
