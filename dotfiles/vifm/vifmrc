@@ -191,5 +191,9 @@ map o :file <cr>l
 map O :file &<cr>l
 map md :mkdir<space>
 
+" fix yanking to clipboard
+map yd :!echo %d | xclip -sel clipboard %i<cr>
+map yf :!echo %c:p | xclip -sel clipboard %i<cr>
+
 " statusline format
 set stl="%= %A %10u:%-7g %15s %20d"

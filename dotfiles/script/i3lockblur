@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+TEMP="/tmp/i3lockblur"
+mkdir -p $TEMP
+
+DATE="`date +%Y%m%d%H%M%S`"
+IMG="$TEMP/$DATE.png"
+BLURRED="$TEMP/${DATE}b.png"
+RES=$(xrandr | grep 'current' | sed -E 's/.*current\s([0-9]+)\sx\s([0-9]+).*/\1x\2/')
+maim $IMG
+
+ffmpeg -f x11grab -video_size $RES -y -i $DISPLAY -i $IMG -filter_complex "boxblur=10" -vframes 1 $BLURRED -loglevel quiet
+
+i3lock -i $BLURRED 

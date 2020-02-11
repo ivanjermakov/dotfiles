@@ -73,7 +73,8 @@ mode "resize" {
 }
 
 bindcode $mod+Shift+26 exec --no-startup-id i3 exit
-bindsym $mod+Escape exec --no-startup-id ~/.config/i3/lock 
+#bindsym $mod+Escape exec --no-startup-id ~/.config/i3/lock 
+bindsym $mod+Escape exec --no-startup-id ~/.script/i3lockblur
 bindsym XF86PowerOff exec --no-startup-id ~/.config/i3/suspend
 
 bindcode $mod+26 kill
