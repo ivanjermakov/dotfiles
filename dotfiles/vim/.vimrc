@@ -86,6 +86,12 @@
 
 		" visual block
         noremap <leader>v <c-v>
+        
+		" move line or selection by line
+        nmap <leader><up> mTddiP`Tii
+        nmap <leader><down> mTddp`Tk
+		vmap <leader><up> diP`[v`]
+        vmap <leader><down> dp`[v`]
 
 " plugins
 		call plug#begin('~/.vim/plugged')
