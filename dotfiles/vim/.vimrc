@@ -1,84 +1,115 @@
-" reduce delays
-set ttimeoutlen=5
-set timeoutlen=5
+" appearance
+		" reduce delays
+		set ttimeoutlen=5
 
-" enable syntax highlighting
-filetype plugin on
-syntax on
+		" enable syntax highlighting
+		filetype plugin on
+		syntax on
 
-" use line number for every file opened
-set number
+		" use line number for every file opened
+		set number
 
-" remove annoyng warning of existing swap files
-set shortmess+=A
+		" remove annoyng warning of existing swap files
+		set shortmess+=A
 
-" set current command combination
-set showcmd
+		" set current command combination
+		set showcmd
 
-" enable mouse wheel scrollin
-set mouse=a
+		" enable mouse wheel scrollin
+		set mouse=a
 
-" system clipboard configuration
-set clipboard=unnamedplus
+		" system clipboard configuration
+		set clipboard=unnamedplus
 
-" store swap files separately
-set backupdir=/tmp//
-set directory=/tmp//
+		" store swap files separately
+		set backupdir=/tmp//
+		set directory=/tmp//
 
-" set tab to spaces
-set tabstop=4
+		" set tab to spaces
+		set tabstop=4
 
-" left lines before/after cursor when scrolling
-set scrolloff=8
+		" left lines before/after cursor when scrolling
+		set scrolloff=8
 
-" enable multiline edit
-set virtualedit=all
+		" enable multiline edit
+		set virtualedit=all
 
-" disable c-z because habitly clicking it cause Vim to close
-nnoremap <c-z> <nop>
+		highlight Search ctermbg=7*
 
-" remap h to insert and use ijkl for inverse T cursor movement
-nnoremap h i
-nnoremap i h
+" mappings
+		" make space leader key
+		let mapleader=" "
 
-noremap i <up>
-noremap j <left>
-noremap k <down>
-noremap l <right>
+		" disable c-z because habitly clicking it cause Vim to close
+		nnoremap <c-z> <nop>
 
-" use angle brackets to indent current line
-nnoremap < <<
-nnoremap > >>
+        " redo
+		nnoremap U <c-r>
+		
+		" remap h to insert and use ijkl for inverse T cursor movement
+		nnoremap h i
+		nnoremap i h
 
-" keep selection after indenting
-vmap < <gv
-vmap > >gv
+		" remap arrow keys
+		noremap i <up>
+		noremap j <left>
+		noremap k <down>
+		noremap l <right>
 
-" search
-set runtimepath^=~/.vim/bundle/incsearch.vim
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-nnoremap <silent> <esc> :noh<cr><esc>
-set hlsearch
-set runtimepath^=~/.vim/bundle/vim-indexed-search
+		" navigation
+        map I <c-u>zz
+        map K <c-d>zz
+		map J gg
+		map L G
 
-highlight Search ctermbg=7*
+		" use angle brackets to indent current line
+		nnoremap < <<
+		nnoremap > >>
+
+		" keep selection after indenting
+		vmap < <gv
+		vmap > >gv
+
+		" apply macros
+		nnoremap Q @q
+		vnoremap Q :norm @q<cr>
+
+" leader mappings
+		" save
+		noremap <leader>w :w<cr>
+
+		" quit
+		noremap <leader>q :q<cr>
+ 
+		" select all text in buffer
+		noremap <leader>a ggVG
+
+		" visual block
+        noremap <leader>v <c-v>
 
 " plugins
-call plug#begin('~/.vim/plugged')
-	Plug 'lervag/vimtex'
-	Plug 'vim-syntastic/syntastic'
-	Plug 'chrisbra/Colorizer'
-	Plug 'jiangmiao/auto-pairs'
-call plug#end()
+		call plug#begin('~/.vim/plugged')
+			Plug 'lervag/vimtex'
+			Plug 'vim-syntastic/syntastic'
+			Plug 'chrisbra/Colorizer'
+			Plug 'jiangmiao/auto-pairs'
+		call plug#end()
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" plugin settings
+		" search
+		set runtimepath^=~/.vim/bundle/incsearch.vim
+		map / <Plug>(incsearch-forward)
+		map ? <Plug>(incsearch-backward)
+		map g/ <Plug>(incsearch-stay)
+		nnoremap <silent> <leader>h :noh<cr><esc>
+		set hlsearch
+		set runtimepath^=~/.vim/bundle/vim-indexed-search
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_w = 1
+		" syntastic
+		set statusline+=%#warningmsg#
+		set statusline+=%{SyntasticStatuslineFlag()}
+		set statusline+=%*
+		let g:syntastic_check_on_open = 1
+		let g:syntastic_check_on_w = 1
+		highlight SignColumn ctermbg=256
 
-highlight SignColumn ctermbg=256
