@@ -1,6 +1,9 @@
-" appearance
+" appearance & behavior
 		" reduce delays
 		set ttimeoutlen=5
+		
+	    " allow us to use Ctrl-s and Ctrl-q as keybinds
+		silent !stty -ixon
 
 		" enable syntax highlighting
 		filetype plugin on
@@ -47,14 +50,15 @@
 		nnoremap U <c-r>
 		
 		" remap h to insert and use ijkl for inverse T cursor movement
-		nnoremap h i
-		nnoremap i h
+		noremap h i
+		noremap i h
+		noremap H I
+		noremap I H
 
 		" remap arrow keys
-		noremap i <up>
-		noremap j <left>
-		noremap k <down>
-		noremap l <right>
+		noremap i k
+		noremap j h
+		noremap k j
 
 		" navigation
         map I <c-u>zz
@@ -99,6 +103,7 @@
 			Plug 'vim-syntastic/syntastic'
 			Plug 'chrisbra/Colorizer'
 			Plug 'jiangmiao/auto-pairs'
+			Plug 'terryma/vim-expand-region'
 		call plug#end()
 
 " plugin settings
@@ -119,3 +124,18 @@
 		let g:syntastic_check_on_w = 1
 		highlight SignColumn ctermbg=256
 
+		" expand-region
+		map <c-w> <Plug>(expand_region_expand)
+		vmap <c-q> <Plug>(expand_region_shrink)
+		let g:expand_region_text_objects = {
+			  \ 'hw'  :0,
+			  \ 'hW'  :0,
+			  \ 'h"'  :0,
+			  \ 'h''' :0,
+			  \ 'h]'  :1,
+			  \ 'hb'  :1,
+			  \ 'hB'  :1,
+			  \ 'hl'  :0,
+			  \ 'hp'  :0,
+			  \ 'he'  :0,
+			  \ }
