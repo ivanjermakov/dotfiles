@@ -42,6 +42,11 @@ dotfiles/:
    ~/
   files:
    - .vimrc
+ idea:
+  from:
+   ~/
+  files:
+   - .ideavimrc
  htop:
   from:
    ~/.config/htop/
