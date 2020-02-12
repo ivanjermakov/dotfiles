@@ -5,6 +5,9 @@
 	    " allow us to use Ctrl-s and Ctrl-q as keybinds
 		silent !stty -ixon
 
+		" support russian layout
+        set langmap=ФИСВУАПОРЛШДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапорлшдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 		" enable syntax highlighting
 		filetype plugin on
 		syntax on
@@ -123,6 +126,7 @@
 		let g:syntastic_check_on_open = 1
 		let g:syntastic_check_on_w = 1
 		highlight SignColumn ctermbg=256
+		nnoremap <leader>s :SyntasticToggleMode<cr>
 
 		" expand-region
 		map <c-w> <Plug>(expand_region_expand)
