@@ -1,6 +1,12 @@
 ! theme
 #include "themes/light"
 
+! clipboard
+URxvt.keysym.Control-v: eval:paste_clipboard
+URxvt.keysym.Control-c: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! appearance
 URxvt.font: xft:Consolas:size=15:antialias=true
 URxvt.boldFont: xft:Consolas:bold:size=15:antialias=true
@@ -12,12 +18,6 @@ URxvt.internalBorder: 2
 URxvt.cursorBlink: true
 URxvt.saveLines: 100000
 URxvt.scrollBar: false
-
-! clipboard
-URxvt.keysym.Control-v: eval:paste_clipboard
-URxvt.keysym.Control-c: eval:selection_to_clipboard
-URxvt.iso14755: false
-URxvt.iso14755_52: false
 
 ! extensions
 URxvt.perl-lib: /home/ivan/.config/urxvt/

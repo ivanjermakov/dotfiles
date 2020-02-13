@@ -12,6 +12,9 @@
 		filetype plugin on
 		syntax on
 
+        " spell check
+		set spelllang=en_us,ru 
+		
 		" use line number for every file opened
 		set number
 
@@ -31,6 +34,8 @@
 		set backupdir=/tmp//
 		set directory=/tmp//
 
+        set showbreak=^
+
 		" set tab to spaces
 		set tabstop=4
 
@@ -45,6 +50,7 @@
 " mappings
 		" make space leader key
 		let mapleader=" "
+		map <space> <nop>
 
 		" disable c-z because habitly clicking it cause Vim to close
 		nnoremap <c-z> <nop>
@@ -59,9 +65,9 @@
 		noremap I H
 
 		" remap arrow keys
-		noremap i k
+		noremap i gk
 		noremap j h
-		noremap k j
+		noremap k gj
 
 		" navigation
         map I <c-u>zz
@@ -99,6 +105,9 @@
         nmap <leader><down> mTddp`Tk
 		vmap <leader><up> diP`[v`]
         vmap <leader><down> dp`[v`]
+
+		" toggle spell check
+		map <leader>c :call ToggleSpellCheck()<cr> 
 
 " plugins
 		call plug#begin('~/.vim/plugged')
@@ -143,3 +152,14 @@
 			  \ 'hp'  :0,
 			  \ 'he'  :0,
 			  \ }
+
+" functions
+		" toggle spellchecking
+		function! ToggleSpellCheck()
+		  set spell!
+		  if &spell
+			echo "Spellcheck ON"
+		  else
+			echo "Spellcheck OFF"
+		  endif
+		endfunction
