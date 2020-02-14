@@ -12,10 +12,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# user configuration
-
-# set theme
-
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 

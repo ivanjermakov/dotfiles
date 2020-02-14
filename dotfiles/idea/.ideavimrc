@@ -1,3 +1,5 @@
+set clipboard+=unnamed
+
 " mappings
 " make space leader key
 let mapleader=" "

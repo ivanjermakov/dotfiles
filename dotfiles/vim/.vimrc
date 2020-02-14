@@ -163,3 +163,7 @@
 			echo "Spellcheck OFF"
 		  endif
 		endfunction
+
+" autocmds
+	" autopdf tex
+	autocmd BufWritePre *.tex !pl %
