@@ -116,6 +116,7 @@
 			Plug 'chrisbra/Colorizer'
 			Plug 'jiangmiao/auto-pairs'
 			Plug 'terryma/vim-expand-region'
+			Plug 'Chiel92/vim-autoformat'
 		call plug#end()
 
 " plugin settings
@@ -152,6 +153,9 @@
 			  \ 'hp'  :0,
 			  \ 'he'  :0,
 			  \ }
+
+		" autoformat
+		map <c-l> :Autoformat<cr>
 
 " functions
 		" toggle spellchecking

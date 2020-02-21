@@ -6,8 +6,8 @@ PS1="%{%F{green}%}%n%{%f%}@%{%F{magenta}%}%m %{%F{blue}%}%~%{%f%}%(!.#.$) "
 ZSH_DISABLE_COMPFIX="true"
 
 plugins=(
-	git
-	zsh-autosuggestions
+		git
+		zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
