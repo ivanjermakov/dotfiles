@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+setxkbmap -layout us
 systemctl suspend
 i3lock -c 444444 -n
 ~/.config/i3/onlog

@@ -38,3 +38,6 @@ xset r rate 220 20
 # run notification daemon
 killall -9 dunst
 dunst &
+
+# auto hide mouse
+unclutter --timeout 2 &
