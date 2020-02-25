@@ -170,4 +170,4 @@
 
 " autocmds
 	" autopdf tex
-	autocmd BufWritePre *.tex !pl %
+	autocmd BufWritePost *.tex !pl %
