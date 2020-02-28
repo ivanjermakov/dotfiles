@@ -38,6 +38,7 @@ dotfiles/:
    ~/.config/urxvt/
   files:
    - "*"
+   - themes/*
  vim:
   from:
    ~/
