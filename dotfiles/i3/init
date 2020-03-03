@@ -3,13 +3,11 @@
 # apply xresources
 xrdb ~/.Xresources
 
-~/.script/displays
-
 # set default pulseaudio profile
 pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo 
 
 # composer
-picom --config ~/.config/picom.conf -b
+compton --config ~/.config/picom.conf -b
 
 # keyboard mapping
 killall -9 xkeysnail
@@ -18,14 +16,8 @@ xkeysnail -q ~/.config/xkeysnail/main.py &
 # set keyboard layout and disable Caps Lock default behavior
 sleep 1 && setxkbmap -option caps:none
 
-# usb mouse settings
-xinput set-prop "A4TECH USB Device"               "libinput Accel Profile Enabled" 0, 1 2> /dev/null
-xinput set-prop "pointer:Compx 2.4G Receiver"     "libinput Accel Profile Enabled" 0, 1 2> /dev/null
-
-# touchpad behavior
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Tapping Enabled" "1"
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Natural Scrolling Enabled" "1"
-xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Accel Speed" "0.2"
+# mouse config
+xinput set-prop "Logitech Wireless Mouse" "libinput Accel Speed" "-0.6"
 
 # disable screen timeout and screensaver
 xset s off
@@ -40,4 +32,4 @@ killall -9 dunst
 dunst &
 
 # auto hide mouse
-unclutter --timeout 2 &
+unclutter -idle 2 -noevents &

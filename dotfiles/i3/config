@@ -96,10 +96,18 @@ bindcode --release $mod+33 exec --no-startup-id polybar-msg cmd hide
 bindcode --release $mod+65 exec --no-startup-id notify-send -u low "Layout: `$HOME/.config/i3/toggle-layout`"
 
 bindcode $mod+40 exec --no-startup-id ~/.config/i3/rofi
-bindcode $mod+54 exec --no-startup-id chromium
+bindcode $mod+54 exec --no-startup-id chromium-browser
 bindcode $mod+57 exec --no-startup-id urxvt -e vifm
 bindcode $mod+58 exec --no-startup-id urxvt -e htop
 bindsym $mod+Return exec --no-startup-id urxvt
+
+# workspaces
+workspace 1 output HDMI-1
+workspace 2 output HDMI-1
+workspace 3 output HDMI-1
+workspace 4 output HDMI-2
+workspace 5 output HDMI-2
+workspace 6 output HDMI-2
 
 ## i3 appearance
 font pango:Consolas 12
@@ -131,17 +139,22 @@ for_window [class="^.*"] border pixel 4
 focus_follows_mouse no
 
 # gaps
-smart_gaps on
-gaps inner 30
+#smart_gaps on
+#gaps inner 30
 
 # fix background
-exec_always --no-startup-id nitrogen --restore
+#exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id xsetroot -solid "#222222"
 
 ## reload xprofile
 #exec_always --no-startup-id ~/.xprofile
 
 ## autostart
 exec_always --no-startup-id ~/.config/i3/polybar &
+
+## load default layouts
+#exec_always --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace/social.json'"
+
 
 ## reload i3
 exec --no-startup-id sleep 0.5 && i3 restart

@@ -8,10 +8,10 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! appearance
-URxvt.font: xft:Consolas:size=15:antialias=true
-URxvt.boldFont: xft:Consolas:bold:size=15:antialias=true
-URxvt.italicFont: xft:Consolas:italic:size=15:antialias=true
-URxvt.boldItalicFont: xft:Consolas:bold:italic:size=15:antialias=true
+URxvt.font: xft:Consolas:size=13:antialias=true
+URxvt.boldFont: xft:Consolas:bold:size=13:antialias=true
+URxvt.italicFont: xft:Consolas:italic:size=13:antialias=true
+URxvt.boldItalicFont: xft:Consolas:bold:italic:size=13:antialias=true
 URxvt.letterSpace: 0 
 URxvt.geometry: 92x24
 URxvt.internalBorder: 2 
