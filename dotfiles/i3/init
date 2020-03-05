@@ -3,9 +3,6 @@
 # apply xresources
 xrdb ~/.Xresources
 
-# set default pulseaudio profile
-pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo 
-
 # composer
 compton --config ~/.config/picom.conf -b
 

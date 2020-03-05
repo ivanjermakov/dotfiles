@@ -80,8 +80,8 @@ bindcode $mod+26 kill
 bindcode $mod+Shift+27 restart
 bindcode $mod+Shift+54 reload
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && notify-send -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && notify-send -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
+bindsym $mod+Prior exec --no-startup-id amixer -D pulse sset Master 5%+ && notify-send -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
+bindsym $mod+Next exec --no-startup-id amixer -D pulse sset Master 5%- && notify-send -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master 1+ toggle && notify-send -u low "Audio `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }'`"
 
 bindsym XF86MonBrightnessUp exec --no-startup-id notify-send -u low "Brightness: `~/.config/i3/backlight +100`"
