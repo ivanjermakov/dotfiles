@@ -5,8 +5,8 @@
 	    " allow us to use Ctrl-s and Ctrl-q as keybinds
 		silent !stty -ixon
 
-		" support russian layout
-        set langmap=ФИСВУАПОРЛШДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапорлшдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+		set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyukop[]asdfgihjl\\;'zxcvbnm\\,.~QWERTYUKOP{}ASDFGIHJL:\\"ZXCVBNM<>
+		imap х <esc>
 
 		" enable syntax highlighting
 		filetype plugin on

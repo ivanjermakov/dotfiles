@@ -39,5 +39,8 @@ xset r rate 220 20
 killall -9 dunst
 dunst &
 
+# automount
+devmon &
+
 # auto hide mouse
 unclutter --timeout 2 &
