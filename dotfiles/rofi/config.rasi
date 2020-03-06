@@ -1,0 +1,11 @@
+configuration {
+	modi: "run";
+	font: "Consolas 12";
+	dpi: 1;
+	width: 20;
+	lines: 4;
+	bw: 0;
+	theme: "Arc";
+	display-run: "";
+}
+

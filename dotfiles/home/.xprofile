@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+source ~/.env
+
+# Forced to do this here instead of ~/.config/i3/init since those exports must be in some primary scripts like .xprofile or .bashrc
+MONITOR=HDMI-1
+if ! xrandr --query | grep -q "^$MONITOR connected"; then
+	export GDK_SCALE=2
+	export GDK_DPI_SCALE=0.5
+fi
+
+$HOME/.config/i3/init &
