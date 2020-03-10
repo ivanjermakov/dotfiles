@@ -111,6 +111,7 @@
 
 " plugins
 		call plug#begin('~/.vim/plugged')
+			Plug 'haya14busa/incsearch.vim'
 			Plug 'lervag/vimtex'
 			Plug 'vim-syntastic/syntastic'
 			Plug 'chrisbra/Colorizer'
@@ -121,7 +122,6 @@
 
 " plugin settings
 		" search
-		set runtimepath^=~/.vim/bundle/incsearch.vim
 		map / <Plug>(incsearch-forward)
 		map ? <Plug>(incsearch-backward)
 		map g/ <Plug>(incsearch-stay)
