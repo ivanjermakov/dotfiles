@@ -43,5 +43,6 @@ Configuration files for my current machine.
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Email client | [neomutt](https://github.com/neomutt/neomutt) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
+| Task manager| [taskell](https://github.com/smallhadroncollider/taskell) |
 | Other | [nitrogen](https://github.com/l3ib/nitrogen) |
 | | [neofetch](https://github.com/dylanaraps/neofetch) |
