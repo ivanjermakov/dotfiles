@@ -108,3 +108,8 @@ dotfiles/:
    - config
    - keymap
    - themes/theme
+ taskell:
+  from:
+   ~/.config/taskell/
+  files:
+   - "*"
