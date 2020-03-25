@@ -15,8 +15,5 @@ source $ZSH/oh-my-zsh.sh
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
-# functions
-function d() { du -h --max-depth=1 "$1" 2>/dev/null }
-
 # env
 source ~/.env
