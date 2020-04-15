@@ -1,4 +1,4 @@
 #!/usr/bin/zsh
 
 setxkbmap us
-rofi -show run
+rofi -show
