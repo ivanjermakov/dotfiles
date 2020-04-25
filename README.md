@@ -10,7 +10,7 @@ Configuration files for my current machine.
 | --- | --- |
 | PC | Dell XPS 15 9560 |
 | Display | Dell U2518D |
-| Keyboard | Zero Mechanical Keyboard |
+| Keyboard | Hand wired 40% planck |
 | Mouse | A4Tech X7-710BK |
 | Monitors | Radiotehnika S-30B |
 | Amp | Kumir U-001 |
@@ -25,7 +25,7 @@ Configuration files for my current machine.
 | --- | --- |
 | OS | Arch Linux |
 | WM | [i3-gaps](https://github.com/i3/i3) |
-| Screen locker | [i3lock](https://github.com/i3/i3lock) |
+| Screen locker | [i3lock (modified)](https://github.com/ivanjermakov/i3lock) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
 | Status bar | [Polybar](https://github.com/polybar/polybar) |
 | Theme | [Arc](https://github.com/arc-design/arc-theme) |
@@ -39,10 +39,7 @@ Configuration files for my current machine.
 | Music player | [moc](https://github.com/jonsafari/mocp) |
 | Video player | [mpv](https://github.com/mpv-player/mpv) |
 | Keyboard mapper | [xkeysnail (own fork)](https://github.com/ivanjermakov/xkeysnail) |
-| Time tracker | [thyme](https://github.com/sourcegraph/thyme) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
-| Email client | [neomutt](https://github.com/neomutt/neomutt) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
-| Task manager| [taskell](https://github.com/smallhadroncollider/taskell) |
 | Other | [nitrogen](https://github.com/l3ib/nitrogen) |
 | | [neofetch](https://github.com/dylanaraps/neofetch) |
