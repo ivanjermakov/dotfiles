@@ -2,5 +2,5 @@
 
 setxkbmap -layout us
 systemctl suspend
-i3lock -c 444444 -n
+i3lock -c dddddd -n
 ~/.config/i3/onlog
