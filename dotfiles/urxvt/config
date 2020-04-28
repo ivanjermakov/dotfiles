@@ -2,8 +2,8 @@
 #include "themes/light"
 
 ! clipboard
-URxvt.keysym.Control-v: eval:paste_clipboard
-URxvt.keysym.Control-c: eval:selection_to_clipboard
+URxvt.keysym.Control-p: eval:paste_clipboard
+URxvt.keysym.Control-y: eval:selection_to_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
