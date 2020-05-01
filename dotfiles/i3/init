@@ -15,7 +15,7 @@ picom --config ~/.config/picom.conf -b
 killall -9 xkeysnail
 xkeysnail -q ~/.config/xkeysnail/main.py &
 
-# set keyboard layout and disable Caps Lock default behavior
+# disable Caps Lock default behavior
 sleep 1 && setxkbmap -option caps:none
 
 # usb mouse settings
