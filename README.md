@@ -26,6 +26,7 @@ Configuration files for my current machine.
 | OS | Arch Linux |
 | WM | [i3-gaps](https://github.com/i3/i3) |
 | Screen locker | [i3lock (modified)](https://github.com/ivanjermakov/i3lock) |
+| DM | [nodm](https://github.com/spanezz/nodm) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
 | Status bar | [Polybar](https://github.com/polybar/polybar) |
 | Theme | [Arc](https://github.com/arc-design/arc-theme) |

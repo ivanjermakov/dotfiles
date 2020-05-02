@@ -5,7 +5,7 @@ dotfiles/:
   files:
    - .Xresources*
    - .bashrc
-   - .xprofile
+   - .xinitrc
  script:
   from:
    ~/.script/

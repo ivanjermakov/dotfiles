@@ -10,3 +10,6 @@ if ! xrandr --query | grep -q "^$MONITOR connected"; then
 fi
 
 $HOME/.config/i3/init &
+$HOME/.config/i3/lock &
+
+exec i3
