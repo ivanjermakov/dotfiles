@@ -12,8 +12,8 @@ pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo
 picom --config ~/.config/picom.conf -b
 
 # keyboard mapping
-killall -9 xkeysnail
-xkeysnail -q ~/.config/xkeysnail/main.py &
+#killall -9 xkeysnail
+#xkeysnail -q ~/.config/xkeysnail/main.py &
 
 # disable Caps Lock default behavior
 sleep 1 && setxkbmap -option caps:none
