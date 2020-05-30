@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+args = sys.argv
+if not (len(args) >= 2 and (args[1] == 'i' or args[1] == 'e')):
+    print('bad argument')
+    exit()
+print('using {} audio profile'.format('internal' if args[1] == 'i' else 'external'))
+if args[1] == 'i':
+    subprocess.run(['pactl', 'set-card-profile', '0', 'output:analog-stereo+input:analog-stereo']) 
+else:
+    subprocess.run(['pactl', 'set-card-profile', '0', 'output:hdmi-stereo+input:analog-stereo']) 

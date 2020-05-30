@@ -79,10 +79,6 @@
 		nnoremap < <<
 		nnoremap > >>
 
-		" replace cutting with deletion
-		nnoremap d "_d
-		vnoremap d "_d
-
 		" keep selection after indenting
 		vmap < <gv
 		vmap > >gv
