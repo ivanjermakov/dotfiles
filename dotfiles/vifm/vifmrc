@@ -46,81 +46,47 @@ mark h ~/
 
 command! df df -h %m 2> /dev/null
 command! diff vim -d %f %F
-command! zip zip -r %f.zip %f
+command! zip zip -r archive.zip %f
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
+command! backup cp %c %c.backup
 
-filextype *.pdf zathura %f %i
-" fileviewer *.pdf pdftotext -nopgbrk %c -
-filextype *.ps,*.eps,*.ps.gz zathura %f
-filextype *.djvu zathura %f
-filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
-        \ xplayer %c
-" fileviewer *.mp3 mp3info
-" fileviewer *.flac soxi
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-        \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-        \*.as[fx]
-        \ mpv --player-operation-mode=pseudo-gui -- %f %i
-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-        \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-        \*.as[fx]
-        \ ffprobe -pretty %c 2>&1
+filextype *.pdf,*.djvu,*.ps,*.eps,*.ps.gz zathura %f %i
+filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx],*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+	\ mpv --player-operation-mode=pseudo-gui -- %f %i
+fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx]
+	\ ffprobe -pretty %c 2>&1
 filextype *.html,*.htm
-        \ chromium-browser %f
-filetype *.html,*.htm links, lynx
+	\ chromium-browser %f
+filetype *.html, *.htm links, lynx
 filetype *.[1-8] man ./%c
-" fileviewer *.[1-8] man ./%c | col -b
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm feh -ZN. %f &
+fileviewer *.[1-8] man ./%c | col -b
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm feh -ZN. %f
 " fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-         \ convert -identify %f -verbose /dev/null
-filetype *.md5
-       \ md5sum -c %f %S
-filetype *.sha1
-       \ sha1sum -c %f %S
-filetype *.sha256
-       \ sha256sum -c %f %S
-filetype *.sha512
-       \ sha512sum -c %f %S
-filetype *.asc
-       \ !!gpg --verify %c
-filetype *.torrent ktorrent %f &
-" fileviewer *.torrent dumptorrent -v %c
-filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
-       \ {Mount with fuse-zip}
-       \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
-       \ {View contents}
-       \ zip -sf %c | less,
-       \ {Extract here}
-       \ tar -xf %c,
-" fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
-filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz
-       \ {Mount with archivemount}
-       \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
-" fileviewer *.tgz,*.tar.gz tar -tzf %c
-" fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
-" fileviewer *.tar.txz,*.txz xz --list %c
-" fileviewer *.tar tar -tf %c
-filetype *.rar
-       \ {Mount with rar2fs}
-       \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
-" fileviewer *.rar unrar v %c
+	\ convert -identify %f -verbose /dev/null
+filetype *.zip,*.jar,*.war
+	\ unzip %c
+fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %c
+fileviewer *.tgz,*.tar.gz tar -tzf %c
+fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
+fileviewer *.tar.txz,*.txz xz --list %c
+fileviewer *.tar tar -tf %c
+filetype *.rar unrar %c
+fileviewer *.rar unrar v %c
 filetype *.iso
-       \ {Mount with fuseiso}
-       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+	\ {Mount with fuseiso}
+	\ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
 filetype *.7z
-       \ {Open in file-roller} file-roller %c
-" fileviewer *.7z 7z l %c
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f &
-" fileviewer *.doc catdoc %c
-" fileviewer *.docx, docx2txt.pl %f -
-filetype * vim %c, xdg-open
+	\ {Open in file-roller} file-roller %c
+fileviewer *.7z 7z l %c
+filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f %i &
+filetype * vim %f, xdg-open, zip archive.zip %f
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+	\phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Sample mappings
 
