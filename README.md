@@ -26,10 +26,8 @@ Configuration files for my current machine.
 | OS | Arch Linux |
 | WM | [i3-gaps](https://github.com/i3/i3) |
 | Screen locker | [i3lock (modified)](https://github.com/ivanjermakov/i3lock) |
-| DM | [nodm](https://github.com/spanezz/nodm) |
+| DM | [LightDM](https://github.com/canonical/lightdm) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
-| Status bar | [Polybar](https://github.com/polybar/polybar) |
-| Theme | [Arc](https://github.com/arc-design/arc-theme) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
 | Text editor | [vim](https://github.com/vim/vim) |
@@ -37,9 +35,7 @@ Configuration files for my current machine.
 | File manager | [vifm](https://github.com/vifm/vifm) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
 | Image viewer | [feh](https://github.com/derf/feh) |
-| Music player | [moc](https://github.com/jonsafari/mocp) |
-| Video player | [mpv](https://github.com/mpv-player/mpv) |
-| Keyboard mapper | [xkeysnail (own fork)](https://github.com/ivanjermakov/xkeysnail) |
+| Music & Video player | [mpv](https://github.com/mpv-player/mpv) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
 | Other | [nitrogen](https://github.com/l3ib/nitrogen) |
