@@ -33,6 +33,7 @@ Configuration files for my current machine.
 | Text editor | [vim](https://github.com/vim/vim) |
 | Browser | [Chromium](https://github.com/chromium/chromium) |
 | File manager | [vifm](https://github.com/vifm/vifm) |
+| Process manager | [pmn](https://github.com/ivanjermakov/pmn) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
 | Image viewer | [feh](https://github.com/derf/feh) |
 | Music & Video player | [mpv](https://github.com/mpv-player/mpv) |
