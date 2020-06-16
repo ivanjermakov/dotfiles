@@ -54,11 +54,6 @@ dotfiles/:
    ~/.config/htop/
   files:
    - htoprc
- kbmap:
-  from:
-   ~/.config/kbmap/
-  files:
-   - config.py
  polybar:
   from:
    ~/.config/polybar/
@@ -85,12 +80,6 @@ dotfiles/:
    ~/.config/feh/
   files:
    - keys
- mutt:
-  from:
-   ~/.config/mutt/
-  files:
-   - muttrc
-   - colors
  dunst:
   from:
    ~/.config/dunst/
@@ -101,15 +90,8 @@ dotfiles/:
    ~/.config/neofetch/
   files:
    - config.conf
- moc:
+ vimium:
   from:
-   ~/.moc/
+   ~/.config/vimium/
   files:
-   - config
-   - keymap
-   - themes/theme
- taskell:
-  from:
-   ~/.config/taskell/
-  files:
-   - "*"
+    - "*"
