@@ -95,3 +95,8 @@ dotfiles/:
    ~/.config/vimium/
   files:
     - "*"
+ firefox:
+  from:
+   ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
+  files:
+   - userChrome.css

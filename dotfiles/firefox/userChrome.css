@@ -1,0 +1,19 @@
+#nav-bar {
+	visibility: collapse;
+}
+
+:root{
+	--height:25px;
+	--tab-min-height:0 !important;
+}
+
+.close-icon, #tabs-newtab-button, .tab-line {
+	visibility: collapse;
+}
+
+.tabbrowser-tab {
+  min-height: var(--height) !important;
+  max-height: var(--height) !important;
+  vertical-align: top !important;
+  -moz-box-sizing: border-box !important;
+}
