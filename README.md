@@ -31,7 +31,7 @@ Configuration files for my current machine.
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
 | Text editor | [vim](https://github.com/vim/vim) |
-| Browser | [Chromium](https://github.com/chromium/chromium) |
+| Browser | [Firefox](https://github.com/mozilla/gecko-dev) |
 | File manager | [vifm](https://github.com/vifm/vifm) |
 | Process manager | [pmn](https://github.com/ivanjermakov/pmn) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
