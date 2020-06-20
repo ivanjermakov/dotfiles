@@ -52,12 +52,12 @@
 }
 
 #urlbar {
-	--urlbar-height: 20px !important;
-	--urlbar-toolbar-height: 24px !important;
+	--urlbar-height: 30px !important;
+	--urlbar-toolbar-height: 34px !important;
 }
 
 #urlbar-container {
-	--urlbar-container-height: 24px !important;
+	--urlbar-container-height: 33px !important;
 	margin: 0 !important;
 }
 
