@@ -1,19 +1,116 @@
-#nav-bar {
-	visibility: collapse;
+:root {
+	--height: 25px;
+	--tab-min-height: 0 !important;
 }
 
-:root{
-	--height:25px;
-	--tab-min-height:0 !important;
+/*remove active tab borders*/
+#navigator-toolbox {
+	--tabs-border-color: transparent !important;
 }
 
+/*smaller tabs width*/
+.tabbrowser-tab[fadein]:not([pinned="true"]) {
+	max-width: 175px !important;
+}
+
+/*remove garbage from tabs*/
 .close-icon, #tabs-newtab-button, .tab-line {
 	visibility: collapse;
 }
 
-.tabbrowser-tab {
-  min-height: var(--height) !important;
-  max-height: var(--height) !important;
-  vertical-align: top !important;
-  -moz-box-sizing: border-box !important;
+#PanelUI-button {
+	border: none !important;
+}
+
+/*remove navigation buttons*/
+#back-button, #forward-button, #stop-reload-button {
+	visibility: collapse;
+}
+
+/*center url dialog*/
+#customizableui-special-spring6 {
+	-moz-box-flex: 10 !important;
+}
+
+/*url bar background*/
+#nav-bar {
+	background: #eee !important;
+}
+
+/*tab bar background*/
+.toolbar-items {
+	background: #eee !important;
+}
+
+/*inactive tab background*/
+.tab-background[selected="true"] {
+	background: white !important;
+}
+
+.tab-background {
+	background: #eee !important;
+}
+
+#urlbar {
+	--urlbar-height: 20px !important;
+	--urlbar-toolbar-height: 24px !important;
+}
+
+#urlbar-container {
+	--urlbar-container-height: 24px !important;
+	margin: 0 !important;
+}
+
+/*remove url panel shadow*/
+#urlbar-background {
+	border: none !important;
+}
+
+/*remove garbage from url panel*/
+#tracking-protection-icon-container, #identity-box, #page-action-buttons {
+	visibility: collapse;
+}
+
+.urlbar-input-box {
+	padding-left: 10px;
+}
+
+/*autohide url bar*/
+#navigator-toolbox {
+	-moz-appearance: none;
+	background-color: transparent !important;
+	border-top: none;
+}
+
+#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
+#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
+#navigator-toolbox {
+	border: none !important;
+}
+
+toolbox {
+	z-index: 10;
+	margin-top: 0 !important;
+	margin-bottom: -40px !important;
+	height: 0 !important;
+	pointer-events: none;
+}
+
+vbox {
+	pointer-events: all;
+}
+
+#nav-bar {
+	opacity: 0;
+	transform-origin: 0 0;
+	pointer-events: none;
+	transition: transform, ease-in-out 0.2s, opacity 0.2s ease-in-out !important;
+}
+
+vbox:hover ~ #nav-bar, toolbox:focus-within > #nav-bar, #nav-bar:hover, #mainPopupSet:hover ~ box #nav-bar,
+#mainPopupSet:focus-within ~ box #nav-bar {
+	opacity: 1;
+	transform: none;
+	pointer-events: all;
 }
