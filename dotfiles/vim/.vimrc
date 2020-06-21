@@ -87,6 +87,12 @@
 		nnoremap Q @q
 		vnoremap Q :norm @q<cr>
 
+		" fzf
+		nnoremap <c-n> :Files<cr>
+
+		" open last file
+		nnoremap <Tab> <c-^>
+
 " leader mappings
 		" save
 		noremap <leader>w :w<cr>
@@ -116,6 +122,8 @@
 			Plug 'vim-syntastic/syntastic'
 			Plug 'chrisbra/Colorizer'
 			Plug 'terryma/vim-expand-region'
+			Plug 'junegunn/fzf'
+			Plug 'junegunn/fzf.vim'
 		call plug#end()
 
 " plugin settings
@@ -131,7 +139,7 @@
 		set statusline+=%#warningmsg#
 		set statusline+=%{SyntasticStatuslineFlag()}
 		set statusline+=%*
-		let g:syntastic_check_on_open = 1
+		let g:syntastic_check_on_open = 0
 		let g:syntastic_check_on_w = 1
 		highlight SignColumn ctermbg=256
 		nnoremap <leader>s :SyntasticToggleMode<cr>
