@@ -160,6 +160,9 @@
 			  \ 'he'  :0,
 			  \ }
 
+		" fzf
+		let $FZF_DEFAULT_COMMAND = 'find .'
+
 " functions
 		" toggle spellchecking
 		function! ToggleSpellCheck()

@@ -64,9 +64,7 @@ filextype *.html,*.htm
 filetype *.html, *.htm links, lynx
 filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm feh -ZN. %f
-" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-	\ convert -identify %f -verbose /dev/null
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm feh --start-at %f
 filetype *.zip,*.jar,*.war
 	\ unzip %c
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %c
