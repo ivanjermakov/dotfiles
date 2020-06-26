@@ -36,6 +36,7 @@ Configuration files for my current machine.
 | Process manager | [pmn](https://github.com/ivanjermakov/pmn) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
 | Image viewer | [feh](https://github.com/derf/feh) |
+| RSS reader | [newsboat](https://github.com/newsboat/newsboat) |
 | Music & Video player | [mpv](https://github.com/mpv-player/mpv) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
