@@ -100,3 +100,8 @@ dotfiles/:
    ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
   files:
    - userChrome.css
+ newsboat:
+  from:
+   ~/.newsboat/
+  files:
+    - config
