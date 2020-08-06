@@ -57,3 +57,8 @@ nmap <leader><up> mTddiP`Tii
 nmap <leader><down> mTddp`Tk
 vmap <leader><up> diP`[v`]
 vmap <leader><down> dp`[v`]
+
+" idea specific
+nmap gu :action ShowUsages<cr>
+nmap gi :action GotoImplementation<cr>
+nmap gs :action GotoSuperMethod<cr>
