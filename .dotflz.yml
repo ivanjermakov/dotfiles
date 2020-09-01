@@ -104,4 +104,10 @@ dotfiles/:
   from:
    ~/.newsboat/
   files:
-    - config
+   - config
+ kbmap:
+  from:
+   ~/.config/kbmap/
+  files:
+   - config.py
+
