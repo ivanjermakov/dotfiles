@@ -46,3 +46,7 @@ devmon &
 # auto hide mouse
 killall unclutter
 unclutter --timeout 2 &
+
+# kbmap
+#killall kbmap
+#kbmap "AT Translated Set 2 keyboard" &
