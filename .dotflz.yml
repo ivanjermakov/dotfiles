@@ -6,6 +6,7 @@ dotfiles/:
    - .Xresources*
    - .bashrc
    - .xprofile
+   - .vimrc
  script:
   from:
    ~/.script/
@@ -41,9 +42,9 @@ dotfiles/:
    - themes/*
  vim:
   from:
-   ~/
+   ~/.vim/init/
   files:
-   - .vimrc
+   - "*"
  idea:
   from:
    ~/
