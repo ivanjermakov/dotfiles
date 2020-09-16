@@ -50,3 +50,7 @@ unclutter --timeout 2 &
 # kbmap
 #killall kbmap
 #kbmap "AT Translated Set 2 keyboard" &
+
+# kmonad
+killall kmonad
+kmonad ~/.config/kmonad/laptop.kbd &
