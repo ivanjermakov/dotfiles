@@ -6,15 +6,15 @@
 )
 
 (defalias
-  ssp (tap-next spc lsft)
-  sen (tap-next ret rsft)
-  smt (tap-next cmp (layer-toggle system))
-  nav (tap-next tab (layer-toggle navigation))
-  d   (tap-next d   (layer-toggle digits))
-  f   (tap-next f   (layer-toggle fns))
-  b   (tap-next b   (layer-toggle braces))
-  r   (tap-next r   (layer-toggle symbols-right))
-  u   (tap-next u   (layer-toggle symbols-left))
+  ssp (tap-next-release spc lsft)
+  sen (tap-next-release ret rsft)
+  smt (tap-next-release cmp (layer-toggle system))
+  nav (tap-next-release tab (layer-toggle navigation))
+  d   (tap-next-release d   (layer-toggle digits))
+  f   (tap-next-release f   (layer-toggle fns))
+  b   (tap-next-release b   (layer-toggle braces))
+  r   (tap-next-release r   (layer-toggle symbols-right))
+  u   (tap-next-release u   (layer-toggle symbols-left))
 )
 
 (defsrc
@@ -28,8 +28,8 @@
 
 (deflayer default
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  ssrq  ins  del
-  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    @r   t    y    @u   i    o    p    bspc ]    \
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  esc  q    w    e    @r   t    y    @u   i    o    p    bspc ]    \
   @nav a    s    @d   @f   g    h    j    k    l    ;    '    ret 
   lsft z    x    c    v    @b   n    m    ,    .    /    @sen            up       
   _    _    lctl           @ssp           lalt @smt                left  down rght
