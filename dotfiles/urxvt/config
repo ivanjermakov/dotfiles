@@ -1,5 +1,5 @@
 ! theme
-#include "themes/light"
+#include "themes/brewer"
 
 ! clipboard
 URxvt.keysym.Control-p: eval:paste_clipboard
