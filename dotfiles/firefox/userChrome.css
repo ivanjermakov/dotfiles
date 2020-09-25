@@ -143,7 +143,7 @@ vbox:hover ~ #nav-bar, toolbox:focus-within > #nav-bar, #nav-bar:hover, #mainPop
 #context-bookmarklink,
 #context-savelink,
 #context-savelinktopocket,
-#context-copylink,
+/* #context-copylink, */
 #context-copy,
 #context-sep-selectall,
 #context-searchselect,
