@@ -9,11 +9,7 @@ xrdb ~/.Xresources
 pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo 
 
 # composer
-picom --config ~/.config/picom.conf -b
-
-# keyboard mapping
-#killall -9 xkeysnail
-#xkeysnail -q ~/.config/xkeysnail/main.py &
+run-if-not picom $(picom --config ~/.config/picom.conf -b) &
 
 # disable Caps Lock default behavior
 sleep 1 && setxkbmap -option caps:none
@@ -35,22 +31,7 @@ xset s noblank
 # set keyboard delay and repeat
 xset r rate 220 20
 
-# run notification daemon
-killall -9 dunst
-dunst &
-
-# automount
-killall devmon
-devmon &
-
-# auto hide mouse
-killall unclutter
-unclutter --timeout 2 &
-
-# kbmap
-#killall kbmap
-#kbmap "AT Translated Set 2 keyboard" &
-
-# kmonad
-killall kmonad
-kmonad ~/.config/kmonad/laptop.kbd &
+run-if-not dunst dunst &
+run-if-not devmon devmon &
+run-if-not unclutter $(unclutter --timeout 2) &
+run-if-not kmonad $(kmonad ~/.config/kmonad/laptop.kbd) &

@@ -9,5 +9,7 @@ if not (len(args) >= 2 and (args[1] == 'i' or args[1] == 'e')):
 print('using {} audio profile'.format('internal' if args[1] == 'i' else 'external'))
 if args[1] == 'i':
     subprocess.run(['pactl', 'set-card-profile', '0', 'output:analog-stereo+input:analog-stereo']) 
+    subprocess.run(['pactl', 'set-sink-port', 'alsa_output.pci-0000_00_1f.3.analog-stereo', 'analog-output-headphones']) 
+    subprocess.run(['pactl', 'set-source-port', 'alsa_input.pci-0000_00_1f.3.analog-stereo', 'analog-input-headset-mic'])
 else:
     subprocess.run(['pactl', 'set-card-profile', '0', 'output:hdmi-stereo+input:analog-stereo']) 
