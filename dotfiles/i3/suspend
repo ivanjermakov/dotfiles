@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
 setxkbmap -layout us
-systemctl suspend
-i3lock -c dddddd -n
-~/.config/i3/onlog
+systemctl suspend -i
+i3lock -c dddddd -n ~/.config/i3/onlog
