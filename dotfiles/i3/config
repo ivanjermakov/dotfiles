@@ -71,6 +71,7 @@ mode "resize" {
 
 bindcode $mod+Shift+26 exec --no-startup-id i3 exit
 bindsym XF86PowerOff exec --no-startup-id ~/.script/system/suspend
+bindsym $mod+Shift+Escape exec --no-startup-id ~/.script/system/suspend
 
 bindcode $mod+26 kill
 bindcode $mod+Shift+27 restart
