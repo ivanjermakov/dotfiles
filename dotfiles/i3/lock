@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-setxkbmap -layout us
-i3lock -c dddddd -n
-~/.config/i3/onlog

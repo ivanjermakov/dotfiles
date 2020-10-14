@@ -31,8 +31,5 @@ xset s noblank
 # set keyboard delay and repeat
 xset r rate 220 20
 
-run-if-not dunst dunst &
-run-if-not devmon devmon &
-run-if-not unclutter $(unclutter --timeout 2) &
-run-if-not kmonad $(kmonad ~/.config/kmonad/laptop.kbd) &
-i8kfan 0 0
+./onlog &
+./autorun &

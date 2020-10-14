@@ -12,6 +12,8 @@ dotfiles/:
    ~/.script/
   files:
    - "*"
+   - wm/*
+   - system/*
  picom:
   from:
    ~/.config/
@@ -21,7 +23,7 @@ dotfiles/:
   from:
    ~/.config/i3/
   files:
-   - "*"
+   - config
  rofi:
   from:
    ~/.config/rofi/
@@ -91,11 +93,6 @@ dotfiles/:
    ~/.config/neofetch/
   files:
    - config.conf
- vimium:
-  from:
-   ~/.config/vimium/
-  files:
-    - "*"
  firefox:
   from:
    ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
@@ -106,11 +103,6 @@ dotfiles/:
    ~/.newsboat/
   files:
    - config
- kbmap:
-  from:
-   ~/.config/kbmap/
-  files:
-   - config.py
  kmonad:
    from:
     ~/.config/kmonad/
