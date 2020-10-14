@@ -25,7 +25,6 @@ Configuration files for my current machine.
 | --- | --- |
 | OS | Arch Linux |
 | WM | [i3-gaps](https://github.com/i3/i3) |
-| Screen locker | [i3lock (modified)](https://github.com/ivanjermakov/i3lock) |
 | DM | [LightDM](https://github.com/canonical/lightdm) |
 | App launcher | [rofi](https://github.com/davatorium/rofi) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
