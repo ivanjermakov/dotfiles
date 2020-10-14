@@ -26,7 +26,7 @@ Configuration files for my current machine.
 | OS | Arch Linux |
 | WM | [i3-gaps](https://github.com/i3/i3) |
 | DM | [LightDM](https://github.com/canonical/lightdm) |
-| App launcher | [rofi](https://github.com/davatorium/rofi) |
+| App launcher | [dmenu](https://github.com/ivanjermakov/dmenu) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
 | Text editor | [vim](https://github.com/vim/vim) |
