@@ -7,5 +7,3 @@ xset s noblank
 
 # set keyboard delay and repeat
 xset r rate 220 20
-
-
