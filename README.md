@@ -11,7 +11,7 @@ Configuration files for my current machine.
 | PC | Dell XPS 15 9560 |
 | Display | Dell U2518D |
 | Keyboard | Hand wired 40% planck ([qmk config](https://github.com/ivanjermakov/qmk_firmware/tree/work40/keyboards/handwired/work40)) |
-| Mouse | A4Tech X7-710BK |
+| Mouse | Logitech G403 Hero |
 | Monitors | Radiotehnika S-30B |
 | Amp | Kumir U-001 |
 | Headphones | Sony MDR-XB650BT |
