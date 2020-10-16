@@ -24,7 +24,7 @@ Configuration files for my current machine.
 | Type | Name |
 | --- | --- |
 | OS | Arch Linux |
-| WM | [i3-gaps](https://github.com/i3/i3) |
+| WM | [dwm](https://github.com/ivanjermakov/dwm) |
 | DM | [LightDM](https://github.com/canonical/lightdm) |
 | App launcher | [dmenu](https://github.com/ivanjermakov/dmenu) |
 | Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |

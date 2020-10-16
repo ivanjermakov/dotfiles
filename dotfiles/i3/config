@@ -134,7 +134,3 @@ smart_gaps on
 gaps inner 30
 
 exec --no-startup-id ~/.script/system/init
-
-## reload i3
-#exec --no-startup-id sleep 0.5 && i3 restart
-
