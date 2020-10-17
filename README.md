@@ -1,6 +1,3 @@
-![Desktop preview](https://sun9-17.userapi.com/c205728/v205728393/60f8e/27JEiXp4dng.jpg)
-![Desktop preview](https://sun9-8.userapi.com/c854128/v854128393/1edfb1/mqwJoUg6K70.jpg)
-
 # Dotfiles
 Configuration files for my current machine.
 
@@ -27,7 +24,7 @@ Configuration files for my current machine.
 | WM | [dwm](https://github.com/ivanjermakov/dwm) |
 | DM | [LightDM](https://github.com/canonical/lightdm) |
 | App launcher | [dmenu](https://github.com/ivanjermakov/dmenu) |
-| Terminal | [urxvt](https://github.com/exg/rxvt-unicode) |
+| Terminal | [st](https://github.com/ivanjermakov/st) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
 | Text editor | [vim](https://github.com/vim/vim) |
 | Browser | [Firefox](https://github.com/mozilla/gecko-dev) |
@@ -39,5 +36,3 @@ Configuration files for my current machine.
 | Music & Video player | [mpv](https://github.com/mpv-player/mpv) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
-| Other | [nitrogen](https://github.com/l3ib/nitrogen) |
-| | [neofetch](https://github.com/dylanaraps/neofetch) |
