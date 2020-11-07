@@ -6,3 +6,5 @@ alias cal='cal -m'
 alias pl='pdflatex -interaction=nonstopmode'
 alias v='vim'
 alias d='du -hs'
+
+alias reboot='systemctl reboot'

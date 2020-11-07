@@ -72,7 +72,7 @@ fileviewer *.tgz,*.tar.gz tar -tzf %c
 fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
 fileviewer *.tar.txz,*.txz xz --list %c
 fileviewer *.tar tar -tf %c
-filetype *.rar unrar %c
+filetype *.rar unrar x %c
 fileviewer *.rar unrar v %c
 filetype *.iso
 	\ {Mount with fuseiso}

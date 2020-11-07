@@ -1,18 +1,15 @@
 #!/bin/sh
 
+~/.script/displays
+
 # apply xresources
 xrdb ~/.Xresources
 
-~/.script/displays
-
 # set default pulseaudio profile
-pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo 
-
-# composer
-run-if-not picom $(picom --config ~/.config/picom.conf -b) &
+pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo &
 
 # disable Caps Lock default behavior
-sleep 1 && setxkbmap -option caps:none
+setxkbmap -option caps:none
 
 ~/.script/system/xinput &
 ~/.script/system/xset &

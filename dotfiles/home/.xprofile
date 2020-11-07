@@ -9,4 +9,4 @@ if ! xrandr --query | grep -q "^$MONITOR connected"; then
 	export GDK_DPI_SCALE=0.5
 fi
 
-$HOME/.script/system/init &
+$HOME/.script/system/init
