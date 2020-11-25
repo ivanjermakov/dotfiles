@@ -7,4 +7,6 @@ alias pl='pdflatex -interaction=nonstopmode'
 alias v='vim'
 alias d='du -hs'
 
-alias reboot='systemctl reboot'
+alias gits='git status'
+alias gitp='git pull'
+alias gitc='git commit -a'
