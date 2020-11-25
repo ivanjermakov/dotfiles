@@ -22,7 +22,7 @@ Configuration files for my current machine.
 | --- | --- |
 | OS | Arch Linux |
 | WM | [dwm](https://github.com/ivanjermakov/dwm) |
-| DM | [LightDM](https://github.com/canonical/lightdm) |
+| DM | [emptty](https://github.com/tvrzna/emptty) |
 | App launcher | [dmenu](https://github.com/ivanjermakov/dmenu) |
 | Terminal | [st](https://github.com/ivanjermakov/st) |
 | Shell | [zsh (ohmyzsh framework)](https://github.com/ohmyzsh/ohmyzsh) |
@@ -32,7 +32,7 @@ Configuration files for my current machine.
 | Process manager | [pmn](https://github.com/ivanjermakov/pmn) |
 | Pdf viewer | [zathura](https://github.com/pwmt/zathura) |
 | Image viewer | [feh](https://github.com/derf/feh) |
-| RSS reader | [newsboat](https://github.com/newsboat/newsboat) |
 | Music & Video player | [mpv](https://github.com/mpv-player/mpv) |
+| RSS reader | [newsboat](https://github.com/newsboat/newsboat) |
 | Screenshot tool | [maim](https://github.com/naelstrof/maim) |
 | Notification daemon | [dunst](https://github.com/dunst-project/dunst) |
