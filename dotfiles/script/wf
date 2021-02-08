@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+args = sys.argv
+if not (len(args) >= 2 and (args[1] == 'on' or args[1] == 'off')):
+	print('bad argument')
+	exit()
+print('turning wifi {}'.format(args[1]))
+subprocess.run(['nmcli', 'radio', 'wifi', args[1]])

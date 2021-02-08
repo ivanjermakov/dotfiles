@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+i8kfan 0 0
+hsetroot -solid "#eeeeee"

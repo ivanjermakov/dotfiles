@@ -1,0 +1,156 @@
+:root {
+	--height: 25px;
+	--tab-min-height: 0 !important;
+}
+
+/*remove active tab borders*/
+#navigator-toolbox {
+	--tabs-border-color: transparent !important;
+}
+
+/*smaller tabs width*/
+.tabbrowser-tab[fadein]:not([pinned="true"]) {
+	max-width: 175px !important;
+}
+
+/*remove garbage from tabs*/
+.close-icon, #tabs-newtab-button, .tab-line {
+	visibility: collapse;
+}
+
+#PanelUI-button {
+	border: none !important;
+}
+
+/*remove navigation buttons*/
+#back-button, #forward-button, #stop-reload-button {
+	visibility: collapse;
+}
+
+/*center url dialog*/
+#customizableui-special-spring6 {
+	-moz-box-flex: 10 !important;
+}
+
+/*url bar background*/
+#nav-bar {
+	background: #eee !important;
+}
+
+/*tab bar background*/
+.toolbar-items {
+	background: #eee !important;
+}
+
+/*inactive tab background*/
+.tab-background[selected="true"] {
+	background: white !important;
+}
+
+.tab-background {
+	background: #eee !important;
+}
+
+#urlbar {
+	--urlbar-height: 30px !important;
+	--urlbar-toolbar-height: 34px !important;
+}
+
+#urlbar-container {
+	--urlbar-container-height: 33px !important;
+	margin: 0 !important;
+}
+
+/*remove url panel shadow*/
+#urlbar-background {
+	border: none !important;
+}
+
+/*remove garbage from url panel*/
+#tracking-protection-icon-container, #identity-box, #page-action-buttons {
+	visibility: collapse;
+}
+
+.urlbar-input-box {
+	padding-left: 10px;
+}
+
+/*autohide url bar*/
+#navigator-toolbox {
+	-moz-appearance: none;
+	background-color: transparent !important;
+	border-top: none;
+}
+
+#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
+#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
+#navigator-toolbox {
+	border: none !important;
+}
+
+toolbox {
+	z-index: 10;
+	margin-top: 0 !important;
+	margin-bottom: -35px !important;
+	height: 0 !important;
+	pointer-events: none;
+}
+
+vbox {
+	pointer-events: all;
+}
+
+#nav-bar {
+	opacity: 0;
+	transform-origin: 0 0;
+	pointer-events: none;
+	transition: transform, ease-in-out 0.2s, opacity 0.2s ease-in-out !important;
+}
+
+vbox:hover ~ #nav-bar, toolbox:focus-within > #nav-bar, #nav-bar:hover, #mainPopupSet:hover ~ box #nav-bar,
+#mainPopupSet:focus-within ~ box #nav-bar {
+	opacity: 1;
+	transform: none;
+	pointer-events: all;
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*hide context menu entries*/
+/*Removes Items from Right Click Context Menu; Diagram here: https://imgur.com/b5gEfUy */
+#context-back,
+#context-forward,
+#context-reload,
+#context-stop,
+#context-bookmarkpage,
+#context-savepage,
+#context-pocket,
+#context-sep-sendpagetodevice,
+#context-sendpagetodevice,
+#context-sep-viewbgimage,
+#context-viewbgimage,
+#context-selectall,
+#context-sep-selectall,
+#context-sep-viewsource,
+#context-viewsource,
+#context-viewinfo,
+/*Removes Items from Right Click on Selected Links Context Menu; Diagram here: https://imgur.com/e9AaMx3 */
+#context-openlinkintab,
+#context-openlinkinusercontext-menu,
+#context-openlink,
+#context-openlinkprivate,
+#context-bookmarklink,
+#context-savelink,
+#context-savelinktopocket,
+/* #context-copylink, */
+#context-copy,
+#context-sep-selectall,
+#context-searchselect,
+#context-sep-sendlinktodevice,
+#context-sendlinktodevice,
+#context-viewpartialsource-selection,
+#contentAreaContextMenu > menuseparator:nth-child(92) /*This is a Separator*/
+{
+	display: none !important;
+}

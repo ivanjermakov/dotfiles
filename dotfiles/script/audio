@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+internal_profile = 'output:analog-stereo+input:analog-stereo'
+external_profile = 'output:hdmi-stereo+input:analog-stereo'
+
+
+def set_internal():
+    print('Using internal audio')
+    subprocess.run(['pactl', 'set-card-profile', '0', internal_profile]) 
+    subprocess.run(['pactl', 'set-sink-port', 'alsa_output.pci-0000_00_1f.3.analog-stereo', 'analog-output-headphones']) 
+    subprocess.run(['pactl', 'set-source-port', 'alsa_input.pci-0000_00_1f.3.analog-stereo', 'analog-input-headset-mic'])
+
+
+def set_external():
+    print('Using external audio')
+    subprocess.run(['pactl', 'set-card-profile', '0', external_profile]) 
+
+
+def get_active_profile():
+    cmd = "pactl list cards | grep Active | awk '{print $3}'"
+    ps = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    output = ps.communicate()[0].decode('utf-8').replace('\n', '')
+    return output
+
+
+args = sys.argv
+if not (len(args) >= 2 and (args[1] in ['i', 'e', 't'])):
+    print('bad argument')
+    exit()
+if args[1] == 'i':
+    set_internal()
+elif args[1] == 'e':
+    set_external()
+elif args[1] == 't':
+    active_profile = get_active_profile()
+    if active_profile == external_profile:
+        set_internal()
+    elif active_profile == internal_profile:
+        set_external()
+
