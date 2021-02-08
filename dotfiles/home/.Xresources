@@ -1,7 +1,0 @@
-!! system
-Xcursor.size: 24
-
-Xft.dpi: 96
-
-!! urxvt
-#include ".config/urxvt/config"

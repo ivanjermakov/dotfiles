@@ -1,4 +1,0 @@
- #!/bin/sh
-
-ffmpeg -f x11grab -video_size 2560x1440 -framerate 60 -i $DISPLAY -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac $1
-

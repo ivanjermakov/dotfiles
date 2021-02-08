@@ -1,7 +1,0 @@
-#!/bin/sh
-
-run-if-not picom $(picom --config ~/.config/picom.conf -b) &
-run-if-not dunst dunst &
-run-if-not devmon devmon &
-run-if-not unclutter $(unclutter --timeout 2) &
-run-if-not kmonad $(kmonad ~/.config/kmonad/laptop.kbd) &

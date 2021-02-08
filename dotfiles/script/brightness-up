@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-notify-send -u low "Brightness: `~/.script/wm/backlight +100`"
