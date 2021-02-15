@@ -3,6 +3,7 @@
 # apply xresources
 xrdb ~/.Xresources
 
+# display config
 ~/.script/displays
 
 # set default pulseaudio profile
@@ -11,6 +12,7 @@ pacmd set-card-profile 0 output:hdmi-stereo+input:analog-stereo &
 # disable Caps Lock default behavior
 setxkbmap -option caps:none
 
+# autorun
 ~/.script/system/xinput &
 ~/.script/system/xset &
 ~/.script/system/onlog &
