@@ -5,7 +5,6 @@
 	    " allow us to use Ctrl-s and Ctrl-q as keybinds
 		silent !stty -ixon
 
-		set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyukop[]asdfgihjl\\;'zxcvbnm\\,.~QWERTYUKOP{}ASDFGIHJL:\\"ZXCVBNM<>
 		imap х <esc>
 
 		" enable syntax highlighting

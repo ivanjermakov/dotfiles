@@ -1,3 +1,3 @@
 #!/usr/bin/zsh
 
-notify-send.py "$(dmenu_run -c -i -h 30 -fn "Consolas-16" -l 5 -nb "white" -nf "black" -sb "#eee" -sf "black" -bw 3)"
+notify-send.py.py "$(dmenu_run -c -i -h 30 -fn "Consolas-16" -l 5 -nb "white" -nf "black" -sb "#eee" -sf "black" -bw 3)"
