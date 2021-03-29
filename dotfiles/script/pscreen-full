@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 maim -u | xclip -selection clipboard -t image/png && xclip -selection clipboard -t image/png -o > ~/picture/screenshot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-notify-send.py.py -u low "Screenshot"
+notify-send.py -u low "Screenshot"

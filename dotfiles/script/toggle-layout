@@ -1,3 +1,14 @@
 #!/usr/bin/env sh
 
-notify-send.py -u low "Layout: `$HOME/.script/toggle-layout`"
+current=`setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}'`
+
+case $current in
+ru)
+	setxkbmap us
+	echo us
+	;;
+us)
+	setxkbmap ru
+	echo ru
+	;;
+esac
