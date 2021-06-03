@@ -14,3 +14,7 @@ alias gitc='git commit -a'
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"
+
+function listen-tex() {
+	find $1 | entr -r pdflatex -interaction=nonstopmode -output-directory=out/ $1
+}
