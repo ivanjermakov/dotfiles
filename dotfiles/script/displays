@@ -2,7 +2,7 @@
 
 # xrandr's name for the external monitor connection
 DEFAULT=eDP1
-MONITOR=HDMI1
+MONITOR=DP1
 
 # if monitor found
 if xrandr --query | grep -q "^$MONITOR connected"; then
