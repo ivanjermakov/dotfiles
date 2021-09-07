@@ -1,0 +1,3 @@
+#! /bin/sh
+
+cat ~/pw.txt | xargs echo -n | xclip -sel c

@@ -3,8 +3,8 @@
 source ~/.env
 
 # Forced to do this here instead of ~/.script/system/init since those exports must be in some primary scripts like .xprofile or .bashrc
-MONITOR=DP1
-if ! xrandr --query | grep -q "^$MONITOR connected"; then
+if ! xrandr --query | grep -qP "^(DP1|HDMI1) connected"; then
+	echo "detected external monitor"
 	export GDK_SCALE=2
 	export GDK_DPI_SCALE=0.5
 fi
