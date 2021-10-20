@@ -4,6 +4,8 @@ import subprocess
 
 internal_profile = 'output:analog-stereo+input:analog-stereo'
 external_profile = 'output:hdmi-stereo+input:analog-stereo'
+a2dp_profile = 'a2dp_sink'
+hfp_profile = 'handsfree_head_unit'
 
 
 def set_internal():
@@ -13,9 +15,19 @@ def set_internal():
     subprocess.run(['pactl', 'set-source-port', 'alsa_input.pci-0000_00_1f.3.analog-stereo', 'analog-input-headset-mic'])
 
 
+def set_a2dp():
+    subprocess.run(['pactl', 'set-card-profile', '1', a2dp_profile]) 
+    print('Using a2dp audio')
+
+
+def set_hfp():
+    subprocess.run(['pactl', 'set-card-profile', '1', hfp_profile]) 
+    print('Using a2dp audio')
+
+
 def set_external():
-    print('Using external audio')
     subprocess.run(['pactl', 'set-card-profile', '0', external_profile]) 
+    print('Using external audio')
 
 
 def get_active_profile():
@@ -26,13 +38,17 @@ def get_active_profile():
 
 
 args = sys.argv
-if not (len(args) >= 2 and (args[1] in ['i', 'e', 't'])):
+if not (len(args) >= 2 and (args[1] in ['i', 'e', 't', 'a', 'h'])):
     print('bad argument')
     exit()
 if args[1] == 'i':
     set_internal()
 elif args[1] == 'e':
     set_external()
+elif args[1] == 'a':
+    set_a2dp()
+elif args[1] == 'h':
+    set_hfp()
 elif args[1] == 't':
     active_profile = get_active_profile()
     if active_profile == external_profile:

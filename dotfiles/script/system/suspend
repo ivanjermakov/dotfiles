@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
+set -m
+
 setxkbmap -layout us
-systemctl suspend -i
+systemctl suspend
