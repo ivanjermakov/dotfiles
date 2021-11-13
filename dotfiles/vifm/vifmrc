@@ -6,7 +6,7 @@ set fastrun
 set sortnumbers
 set undolevels=1000
 set novimhelp
-colorscheme Clean
+colorscheme Papercolor
 
 set syncregs=general
 
