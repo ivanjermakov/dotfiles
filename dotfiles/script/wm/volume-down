@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 amixer -D pulse sset Master 5%-
-notify-send.py -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
+notify-send -u low "Volume: `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
