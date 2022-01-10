@@ -47,6 +47,7 @@ dotfiles/:
    ~/.config/nvim/ 
   files:
    - "*"
+   - core/*
  idea:
   from:
    ~/
