@@ -4,7 +4,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cal='cal -m'
 alias pl='pdflatex -interaction=nonstopmode'
-alias v='vim'
+alias v='nvim'
 alias d='du -hs'
 
 alias gits='git status'

@@ -42,6 +42,11 @@ dotfiles/:
    ~/.vim/init/
   files:
    - "*"
+ nvim:
+  from:
+   ~/.config/nvim/ 
+  files:
+   - "*"
  idea:
   from:
    ~/
