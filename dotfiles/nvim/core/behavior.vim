@@ -11,9 +11,6 @@
 		filetype plugin on
 		syntax on
 
-        " spell check
-		set spelllang=en_us,ru 
-		
 		" use line number for every file opened
 		set number
 

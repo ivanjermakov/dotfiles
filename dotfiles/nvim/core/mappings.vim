@@ -60,5 +60,6 @@
 		vmap <leader><up> diP`[v`]
         vmap <leader><down> dp`[v`]
 
-		" toggle spell check
-		map <leader>c :call ToggleSpellCheck()<cr> 
+		" close active window
+		map <leader>c :enew<cr>
+
