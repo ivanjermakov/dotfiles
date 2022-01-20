@@ -111,7 +111,7 @@ dotfiles/:
      - "*" 
  qutebrowser:
    from:
-     ~/.config/qutebrowser 
+     ~/.config/qutebrowser/
    files:
      - config.py
 
