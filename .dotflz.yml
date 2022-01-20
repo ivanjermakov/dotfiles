@@ -109,4 +109,9 @@ dotfiles/:
     ~/.config/kmonad/
    files:
      - "*" 
+ qutebrowser:
+   from:
+     ~/.config/qutebrowser 
+   files:
+     - config.py
 
