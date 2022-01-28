@@ -104,6 +104,12 @@ dotfiles/:
    ~/.newsboat/
   files:
    - config
+ mpv:
+  from:
+   ~/.config/mpv/
+  files:
+   - mpv.conf
+   - input.conf
  kmonad:
    from:
     ~/.config/kmonad/
