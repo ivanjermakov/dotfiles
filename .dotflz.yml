@@ -14,6 +14,11 @@ dotfiles/:
    - "*"
    - wm/*
    - system/*
+ fonts:
+  from:
+   ~/.config/fontconfig/
+  files:
+   - fonts.conf
  picom:
   from:
    ~/.config/
