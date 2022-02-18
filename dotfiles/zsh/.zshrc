@@ -18,6 +18,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 # env
 source ~/.env
 
-# keychain
-eval $(keychain --eval --quiet id_rsa)
-
