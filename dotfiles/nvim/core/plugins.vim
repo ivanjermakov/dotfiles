@@ -1,11 +1,12 @@
 " plugins
 		call plug#begin()
-			Plug 'haya14busa/incsearch.vim'
-			" telescope
-            Plug 'nvim-lua/plenary.nvim'
-		    Plug 'nvim-telescope/telescope.nvim'
-			Plug 'terryma/vim-expand-region'
-			Plug 'smithbm2316/centerpad.nvim'
+				Plug 'haya14busa/incsearch.vim'
+				" telescope
+				Plug 'nvim-lua/plenary.nvim'
+				Plug 'nvim-telescope/telescope.nvim'
+				Plug 'terryma/vim-expand-region'
+				Plug 'smithbm2316/centerpad.nvim'
+				Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 		call plug#end()
 
 " plugin settings
@@ -27,14 +28,14 @@
 		map <c-w> <Plug>(expand_region_expand)
 		vmap <c-q> <Plug>(expand_region_shrink)
 		let g:expand_region_text_objects = {
-			  \ 'hw'  :0,
-			  \ 'hW'  :0,
-			  \ 'h"'  :0,
-			  \ 'h''' :0,
-			  \ 'h]'  :1,
-			  \ 'hb'  :1,
-			  \ 'hB'  :1,
-			  \ 'hl'  :0,
-			  \ 'hp'  :0,
-			  \ 'he'  :0,
-			  \ }
+				\ 'hw'  :0,
+				\ 'hW'  :0,
+				\ 'h"'  :0,
+				\ 'h''' :0,
+				\ 'h]'  :1,
+				\ 'hb'  :1,
+				\ 'hB'  :1,
+				\ 'hl'  :0,
+				\ 'hp'  :0,
+				\ 'he'  :0,
+				\ }

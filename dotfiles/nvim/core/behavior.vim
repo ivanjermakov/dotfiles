@@ -1,47 +1,48 @@
 " appearance & behavior
-		" reduce delays
-		set ttimeoutlen=5
-		
-	    " allow us to use Ctrl-s and Ctrl-q as keybinds
-		silent !stty -ixon
+" reduce delays
+set ttimeoutlen=5
 
-		imap х <esc>
+" allow us to use Ctrl-s and Ctrl-q as keybinds
+silent !stty -ixon
 
-		" enable syntax highlighting
-		filetype plugin on
-		syntax on
+imap х <esc>
 
-		" use line number for every file opened
-		set number
+" enable syntax highlighting
+filetype plugin on
+syntax on
 
-		" remove annoyng warning of existing swap files
-		set shortmess+=A
+" use line number for every file opened
+set number
 
-		" set current command combination
-		set showcmd
+" remove annoyng warning of existing swap files
+set shortmess+=A
 
-		" enable mouse wheel scrollin
-		set mouse=a
+" set current command combination
+set showcmd
 
-		" system clipboard configuration
-		set clipboard=unnamedplus
+" enable mouse wheel scrollin
+set mouse=a
 
-		" store swap files separately
-		set backupdir=/tmp//
-		set directory=/tmp//
+" system clipboard configuration
+set clipboard=unnamedplus
 
-        set showbreak=^
+" store swap files separately
+set backupdir=/tmp//
+set directory=/tmp//
 
-		" set tab to spaces
-		set tabstop=4
+set showbreak=^
 
-		" left lines before/after cursor when scrolling
-		set scrolloff=8
+" set tab to spaces
+set tabstop=4
 
-		" enable multiline edit
-		set virtualedit=all
+" left lines before/after cursor when scrolling
+set scrolloff=8
 
-		highlight Search ctermbg=7*
+" enable multiline edit
+set virtualedit=all
 
-		" hide statusline
-		set laststatus=0
+highlight Search ctermbg=7*
+
+" hide statusline
+set laststatus=0
+
