@@ -32,8 +32,10 @@ set directory=/tmp//
 
 set showbreak=^
 
-" set tab to spaces
+" tabs config
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " left lines before/after cursor when scrolling
 set scrolloff=8
