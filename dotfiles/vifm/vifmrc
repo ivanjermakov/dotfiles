@@ -64,7 +64,8 @@ filextype *.html,*.htm
 filetype *.html, *.htm links, lynx
 filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg feh --conversion-timeout 1 --start-at %f
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg, feh -. -d -Z --conversion-timeout 1 --start-at %f
+filextype *.arw feh -. -d -Z --conversion-timeout 1 --draw-exif --start-at %f
 filetype *.zip,*.jar,*.war
 	\ unzip %c
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %c
