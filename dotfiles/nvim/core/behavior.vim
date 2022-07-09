@@ -26,6 +26,9 @@ set mouse=a
 " system clipboard configuration
 set clipboard=unnamedplus
 
+" do not yank selection on put
+vnoremap p "_dP
+
 " store swap files separately
 set backupdir=/tmp//
 set directory=/tmp//
@@ -47,4 +50,7 @@ highlight Search ctermbg=7*
 
 " hide statusline
 set laststatus=0
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 

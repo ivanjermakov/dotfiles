@@ -18,7 +18,6 @@ set inputbar-fg "#FFFFFF"
 set statusbar-bg "#000000"
 set statusbar-fg "#FFFFFF"
 
-set recolor "true"
 set recolor-lightcolor "#000000" #00
 set recolor-darkcolor "#E0E0E0" #06
 set recolor-reverse-video "true"

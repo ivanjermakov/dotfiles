@@ -1,0 +1,9 @@
+#! /bin/sh
+
+rm -r .vscode
+mkdir -p src/app/component/app
+rm -r src/app/app.component*
+ng g c component/app
+sed -i "s/\.\/app\.component/\.\/component\/app\/app\.component/g" src/app/app.module.ts
+echo "" > README.md
+

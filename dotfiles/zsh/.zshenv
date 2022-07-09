@@ -6,6 +6,7 @@ alias cal='cal -m'
 alias pl='pdflatex -interaction=nonstopmode'
 alias v='nvim'
 alias d='du -hs'
+alias df='df -h'
 
 alias gits='git status'
 alias gitp='git pull'

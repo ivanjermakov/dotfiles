@@ -1,65 +1,67 @@
 " mappings
-		" make space leader key
-		let mapleader=" "
-		map <space> <nop>
+    " make space leader key
+    let mapleader=" "
+    map <space> <nop>
 
-		" disable c-z because habitly clicking it cause Vim to close
-		nnoremap <c-z> <nop>
+    " disable c-z because habitly clicking it cause Vim to close
+    nnoremap <c-z> <nop>
 
-        " redo
-		nnoremap U <c-r>
-		
-		" remap h to insert and use ijkl for inverse T cursor movement
-		noremap h i
-		noremap i h
-		noremap H I
-		noremap I H
+    " redo
+    nnoremap U :redo
+    
+    " remap h to insert and use ijkl for inverse T cursor movement
+    noremap h i
+    noremap i h
+    noremap H I
+    noremap I H
 
-		" remap arrow keys
-		noremap i gk
-		noremap j h
-		noremap k gj
+    " remap arrow keys
+    noremap i gk
+    noremap j h
+    noremap k gj
 
-		" navigation
-        map I <c-u>zz
-        map K <c-d>zz
-		map J gg
-		map L G
+    " navigation
+    map I <c-u>zz
+    map K <c-d>zz
+    map J gg
+    map L G
 
-		" use angle brackets to indent current line
-		nnoremap < <<
-		nnoremap > >>
+    " use angle brackets to indent current line
+    nnoremap < <<
+    nnoremap > >>
 
-		" keep selection after indenting
-		vmap < <gv
-		vmap > >gv
+    " keep selection after indenting
+    vmap < <gv
+    vmap > >gv
 
-		" apply macros
-		nnoremap Q @q
-		vnoremap Q :norm @q<cr>
+    " apply macros
+    nnoremap Q @q
+    vnoremap Q :norm @q<cr>
 
-		" open last file
-		nnoremap <Tab> <c-^>
+    " open last file
+    nnoremap <Tab> <c-^>
+
+    nnoremap <c-r> :%s/
 
 " leader mappings
-		" save
-		noremap <leader>w :w<cr>
+    " save
+    noremap <leader>w :w<cr>
 
-		" quit
-		noremap <leader>q :q<cr>
- 
-		" select all text in buffer
-		noremap <leader>a ggVG
+    " quit
+    noremap <leader>q :q<cr>
 
-		" visual block
-        noremap <leader>v <c-v>
-        
-		" move line or selection by line
-        nmap <leader><up> mTddiP`Tii
-        nmap <leader><down> mTddp`Tk
-		vmap <leader><up> diP`[v`]
-        vmap <leader><down> dp`[v`]
+    " select all text in buffer
+    noremap <leader>a ggVG
 
-		" close active window
-		map <leader>c :enew<cr>
+    " visual block
+    noremap <leader>v <c-v>
+    
+    " move line or selection by line
+    nmap <leader><up> mTddiP`Tii
+    nmap <leader><down> mTddp`Tk
+    vmap <leader><up> diP`[v`]
+    vmap <leader><down> dp`[v`]
+
+    " close active window
+    map <leader>c :enew<cr>
 
