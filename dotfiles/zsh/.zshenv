@@ -12,6 +12,8 @@ alias gits='git status'
 alias gitp='git pull'
 alias gitc='git commit -a'
 
+alias lg='lazygit'
+
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"

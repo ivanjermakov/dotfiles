@@ -7,7 +7,7 @@
     nnoremap <c-z> <nop>
 
     " redo
-    nnoremap U :redo
+    nnoremap U :redo<cr>
     
     " remap h to insert and use ijkl for inverse T cursor movement
     noremap h i
@@ -65,3 +65,4 @@
     " close active window
     map <leader>c :enew<cr>
 
+    map <leader>s :source $MYVIMRC<cr>

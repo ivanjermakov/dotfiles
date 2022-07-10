@@ -2,6 +2,10 @@
 " reduce delays
 set ttimeoutlen=5
 
+" autoread
+set autoread
+autocmd CursorHold * checktime
+
 " allow us to use Ctrl-s and Ctrl-q as keybinds
 silent !stty -ixon
 
@@ -14,13 +18,13 @@ syntax on
 " use line number for every file opened
 set number
 
-" remove annoyng warning of existing swap files
+" remove annoying warning of existing swap files
 set shortmess+=A
 
 " set current command combination
 set showcmd
 
-" enable mouse wheel scrollin
+" enable mouse wheel scrolling
 set mouse=a
 
 " system clipboard configuration
@@ -51,6 +55,7 @@ highlight Search ctermbg=7*
 " hide statusline
 set laststatus=0
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+filetype plugin on
 
+set list
+set lcs+=space:·
