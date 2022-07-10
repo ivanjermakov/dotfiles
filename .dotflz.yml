@@ -125,4 +125,8 @@ dotfiles/:
      ~/.config/qutebrowser/
    files:
      - config.py
-
+ lazygit:
+   from:
+    ~/.config/lazygit/
+   files:
+     - "*" 
