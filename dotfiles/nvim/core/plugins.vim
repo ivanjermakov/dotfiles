@@ -134,3 +134,5 @@ require('autosave').setup({
     execution_message = ''
 })
 EOF
+
+nnoremap <silent> <leader>l :%s/\s\+$//e<cr>

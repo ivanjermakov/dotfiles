@@ -1,3 +1,4 @@
 " autocmds
-	" autopdf tex
-	autocmd BufWritePost *.tex !pl %
+" autopdf tex
+autocmd BufWritePost *.tex !pl %
+

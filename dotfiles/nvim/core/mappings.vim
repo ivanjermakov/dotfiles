@@ -8,7 +8,7 @@
 
     " redo
     nnoremap U :redo<cr>
-    
+
     " remap h to insert and use ijkl for inverse T cursor movement
     noremap h i
     noremap i h
@@ -55,7 +55,7 @@
 
     " visual block
     noremap <leader>v <c-v>
-    
+
     " move line or selection by line
     nmap <leader><up> mTddiP`Tii
     nmap <leader><down> mTddp`Tk
@@ -65,4 +65,6 @@
     " close active window
     map <leader>c :enew<cr>
 
+    " refresh config
     map <leader>s :source $MYVIMRC<cr>
+
