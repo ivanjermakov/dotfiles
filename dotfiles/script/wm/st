@@ -1,9 +1,0 @@
-#!/bin/sh
-dpi=`xrdb -query Xft.dpi | grep "Xft.dpi" | (read _ dpi; echo $dpi)`
-[ x$dpi = x ] && dpi=96
-echo $dpi
-
-fontsize=$(($dpi / 5))
-font="Hack:pixelsize=$fontsize:antialias=true:autohint=true";
-
-/usr/local/bin/st -f "$font" "$@"
