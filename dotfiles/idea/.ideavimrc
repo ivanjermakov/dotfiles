@@ -1,5 +1,8 @@
 set clipboard+=unnamed
 
+" virtual edit
+set virtualedit=all
+
 " mappings
 " make space leader key
 let mapleader=" "

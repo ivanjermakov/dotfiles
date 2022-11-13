@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-#i8kfan 1 1
+i8kfan 1 1
 hsetroot -solid "#222222"

@@ -1,7 +1,11 @@
 lastupdatecheck: 1657479724
 recentrepos:
-- /home/ivan/bin/dwm
 - /D/project/machines-heart
+- /home/ivan/bin/zmk-config
+- /D/project/ivnj
+- /home/ivan/bin/qmk_firmware
+- /home/ivan/bin/dwm
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- q
 hidecommandlog: false

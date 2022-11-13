@@ -10,7 +10,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.*'}
+    Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'Pocco81/AutoSave.nvim'
 call plug#end()

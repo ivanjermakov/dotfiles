@@ -1,4 +1,3 @@
 #! /bin/sh
 
-#cat ~/pw.txt | xargs -0 echo -n | xclip -sel c
-xclip -sel c < ~/pw.txt
+cat ~/pw.txt | xargs -0 echo -n | xclip -sel c
