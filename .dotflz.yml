@@ -129,4 +129,4 @@ dotfiles/:
    from:
     ~/.config/lazygit/
    files:
-     - "*" 
+     - config.yml
