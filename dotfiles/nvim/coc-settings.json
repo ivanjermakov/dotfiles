@@ -12,5 +12,7 @@
   },
   "signature.floatConfig": {
     "border": true
-  }
+  },
+  "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
+  "cSpell.enabled": "false"
 }

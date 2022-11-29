@@ -13,6 +13,7 @@ call plug#begin()
     Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'Pocco81/AutoSave.nvim'
+    Plug 'folke/which-key.nvim'
 call plug#end()
 
 
@@ -51,6 +52,7 @@ require("telescope").load_extension "file_browser"
 EOF
 
 " coc https://github.com/neoclide/coc.nvim
+"
 set updatetime=300
 set shortmess+=c
 set signcolumn=number
@@ -95,6 +97,7 @@ function! NerdTreeFocused() abort
 endfunction
 
 " nerdtree
+"
 nnoremap <silent> <expr> <f1> NerdTreeFocused() ? "\:NERDTreeClose<cr>" : "\:NERDTreeFind<cr>"
 let NERDTreeWinSize=40
 let NERDTreeMinimalUI = 1
@@ -104,6 +107,7 @@ map <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <esc> :wincmd l<cr>
 
 " toggleterm
+"
 function! TermFocused() abort
     return matchstr(bufname(''), "*#toggleterm#*") != ''
 endfunction
@@ -120,14 +124,17 @@ nnoremap <f12> :ToggleTerm<cr>
 tnoremap <f12> <c-\><c-n>:ToggleTerm<cr>
 tnoremap <s-i> <c-\><c-n>:resize +10<cr>a
 tnoremap <s-k> <c-\><c-n>:resize -10<cr>a
+tnoremap <esc> <c-\><c-n>
 
 " gitsigns
+"
 lua <<EOF
 vim.wo.signcolumn = "yes"
 require('gitsigns').setup()
 EOF
 
 " autosave
+"
 lua << EOF
 require('autosave').setup({
     enabled = true,
@@ -136,3 +143,32 @@ require('autosave').setup({
 EOF
 
 nnoremap <silent> <leader>l :%s/\s\+$//e<cr>
+
+" which-key
+"
+lua << EOF
+  require("which-key").setup {
+    presets = {
+        operators = false,
+        motions = false,
+        text_objects = false,
+        windows = false,
+        nav = false,
+        z = false,
+        g = false,
+    },
+  }
+EOF
+
+
+lua << EOF
+local catppuccin = require("catppuccin")
+catppuccin.setup(
+    {
+		transparent_background = true
+	}
+)
+catppuccin.load()
+vim.cmd[[colorscheme catppuccin]]
+EOF
+

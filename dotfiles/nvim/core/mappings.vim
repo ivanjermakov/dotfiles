@@ -43,6 +43,10 @@
 
     nnoremap <c-r> :%s/
 
+    " ctrl+bspc delete previous word
+    inoremap <c-bs> <c-w>
+    inoremap <c-del> <C-o>de
+
 " leader mappings
     " save
     noremap <leader>w :w<cr>

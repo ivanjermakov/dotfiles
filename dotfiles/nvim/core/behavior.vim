@@ -59,3 +59,6 @@ filetype plugin on
 
 set list
 set lcs+=space:·
+
+" time after which popups show up
+set timeoutlen=500
