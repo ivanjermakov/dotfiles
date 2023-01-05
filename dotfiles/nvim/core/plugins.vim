@@ -14,6 +14,7 @@ call plug#begin()
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'Pocco81/AutoSave.nvim'
     Plug 'folke/which-key.nvim'
+    Plug 'ivanjermakov/nois.vim'
 call plug#end()
 
 
