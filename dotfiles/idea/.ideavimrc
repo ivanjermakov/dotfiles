@@ -65,3 +65,8 @@ vmap <leader><down> dp`[v`]
 nmap gu :action ShowUsages<cr>
 nmap gi :action GotoImplementation<cr>
 nmap gs :action GotoSuperMethod<cr>
+
+set surround
+
+nunmap s
+set sneak
