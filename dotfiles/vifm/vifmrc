@@ -1,4 +1,4 @@
-set vicmd=vim
+set vicmd=nvim
 set trash
 set history=100
 set nofollowlinks
@@ -47,12 +47,12 @@ mark a ~/Downloads/
 " %m run the command in a menu window
 
 command! df df -h %m 2> /dev/null
-command! diff vim -d %f %F
+command! diff nvim -d %f %F
 command! zip zip -r archive.zip %f
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
-command! vgrep vim "+grep %a"
+command! vgrep nvim "+grep %a"
 command! reload :write | restart
 command! backup cp %c %c.backup
 
@@ -84,7 +84,7 @@ filetype *.7z
 	\ {Open in file-roller} file-roller %c
 fileviewer *.7z 7z l %c
 filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f %i &
-filetype * vim %f, xdg-open, zip archive.zip %f
+filetype * nvim %f, xdg-open, zip archive.zip %f
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 	\phistory,fhistory,dirstack,registers,bookmarks,bmarks

@@ -7,4 +7,4 @@ xset s noblank
 
 # set keyboard delay and repeat
 export DISPLAY=":0"
-xset r rate 220 20
+xset r rate 200 25
