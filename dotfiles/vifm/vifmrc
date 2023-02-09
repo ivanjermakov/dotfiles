@@ -84,6 +84,7 @@ filetype *.7z
 	\ {Open in file-roller} file-roller %c
 fileviewer *.7z 7z l %c
 filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f %i &
+filextype *.csv libreoffice --calc %f %i &
 filetype * nvim %f, xdg-open, zip archive.zip %f
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,

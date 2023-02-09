@@ -1,0 +1,3 @@
+#!/bin/sh
+
+clipcatctl list --no-id | vim -R -
