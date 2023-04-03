@@ -1,0 +1,96 @@
+diff --git a/dotfiles/nvim/lua/config/set.lua b/dotfiles/nvim/lua/config/set.lua
+index 28807fd..2a912a2 100644
+--- a/dotfiles/nvim/lua/config/set.lua
++++ b/dotfiles/nvim/lua/config/set.lua
+@@ -22,3 +22,5 @@ vim.opt.scrolloff = 8
+ vim.opt.updatetime = 50
+ 
+ vim.opt.signcolumn = "yes"
++
++vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
+diff --git a/dotfiles/zsh/.env b/dotfiles/zsh/.env
+index 5497637..92ffc55 100644
+--- a/dotfiles/zsh/.env
++++ b/dotfiles/zsh/.env
+@@ -20,3 +20,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
+ export npm_config_prefix="$HOME/.local"
+ 
+ export NODE_OPTIONS="--openssl-legacy-provider"
++
++export GTK_THEME=Adwaita-dark
++
++alias steam="flatpak run com.valvesoftware.Steam"
++alias sap="steam steam://rungameid/1714040"
++alias ws="webstorm"
+diff --git a/dotfiles/nvim/lua/config/set.lua b/dotfiles/nvim/lua/config/set.lua
+index 28807fdd026ec157efbba26c3f333b0cb7fd412a..2a912a2774dee16b8af4610acc136d445ee5e17a 100644
+--- a/dotfiles/nvim/lua/config/set.lua
++++ b/dotfiles/nvim/lua/config/set.lua
+@@ -22,3 +22,5 @@ vim.opt.scrolloff = 8
+ vim.opt.updatetime = 50
+ 
+ vim.opt.signcolumn = "yes"
++
++vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
+diff --git a/dotfiles/zsh/.env b/dotfiles/zsh/.env
+index 5497637d77b97a765279bc45934ddacd6ec78247..92ffc55da89cce64ce1a7fe160e4ca3487f22499 100644
+--- a/dotfiles/zsh/.env
++++ b/dotfiles/zsh/.env
+@@ -20,3 +20,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
+ export npm_config_prefix="$HOME/.local"
+ 
+ export NODE_OPTIONS="--openssl-legacy-provider"
++
++export GTK_THEME=Adwaita-dark
++
++alias steam="flatpak run com.valvesoftware.Steam"
++alias sap="steam steam://rungameid/1714040"
++alias ws="webstorm"
+diff --git a/dotfiles/nvim/lua/config/set.lua b/dotfiles/nvim/lua/config/set.lua
+index 28807fdd026ec157efbba26c3f333b0cb7fd412a..2a912a2774dee16b8af4610acc136d445ee5e17a 100644
+--- a/dotfiles/nvim/lua/config/set.lua
++++ b/dotfiles/nvim/lua/config/set.lua
+@@ -22,3 +22,5 @@ vim.opt.scrolloff = 8
+ vim.opt.updatetime = 50
+ 
+ vim.opt.signcolumn = "yes"
++
++vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
+diff --git a/dotfiles/zsh/.env b/dotfiles/zsh/.env
+index 5497637d77b97a765279bc45934ddacd6ec78247..92ffc55da89cce64ce1a7fe160e4ca3487f22499 100644
+--- a/dotfiles/zsh/.env
++++ b/dotfiles/zsh/.env
+@@ -20,3 +20,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
+ export npm_config_prefix="$HOME/.local"
+ 
+ export NODE_OPTIONS="--openssl-legacy-provider"
++
++export GTK_THEME=Adwaita-dark
++
++alias steam="flatpak run com.valvesoftware.Steam"
++alias sap="steam steam://rungameid/1714040"
++alias ws="webstorm"
+diff --git a/dotfiles/nvim/lua/config/set.lua b/dotfiles/nvim/lua/config/set.lua
+index 28807fdd026ec157efbba26c3f333b0cb7fd412a..2a912a2774dee16b8af4610acc136d445ee5e17a 100644
+--- a/dotfiles/nvim/lua/config/set.lua
++++ b/dotfiles/nvim/lua/config/set.lua
+@@ -22,3 +22,5 @@ vim.opt.scrolloff = 8
+ vim.opt.updatetime = 50
+ 
+ vim.opt.signcolumn = "yes"
++
++vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
+diff --git a/dotfiles/zsh/.env b/dotfiles/zsh/.env
+index 5497637d77b97a765279bc45934ddacd6ec78247..92ffc55da89cce64ce1a7fe160e4ca3487f22499 100644
+--- a/dotfiles/zsh/.env
++++ b/dotfiles/zsh/.env
+@@ -20,3 +20,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
+ export npm_config_prefix="$HOME/.local"
+ 
+ export NODE_OPTIONS="--openssl-legacy-provider"
++
++export GTK_THEME=Adwaita-dark
++
++alias steam="flatpak run com.valvesoftware.Steam"
++alias sap="steam steam://rungameid/1714040"
++alias ws="webstorm"
