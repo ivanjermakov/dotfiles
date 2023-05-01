@@ -36,7 +36,7 @@ map <Down> scroll down
 map <Left> navigate previous
 map <Right> navigate next
 
-map n toggle_statusbar
+map S toggle_statusbar
 
 map a adjust_window best-fit
 map R recolor

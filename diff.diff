@@ -1,0 +1,796 @@
+diff --git a/.dotflz.yml b/.dotflz.yml
+index 024650604e04a5c0085ef32babf4e695bb4a87fb..c4d584d945309ad8b4413878e47a2f467d377fb9 100644
+--- a/.dotflz.yml
++++ b/.dotflz.yml
+@@ -51,8 +51,7 @@ dotfiles/:
+   from:
+    ~/.config/nvim/ 
+   files:
+-   - "*"
+-   - core/*
++   - "**"
+  idea:
+   from:
+    ~/
+diff --git a/dotfiles/nvim/README.md b/dotfiles/nvim/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..43c2403aa69120d4333828d4f5fb01702a9478b1
+--- /dev/null
++++ b/dotfiles/nvim/README.md
+@@ -0,0 +1,2 @@
++# nvim
++Personal neovim configuration
+diff --git a/dotfiles/nvim/after/plugin/colorscheme.lua b/dotfiles/nvim/after/plugin/colorscheme.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..d7de05ac68dcce9f9f8c3a4e5ee034dc00d78ce0
+--- /dev/null
++++ b/dotfiles/nvim/after/plugin/colorscheme.lua
+@@ -0,0 +1,2 @@
++vim.cmd.colorscheme "catppuccin"
++
+diff --git a/dotfiles/nvim/after/plugin/comment.lua b/dotfiles/nvim/after/plugin/comment.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3d46bb603a53fc4edb24dc6623b943695154d
+--- /dev/null
++++ b/dotfiles/nvim/after/plugin/comment.lua
+@@ -0,0 +1,44 @@
++require('Comment').setup({
++    ---Add a space b/w comment and the line
++    padding = true,
++    ---Whether the cursor should stay at its position
++    sticky = true,
++    ---Lines to be ignored while (un)comment
++    ignore = nil,
++    ---LHS of toggle mappings in NORMAL mode
++    toggler = {
++        ---Line-comment toggle keymap
++        line = '<c-_>',
++        ---Block-comment toggle keymap
++        block = '<m-/>',
++    },
++    ---LHS of operator-pending mappings in NORMAL and VISUAL mode
++    opleader = {
++        ---Line-comment keymap
++        line = '<c-_>',
++        ---Block-comment keymap
++        block = '<m-/>',
++    },
++    ---LHS of extra mappings
++    extra = {
++        ---Add comment on the line above
++        above = 'gcO',
++        ---Add comment on the line below
++        below = 'gco',
++        ---Add comment at the end of line
++        eol = 'gcA',
++    },
++    ---Enable keybindings
++    ---NOTE: If given `false` then the plugin won't create any mappings
++    mappings = {
++        ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
++        basic = true,
++        ---Extra mapping; `gco`, `gcO`, `gcA`
++        extra = false,
++    },
++    ---Function to call before (un)comment
++    pre_hook = nil,
++    ---Function to call after (un)comment
++    post_hook = nil,
++})
++
+diff --git a/dotfiles/nvim/after/plugin/lsp.lua b/dotfiles/nvim/after/plugin/lsp.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..b4ca92752c8ca5aa8e7cedc5584fd266fffa69f7
+--- /dev/null
++++ b/dotfiles/nvim/after/plugin/lsp.lua
+@@ -0,0 +1,38 @@
++local lsp = require("lsp-zero")
++
++lsp.preset("recommended")
++
++lsp.ensure_installed({
++  'tsserver',
++  'rust_analyzer',
++})
++
++lsp.on_attach(function(client, bufnr)
++  local opts = {buffer = bufnr, remap = false}
++
++  if client.name == "eslint" then
++      vim.cmd.LspStop('eslint')
++      return
++  end
++
++  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
++  vim.keymap.set("n", "<c-q>", vim.lsp.buf.hover, opts)
++  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
++  vim.keymap.set("n", "<f3>", vim.diagnostic.goto_next, opts)
++  vim.keymap.set("n", "<f2>", vim.diagnostic.goto_prev, opts)
++  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
++  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
++end)
++
++lsp.set_preferences({
++    suggest_lsp_servers = true,
++    set_lsp_keymaps = false,
++    sign_icons = {}
++})
++
++lsp.setup()
++
++vim.diagnostic.config({
++    virtual_text = false,
++})
++
+diff --git a/dotfiles/nvim/after/plugin/telescope.lua b/dotfiles/nvim/after/plugin/telescope.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..33826b31df83cd6484e6dbf9d3a0e3cd18fc7c36
+--- /dev/null
++++ b/dotfiles/nvim/after/plugin/telescope.lua
+@@ -0,0 +1,6 @@
++local builtin = require('telescope.builtin')
++vim.keymap.set('n', '<c-n>', builtin.find_files, {})
++vim.keymap.set('n', '<leader>f', builtin.git_files, {})
++vim.keymap.set('n', '<c-f>', builtin.live_grep, {})
++vim.keymap.set('n', '<c-e>', builtin.buffers, {})
++
+diff --git a/dotfiles/nvim/after/plugin/treesitter.lua b/dotfiles/nvim/after/plugin/treesitter.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..a0d560094c122035a03f71930fe8496c8ab258e2
+--- /dev/null
++++ b/dotfiles/nvim/after/plugin/treesitter.lua
+@@ -0,0 +1,23 @@
++require'nvim-treesitter.configs'.setup {
++    ensure_installed = { "help", "javascript", "typescript", "c", "lua", "rust" },
++
++    sync_install = false,
++
++    auto_install = true,
++
++    highlight = {
++        enable = true,
++        additional_vim_regex_highlighting = false,
++    },
++
++    incremental_selection = {
++        enable = true,
++        keymaps = {
++            init_selection = "<c-w>",
++            node_incremental = "<c-w>",
++            scope_incremental = ".",
++            node_decremental = ",",
++        },
++    },
++}
++
+diff --git a/dotfiles/nvim/lua/config/init.lua b/dotfiles/nvim/lua/config/init.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..4d0b674871c991813ddbf89e5b5f83e278c3bf9c
+--- /dev/null
++++ b/dotfiles/nvim/lua/config/init.lua
+@@ -0,0 +1,3 @@
++require("config.remap")
++require("config.set")
++require("config.packer")
+diff --git a/dotfiles/nvim/lua/config/packer.lua b/dotfiles/nvim/lua/config/packer.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..2f858ff0657564d6d246fdde14ba3581a95cfa3d
+--- /dev/null
++++ b/dotfiles/nvim/lua/config/packer.lua
+@@ -0,0 +1,42 @@
++vim.cmd [[packadd packer.nvim]]
++
++return require('packer').startup(function(use)
++    use 'wbthomason/packer.nvim'
++
++    use {
++        'nvim-telescope/telescope.nvim', tag = '0.1.0',
++        requires = { {'nvim-lua/plenary.nvim'} }
++    }
++
++    use { "catppuccin/nvim", as = "catppuccin" }
++
++    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
++    use('nvim-treesitter/playground')
++    use 'nois-lang/nois.vim'
++
++    use {
++        'VonHeikemen/lsp-zero.nvim',
++        requires = {
++            {'neovim/nvim-lspconfig'},
++            {'williamboman/mason.nvim'},
++            {'williamboman/mason-lspconfig.nvim'},
++
++            {'hrsh7th/nvim-cmp'},
++            {'hrsh7th/cmp-buffer'},
++            {'hrsh7th/cmp-path'},
++            {'saadparwaiz1/cmp_luasnip'},
++            {'hrsh7th/cmp-nvim-lsp'},
++            {'hrsh7th/cmp-nvim-lua'},
++
++            {'L3MON4D3/LuaSnip'},
++            {'rafamadriz/friendly-snippets'},
++        }
++    }
++
++    use {
++        'numToStr/Comment.nvim',
++        config = function()
++            require('Comment').setup()
++        end
++    }
++end)
+diff --git a/dotfiles/nvim/lua/config/remap.lua b/dotfiles/nvim/lua/config/remap.lua
+new file mode 100755
+index 0000000000000000000000000000000000000000..a03463344994ce64757ddb37fe3d67740e097a1d
+--- /dev/null
++++ b/dotfiles/nvim/lua/config/remap.lua
+@@ -0,0 +1,43 @@
++vim.g.mapleader = " "
++vim.keymap.set({"n", "v"}, "<space>", "<nop>")
++
++vim.keymap.set({"n", "v"}, "h", "i")
++vim.keymap.set({"n", "v"}, "i", "h")
++vim.keymap.set({"n", "v"}, "i", "gk")
++vim.keymap.set({"n", "v"}, "j", "h")
++vim.keymap.set({"n", "v"}, "k", "gj")
++
++vim.keymap.set({"n", "v"}, "I", "<c-u>zz")
++vim.keymap.set({"n", "v"}, "K", "<c-d>zz")
++
++vim.keymap.set({"n"}, "U", "<c-r>")
++
++vim.keymap.set({"n"}, ">", ">>")
++vim.keymap.set({"n"}, "<", "<<")
++vim.keymap.set({"v"}, ">", ">gv")
++vim.keymap.set({"v"}, "<", "<gv")
++
++vim.keymap.set({"n", "v"}, "y", [["+y]])
++vim.keymap.set("v", "p", [["_dP]])
++
++vim.keymap.set("i", "<c-c>", "<Esc>")
++vim.keymap.set("n", "<leader>l", vim.lsp.buf.format)
++
++vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
++
++vim.keymap.set("n", "<tab>", "<c-^>")
++
++vim.keymap.set("i", "<c-h>", "<c-o>db")
++vim.keymap.set("i", "<c-del>", "<c-o>de")
++
++vim.keymap.set("n", "Q", "@q")
++vim.keymap.set("v", "Q", ":norm @q<cr>")
++
++vim.keymap.set("n", "<c-r>", ":%s//g<left><left>")
++
++vim.keymap.set("n", "<leader>w", ":w<cr>")
++vim.keymap.set("n", "<leader>q", ":q<cr>")
++vim.keymap.set("n", "<leader>a", "ggVG")
++vim.keymap.set("n", "<leader>v", "<c-v>")
++vim.keymap.set("n", "<leader>o", ":source $MYVIMRC<cr>", { silent = true })
++
+diff --git a/dotfiles/nvim/lua/config/set.lua b/dotfiles/nvim/lua/config/set.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..2a912a2774dee16b8af4610acc136d445ee5e17a
+--- /dev/null
++++ b/dotfiles/nvim/lua/config/set.lua
+@@ -0,0 +1,26 @@
++vim.opt.nu = true
++
++vim.opt.tabstop = 4
++vim.opt.softtabstop = 4
++vim.opt.shiftwidth = 4
++vim.opt.expandtab = true
++
++vim.opt.smartindent = true
++
++vim.opt.wrap = false
++
++vim.opt.swapfile = false
++vim.opt.backup = false
++
++vim.opt.hlsearch = false
++vim.opt.incsearch = true
++
++vim.opt.termguicolors = true
++
++vim.opt.scrolloff = 8
++
++vim.opt.updatetime = 50
++
++vim.opt.signcolumn = "yes"
++
++vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
+diff --git a/dotfiles/nvim/plugin/packer_compiled.lua b/dotfiles/nvim/plugin/packer_compiled.lua
+new file mode 100644
+index 0000000000000000000000000000000000000000..7c61521c3fa18c0ca81c77bd127a86577514d717
+--- /dev/null
++++ b/dotfiles/nvim/plugin/packer_compiled.lua
+@@ -0,0 +1,199 @@
++-- Automatically generated packer.nvim plugin loader code
++
++if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
++  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
++  return
++end
++
++vim.api.nvim_command('packadd packer.nvim')
++
++local no_errors, error_msg = pcall(function()
++
++_G._packer = _G._packer or {}
++_G._packer.inside_compile = true
++
++local time
++local profile_info
++local should_profile = false
++if should_profile then
++  local hrtime = vim.loop.hrtime
++  profile_info = {}
++  time = function(chunk, start)
++    if start then
++      profile_info[chunk] = hrtime()
++    else
++      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
++    end
++  end
++else
++  time = function(chunk, start) end
++end
++
++local function save_profiles(threshold)
++  local sorted_times = {}
++  for chunk_name, time_taken in pairs(profile_info) do
++    sorted_times[#sorted_times + 1] = {chunk_name, time_taken}
++  end
++  table.sort(sorted_times, function(a, b) return a[2] > b[2] end)
++  local results = {}
++  for i, elem in ipairs(sorted_times) do
++    if not threshold or threshold and elem[2] > threshold then
++      results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
++    end
++  end
++  if threshold then
++    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
++  end
++
++  _G._packer.profile_output = results
++end
++
++time([[Luarocks path setup]], true)
++local package_path_str = "/home/ivan/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/ivan/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/ivan/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/ivan/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
++local install_cpath_pattern = "/home/ivan/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
++if not string.find(package.path, package_path_str, 1, true) then
++  package.path = package.path .. ';' .. package_path_str
++end
++
++if not string.find(package.cpath, install_cpath_pattern, 1, true) then
++  package.cpath = package.cpath .. ';' .. install_cpath_pattern
++end
++
++time([[Luarocks path setup]], false)
++time([[try_loadstring definition]], true)
++local function try_loadstring(s, component, name)
++  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
++  if not success then
++    vim.schedule(function()
++      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
++    end)
++  end
++  return result
++end
++
++time([[try_loadstring definition]], false)
++time([[Defining packer_plugins]], true)
++_G.packer_plugins = {
++  ["Comment.nvim"] = {
++    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/Comment.nvim",
++    url = "https://github.com/numToStr/Comment.nvim"
++  },
++  LuaSnip = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/LuaSnip",
++    url = "https://github.com/L3MON4D3/LuaSnip"
++  },
++  catppuccin = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/catppuccin",
++    url = "https://github.com/catppuccin/nvim"
++  },
++  ["cmp-buffer"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
++    url = "https://github.com/hrsh7th/cmp-buffer"
++  },
++  ["cmp-nvim-lsp"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
++    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
++  },
++  ["cmp-nvim-lua"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
++    url = "https://github.com/hrsh7th/cmp-nvim-lua"
++  },
++  ["cmp-path"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/cmp-path",
++    url = "https://github.com/hrsh7th/cmp-path"
++  },
++  cmp_luasnip = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
++    url = "https://github.com/saadparwaiz1/cmp_luasnip"
++  },
++  ["friendly-snippets"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
++    url = "https://github.com/rafamadriz/friendly-snippets"
++  },
++  ["lsp-zero.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
++    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
++  },
++  ["mason-lspconfig.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
++    url = "https://github.com/williamboman/mason-lspconfig.nvim"
++  },
++  ["mason.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/mason.nvim",
++    url = "https://github.com/williamboman/mason.nvim"
++  },
++  ["nois.vim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/nois.vim",
++    url = "https://github.com/nois-lang/nois.vim"
++  },
++  ["nvim-cmp"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
++    url = "https://github.com/hrsh7th/nvim-cmp"
++  },
++  ["nvim-lspconfig"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
++    url = "https://github.com/neovim/nvim-lspconfig"
++  },
++  ["nvim-treesitter"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
++    url = "https://github.com/nvim-treesitter/nvim-treesitter"
++  },
++  ["packer.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/packer.nvim",
++    url = "https://github.com/wbthomason/packer.nvim"
++  },
++  playground = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/playground",
++    url = "https://github.com/nvim-treesitter/playground"
++  },
++  ["plenary.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
++    url = "https://github.com/nvim-lua/plenary.nvim"
++  },
++  ["telescope.nvim"] = {
++    loaded = true,
++    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
++    url = "https://github.com/nvim-telescope/telescope.nvim"
++  }
++}
++
++time([[Defining packer_plugins]], false)
++-- Config for: Comment.nvim
++time([[Config for Comment.nvim]], true)
++try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
++time([[Config for Comment.nvim]], false)
++
++_G._packer.inside_compile = false
++if _G._packer.needs_bufread == true then
++  vim.cmd("doautocmd BufRead")
++end
++_G._packer.needs_bufread = false
++
++if should_profile then save_profiles() end
++
++end)
++
++if not no_errors then
++  error_msg = error_msg:gsub('"', '\\"')
++  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
++end
+diff --git a/dotfiles/script/copy-hist b/dotfiles/script/copy-hist
+new file mode 100755
+index 0000000000000000000000000000000000000000..79c7f0a0b705db6a07e958fe5e606a9d49ab82bf
+--- /dev/null
++++ b/dotfiles/script/copy-hist
+@@ -0,0 +1,3 @@
++#!/bin/sh
++
++clipcatctl list --no-id | vim -R -
+diff --git a/dotfiles/script/get-pw b/dotfiles/script/get-pw
+index 6afbc94b7bf6f0a07afae5172d845d35c3a83891..3665e695e9080a5b85efe534f89ff907c498a0da 100755
+--- a/dotfiles/script/get-pw
++++ b/dotfiles/script/get-pw
+@@ -1,3 +1,5 @@
+ #! /bin/sh
+ 
+-cat ~/pw.txt | xargs -0 echo -n | xclip -sel c
++cat ~/pw.txt | xargs echo -n | xclip -sel c
++
++
+diff --git a/dotfiles/script/system/autorun b/dotfiles/script/system/autorun
+index c3e4e618c3274d8668f582fdac527538de47541a..d99dcf579ba07daa273c84bf85f44a11e5fdf0e3 100755
+--- a/dotfiles/script/system/autorun
++++ b/dotfiles/script/system/autorun
+@@ -5,3 +5,4 @@ run-if-not dunst dunst &
+ run-if-not devmon devmon &
+ run-if-not unclutter $(unclutter --timeout 2) &
+ run-if-not kmonad $(kmonad ~/.config/kmonad/laptop.kbd) &
++clipcatd
+diff --git a/dotfiles/script/system/xset b/dotfiles/script/system/xset
+index 07d99231bf352f5a8650701fe2bd0a59f4644cc1..51d79e9ba284594eb3fc20cacb0f541034a395fa 100755
+--- a/dotfiles/script/system/xset
++++ b/dotfiles/script/system/xset
+@@ -7,4 +7,4 @@ xset s noblank
+ 
+ # set keyboard delay and repeat
+ export DISPLAY=":0"
+-xset r rate 220 20
++xset r rate 200 25
+diff --git a/dotfiles/script/ub b/dotfiles/script/ub
+new file mode 100755
+index 0000000000000000000000000000000000000000..13f140c1147050016ae8c4443e1793ce0cd0f489
+--- /dev/null
++++ b/dotfiles/script/ub
+@@ -0,0 +1,9 @@
++#!/bin/bash
++source "`ueberzug library`"
++
++[ -z "$5" ] && echo "Usage: $0 <image> <x> <y> <max height> <max width>" && exit
++
++ImageLayer 0< >(
++    ImageLayer::add [identifier]="example0" [x]="$2" [y]="$3" [max_width]="$5" [max_height]="$4" [path]="$1"
++    read
++)
+diff --git a/dotfiles/script/vifmimg b/dotfiles/script/vifmimg
+new file mode 100755
+index 0000000000000000000000000000000000000000..c15a0946bfe9ddf1201f12ae8a07eb3e11a55296
+--- /dev/null
++++ b/dotfiles/script/vifmimg
+@@ -0,0 +1,54 @@
++#!/bin/sh
++export PCACHE="$HOME/.cache/vifm/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$PWD/$6")" | sha256sum | awk '{print $1}')"
++
++pclear() {
++	printf '{"action": "remove", "identifier": "vifm-preview"}\n' > "$FIFO_UEBERZUG"
++}
++
++image() {
++		printf '{"action": "add", "identifier": "vifm-preview", "x": "%s", "y": "%s", "width": "%s", "height": "%s", "scaler": "contain", "path": "%s"}\n' "$2" "$3" "$4" "$5" "$6" > "$FIFO_UEBERZUG"
++}
++
++main() {
++    case "$1" in
++        "clear")
++			pclear "$@"
++			;;
++        "draw")
++			FILE="$PWD/$6"
++			image "$1" "$2" "$3" "$4" "$5" "$FILE"
++			;;
++        "video")
++			[ ! -f "$PCACHE" ] && \
++				ffmpegthumbnailer -i "$6" -o "${PCACHE}.jpg" -s 0 -q 5
++			image "$1" "$2" "$3" "$4" "$5" "${PCACHE}.jpg"
++			;;
++        "epub")
++			[ ! -f "$PCACHE" ] && \
++				epub-thumbnailer "$6" "$PCACHE" 1024
++			image "$1" "$2" "$3" "$4" "$5" "$PCACHE"
++			;;
++        "pdf")
++			[ ! -f "${PCACHE}.jpg" ] && \
++				pdftoppm -jpeg -f 1 -singlefile "$6" "$PCACHE"
++			image "$1" "$2" "$3" "$4" "$5" "${PCACHE}.jpg"
++			;;
++        "djvu")
++			[ ! -f "${PCACHE}.jpg" ] && \
++				ddjvu -format=tiff -quality=90 -page=1 "$6" "$PCACHE.jpg"
++			image "$1" "$2" "$3" "$4" "$5" "${PCACHE}.jpg"
++			;;
++        "audio")
++			[ ! -f "${PCACHE}.jpg" ] && \
++				ffmpeg -hide_banner -i "$6" "${PCACHE}.jpg" -y >/dev/null
++			image "$1" "$2" "$3" "$4" "$5" "${PCACHE}.jpg"
++			;;
++        "font")
++			[ ! -f "${PCACHE}.jpg" ] && \
++				fontpreview -i "$6" -o "${PCACHE}.jpg"
++			image "$1" "$2" "$3" "$4" "$5" "${PCACHE}.jpg"
++			;;
++        *)
++    esac
++}
++main "$@"
+diff --git a/dotfiles/script/vifmrun b/dotfiles/script/vifmrun
+new file mode 100755
+index 0000000000000000000000000000000000000000..ce9af1770600fffb3227af4026a10fb1e8cb4ab2
+--- /dev/null
++++ b/dotfiles/script/vifmrun
+@@ -0,0 +1,21 @@
++#!/bin/sh
++
++if [ -z "$(command -v vifm)" ]; then
++	printf "vifm isn't installed on your system!\n"
++	exit 1
++elif [ -z "$(command -v ueberzug)" ]; then
++	exec vifm "$@"
++else
++	cleanup() {
++		exec 3>&-
++	    rm "$FIFO_UEBERZUG"
++	}
++	[ ! -d "$HOME/.cache/vifm" ] && mkdir -p "$HOME/.cache/vifm"
++	export FIFO_UEBERZUG="$HOME/.cache/vifm/ueberzug-${$}"
++	mkfifo "$FIFO_UEBERZUG"
++	ueberzug layer -s <"$FIFO_UEBERZUG" -p json &
++	exec 3>"$FIFO_UEBERZUG"
++	trap cleanup EXIT
++	vifm "$@" 3>&-
++	vifmimg clear
++fi
+diff --git a/dotfiles/script/wm/brightness-down b/dotfiles/script/wm/brightness-down
+index 9d8a0887d644eb5d5c872babff8a3097ca2e50b0..39c0f60742d8350100daea530fee108c0e27b20e 100755
+--- a/dotfiles/script/wm/brightness-down
++++ b/dotfiles/script/wm/brightness-down
+@@ -1,3 +1,7 @@
+ #!/usr/bin/env sh
+ 
+ notify-send -u low "Brightness: `~/.script/wm/backlight -100`"
++NEW=`ddccontrol dev:/dev/i2c-4 -r 0x10 -W -10 2>/dev/null | awk '/^Control/{print $3}' | awk -F '/' '{print $2}'`
++notify-send -u low "Brightness: $NEW"
++
++
+diff --git a/dotfiles/script/wm/brightness-up b/dotfiles/script/wm/brightness-up
+index e4622b1bbdf627615bd624eafacd6d046ae6d79b..9e0564adbf45cc6b8ba17a35c789daeb257368ac 100755
+--- a/dotfiles/script/wm/brightness-up
++++ b/dotfiles/script/wm/brightness-up
+@@ -1,3 +1,6 @@
+ #!/usr/bin/env sh
+ 
+ notify-send -u low "Brightness: `~/.script/wm/backlight +100`"
++NEW=`ddccontrol dev:/dev/i2c-4 -r 0x10 -W +10 2>/dev/null | awk '/^Control/{print $3}' | awk -F '/' '{print $2}'`
++notify-send -u low "Brightness: $NEW"
++
+diff --git a/dotfiles/vifm/vifmrc b/dotfiles/vifm/vifmrc
+index ae2d6ebbbc44b8f9de4acf8f1a240689f87d1e78..77728b2823d92321ba70444bc522ad5574a450a4 100644
+--- a/dotfiles/vifm/vifmrc
++++ b/dotfiles/vifm/vifmrc
+@@ -1,4 +1,4 @@
+-set vicmd=vim
++set vicmd=nvim
+ set trash
+ set history=100
+ set nofollowlinks
+@@ -47,44 +47,54 @@ mark a ~/Downloads/
+ " %m run the command in a menu window
+ 
+ command! df df -h %m 2> /dev/null
+-command! diff vim -d %f %F
++command! diff nvim -d %f %F
+ command! zip zip -r archive.zip %f
+ command! run !! ./%f
+ command! make !!make %a
+ command! mkcd :mkdir %a | cd %a
+-command! vgrep vim "+grep %a"
++command! vgrep nvim "+grep %a"
+ command! reload :write | restart
+ command! backup cp %c %c.backup
+ 
+ filextype *.pdf,*.djvu,*.ps,*.eps,*.ps.gz,*.epub zathura %f %i
+ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx],*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+ 	\ mpv --player-operation-mode=pseudo-gui --no-sub-visibility -- %f %i
+-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx]
+-	\ ffprobe -hide_banner -pretty %c 2>&1
+ filextype *.html,*.htm
+ 	\ chromium-browser %f
+ filetype *.html, *.htm links, lynx
+ filetype *.[1-8] man ./%c
+-fileviewer *.[1-8] man ./%c | col -b
+ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg, feh -. -d -Z --conversion-timeout 1 --start-at %f
+ filextype *.arw feh -. -d -Z --conversion-timeout 1 --draw-exif --start-at %f
+ filetype *.zip,*.jar,*.war
+ 	\ unzip %c
+-fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %c
+-fileviewer *.tgz,*.tar.gz tar -tzf %c
+-fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
+-fileviewer *.tar.txz,*.txz xz --list %c
+-fileviewer *.tar tar -tf %c
+ filetype *.rar unrar x %c
+-fileviewer *.rar unrar v %c
+ filetype *.iso
+ 	\ {Mount with fuseiso}
+ 	\ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+ filetype *.7z
+ 	\ {Open in file-roller} file-roller %c
+-fileviewer *.7z 7z l %c
+ filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f %i &
+-filetype * vim %f, xdg-open, zip archive.zip %f
++filextype *.csv libreoffice --calc %f %i &
++filetype * nvim %f, xdg-open, zip archive.zip %f
++
++fileviewer <image/*>
++    \ vifmimg draw %px %py %pw %ph %c
++    \ %pc
++    \ vifmimg clear
++fileviewer *.pdf
++    \ vifmimg pdf %px %py %pw %ph %c
++    \ %pc
++    \ vifmimg clear
++fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx]
++	\ ffprobe -hide_banner -pretty %c 2>&1
++fileviewer *.[1-8] man ./%c | col -b
++fileviewer *.zip,*.jar,*.war,*.ear,*.oxt unzip -l %c
++fileviewer *.tgz,*.tar.gz tar -tzf %c
++fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
++fileviewer *.tar.txz,*.txz xz --list %c
++fileviewer *.tar tar -tf %c
++fileviewer *.rar unrar v %c
++fileviewer *.7z 7z l %c
+ 
+ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+ 	\phistory,fhistory,dirstack,registers,bookmarks,bmarks
+diff --git a/dotfiles/zsh/.env b/dotfiles/zsh/.env
+index 0d225b15985f8162763f1cd49a36197ef7ec9aa8..92ffc55da89cce64ce1a7fe160e4ca3487f22499 100644
+--- a/dotfiles/zsh/.env
++++ b/dotfiles/zsh/.env
+@@ -7,6 +7,7 @@ export PATH="$HOME/.local/bin:$PATH"
+ export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH    
+ export PATH=$PATH:~/.cabal/bin
+ export PATH=$PATH:~/.cargo/bin
++export PATH=$PATH:~/go/bin
+ 
+ export MANPAGER="/usr/bin/zsh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
+ export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
+@@ -17,3 +18,11 @@ export VIFM="$HOME/.config/vifm"
+ export _JAVA_AWT_WM_NONREPARENTING=1
+ 
+ export npm_config_prefix="$HOME/.local"
++
++export NODE_OPTIONS="--openssl-legacy-provider"
++
++export GTK_THEME=Adwaita-dark
++
++alias steam="flatpak run com.valvesoftware.Steam"
++alias sap="steam steam://rungameid/1714040"
++alias ws="webstorm"
+diff --git a/dotfiles/zsh/.zshenv b/dotfiles/zsh/.zshenv
+index 303bbaa7d002a1a1265f8ab5e6d0a1ed75db1c78..d5b3695d64fd56e628ea0486265fdbe21ddb678c 100644
+--- a/dotfiles/zsh/.zshenv
++++ b/dotfiles/zsh/.zshenv
+@@ -20,6 +20,8 @@ alias halt="sudo systemctl halt"
+ 
+ alias yt-dlpf='yt-dlp --format "(bestvideo[vcodec^=av01][height>=4320][fps>30]/bestvideo[vcodec^=vp9.2][height>=4320][fps>30]/bestvideo[vcodec^=vp9][height>=4320][fps>30]/bestvideo[vcodec^=avc1][height>=4320][fps>30]/bestvideo[height>=4320][fps>30]/bestvideo[vcodec^=av01][height>=4320]/bestvideo[vcodec^=vp9.2][height>=4320]/bestvideo[vcodec^=vp9][height>=4320]/bestvideo[vcodec^=avc1][height>=4320]/bestvideo[height>=4320]/bestvideo[vcodec^=av01][height>=2880][fps>30]/bestvideo[vcodec^=vp9.2][height>=2880][fps>30]/bestvideo[vcodec^=vp9][height>=2880][fps>30]/bestvideo[vcodec^=avc1][height>=2880][fps>30]/bestvideo[height>=2880][fps>30]/bestvideo[vcodec^=av01][height>=2880]/bestvideo[vcodec^=vp9.2][height>=2880]/bestvideo[vcodec^=vp9][height>=2880]/bestvideo[vcodec^=avc1][height>=2880]/bestvideo[height>=2880]/bestvideo[vcodec^=av01][height>=2160][fps>30]/bestvideo[vcodec^=vp9.2][height>=2160][fps>30]/bestvideo[vcodec^=vp9][height>=2160][fps>30]/bestvideo[vcodec^=avc1][height>=2160][fps>30]/bestvideo[height>=2160][fps>30]/bestvideo[vcodec^=av01][height>=2160]/bestvideo[vcodec^=vp9.2][height>=2160]/bestvideo[vcodec^=vp9][height>=2160]/bestvideo[vcodec^=avc1][height>=2160]/bestvideo[height>=2160]/bestvideo[vcodec^=av01][height>=1440][fps>30]/bestvideo[vcodec^=vp9.2][height>=1440][fps>30]/bestvideo[vcodec^=vp9][height>=1440][fps>30]/bestvideo[vcodec^=avc1][height>=1440][fps>30]/bestvideo[height>=1440][fps>30]/bestvideo[vcodec^=av01][height>=1440]/bestvideo[vcodec^=vp9.2][height>=1440]/bestvideo[vcodec^=vp9][height>=1440]/bestvideo[vcodec^=avc1][height>=1440]/bestvideo[height>=1440]/bestvideo[vcodec^=av01][height>=1080][fps>30]/bestvideo[vcodec^=vp9.2][height>=1080][fps>30]/bestvideo[vcodec^=vp9][height>=1080][fps>30]/bestvideo[vcodec^=avc1][height>=1080][fps>30]/bestvideo[height>=1080][fps>30]/bestvideo[vcodec^=av01][height>=1080]/bestvideo[vcodec^=vp9.2][height>=1080]/bestvideo[vcodec^=vp9][height>=1080]/bestvideo[vcodec^=avc1][height>=1080]/bestvideo[height>=1080]/bestvideo[vcodec^=av01][height>=720][fps>30]/bestvideo[vcodec^=vp9.2][height>=720][fps>30]/bestvideo[vcodec^=vp9][height>=720][fps>30]/bestvideo[vcodec^=avc1][height>=720][fps>30]/bestvideo[height>=720][fps>30]/bestvideo[vcodec^=av01][height>=720]/bestvideo[vcodec^=vp9.2][height>=720]/bestvideo[vcodec^=vp9][height>=720]/bestvideo[vcodec^=avc1][height>=720]/bestvideo[height>=720]/bestvideo[vcodec^=av01][height>=480][fps>30]/bestvideo[vcodec^=vp9.2][height>=480][fps>30]/bestvideo[vcodec^=vp9][height>=480][fps>30]/bestvideo[vcodec^=avc1][height>=480][fps>30]/bestvideo[height>=480][fps>30]/bestvideo[vcodec^=av01][height>=480]/bestvideo[vcodec^=vp9.2][height>=480]/bestvideo[vcodec^=vp9][height>=480]/bestvideo[vcodec^=avc1][height>=480]/bestvideo[height>=480]/bestvideo[vcodec^=av01][height>=360][fps>30]/bestvideo[vcodec^=vp9.2][height>=360][fps>30]/bestvideo[vcodec^=vp9][height>=360][fps>30]/bestvideo[vcodec^=avc1][height>=360][fps>30]/bestvideo[height>=360][fps>30]/bestvideo[vcodec^=av01][height>=360]/bestvideo[vcodec^=vp9.2][height>=360]/bestvideo[vcodec^=vp9][height>=360]/bestvideo[vcodec^=avc1][height>=360]/bestvideo[height>=360]/bestvideo[vcodec^=avc1][height>=240][fps>30]/bestvideo[vcodec^=av01][height>=240][fps>30]/bestvideo[vcodec^=vp9.2][height>=240][fps>30]/bestvideo[vcodec^=vp9][height>=240][fps>30]/bestvideo[height>=240][fps>30]/bestvideo[vcodec^=avc1][height>=240]/bestvideo[vcodec^=av01][height>=240]/bestvideo[vcodec^=vp9.2][height>=240]/bestvideo[vcodec^=vp9][height>=240]/bestvideo[height>=240]/bestvideo[vcodec^=avc1][height>=144][fps>30]/bestvideo[vcodec^=av01][height>=144][fps>30]/bestvideo[vcodec^=vp9.2][height>=144][fps>30]/bestvideo[vcodec^=vp9][height>=144][fps>30]/bestvideo[height>=144][fps>30]/bestvideo[vcodec^=avc1][height>=144]/bestvideo[vcodec^=av01][height>=144]/bestvideo[vcodec^=vp9.2][height>=144]/bestvideo[vcodec^=vp9][height>=144]/bestvideo[height>=144]/bestvideo)+(bestaudio[acodec^=opus]/bestaudio)/best" --verbose --force-ipv4 --ignore-errors --no-continue --no-overwrites --add-metadata --all-subs --embed-subs --output "%(uploader)s - %(title)s [%(id)s].%(ext)s" --merge-output-format "mkv"'
+ 
++alias vifm='vifmrun'
++
+ function listen-tex() {
+ 	find $1 | entr -r pdflatex -interaction=nonstopmode -output-directory=out/ $1
+ }
+diff --git a/dotfiles/zsh/.zshrc b/dotfiles/zsh/.zshrc
+index 67171e19cf7dd6425269b0c22bff69b6ffb534c6..85bd0261717396d97f29ade2f8cb8a3315f2d63b 100644
+--- a/dotfiles/zsh/.zshrc
++++ b/dotfiles/zsh/.zshrc
+@@ -17,4 +17,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+ 
+ # env
+ source ~/.env
+-

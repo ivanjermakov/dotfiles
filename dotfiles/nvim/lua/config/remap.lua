@@ -40,4 +40,3 @@ vim.keymap.set("n", "<leader>q", ":q<cr>")
 vim.keymap.set("n", "<leader>a", "ggVG")
 vim.keymap.set("n", "<leader>v", "<c-v>")
 vim.keymap.set("n", "<leader>o", ":source $MYVIMRC<cr>", { silent = true })
-

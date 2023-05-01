@@ -1,131 +1,112 @@
 dotfiles/:
- home:
-  from:
-   ~/
-  files:
-   - .Xresources*
-   - .bashrc
-   - .xprofile
-   - .vimrc
- script:
-  from:
-   ~/.script/
-  files:
-   - "*"
-   - wm/*
-   - system/*
- fonts:
-  from:
-   ~/.config/fontconfig/
-  files:
-   - fonts.conf
- picom:
-  from:
-   ~/.config/
-  files:
-   picom.conf
- i3:
-  from:
-   ~/.config/i3/
-  files:
-   - config
- zsh:
-  from:
-   ~/
-  files:
-   - .zshrc
-   - .zshenv
-   - .env
- urxvt:
-  from:
-   ~/.config/urxvt/
-  files:
-   - "*"
-   - themes/*
- vim:
-  from:
-   ~/.vim/init/
-  files:
-   - "*"
- nvim:
-  from:
-   ~/.config/nvim/ 
-  files:
-   - "**"
- idea:
-  from:
-   ~/
-  files:
-   - .ideavimrc
- htop:
-  from:
-   ~/.config/htop/
-  files:
-   - htoprc
- polybar:
-  from:
-   ~/.config/polybar/
-  files:
-   - config
- vifm:
-  from:
-   ~/.config/vifm/
-  files:
-   - vifmrc
-   - colors/*
- xkeysnail:
-  from:
-   ~/.config/xkeysnail/
-  files:
-   - main.py
- zathura:
-  from:
-   ~/.config/zathura/
-  files:
-   - zathurarc
- feh:
-  from:
-   ~/.config/feh/
-  files:
-   - keys
- dunst:
-  from:
-   ~/.config/dunst/
-  files:
-   - dunstrc
- neofetch:
-  from:
-   ~/.config/neofetch/
-  files:
-   - config.conf
- firefox:
-  from:
-   ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
-  files:
-   - userChrome.css
- newsboat:
-  from:
-   ~/.newsboat/
-  files:
-   - config
- mpv:
-  from:
-   ~/.config/mpv/
-  files:
-   - mpv.conf
-   - input.conf
- kmonad:
-   from:
-    ~/.config/kmonad/
-   files:
-     - "*" 
- qutebrowser:
-   from:
-     ~/.config/qutebrowser/
-   files:
-     - config.py
- lazygit:
-   from:
-    ~/.config/lazygit/
-   files:
-     - config.yml
+  home:
+    from: ~/
+    files:
+      - .Xresources*
+      - .bashrc
+      - .xprofile
+      - .vimrc
+  script:
+    from: ~/.script/
+    files:
+      - "*"
+      - wm/*
+      - system/*
+  fonts:
+    from: ~/.config/fontconfig/
+    files:
+      - fonts.conf
+  picom:
+    from: ~/.config/
+    files:
+      picom.conf
+  i3:
+    from: ~/.config/i3/
+    files:
+      - config
+  zsh:
+    from: ~/
+    files:
+      - .zshrc
+      - .zshenv
+      - .env
+  urxvt:
+    from: ~/.config/urxvt/
+    files:
+      - "*"
+      - themes/*
+  vim:
+    from: ~/.vim/init/
+    files:
+      - "*"
+  nvim:
+    from: ~/.config/nvim/
+    files:
+      - "**"
+  idea:
+    from: ~/
+    files:
+      - .ideavimrc
+  htop:
+    from: ~/.config/htop/
+    files:
+      - htoprc
+  polybar:
+    from: ~/.config/polybar/
+    files:
+      - config
+  vifm:
+    from: ~/.config/vifm/
+    files:
+      - vifmrc
+      - colors/*
+  xkeysnail:
+    from: ~/.config/xkeysnail/
+    files:
+      - main.py
+  zathura:
+    from: ~/.config/zathura/
+    files:
+      - zathurarc
+  feh:
+    from: ~/.config/feh/
+    files:
+      - keys
+  dunst:
+    from: ~/.config/dunst/
+    files:
+      - dunstrc
+  neofetch:
+    from: ~/.config/neofetch/
+    files:
+      - config.conf
+  firefox:
+    from: ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
+    files:
+      - userChrome.css
+  newsboat:
+    from: ~/.newsboat/
+    files:
+      - config
+  mpv:
+    from: ~/.config/mpv/
+    files:
+      - mpv.conf
+      - input.conf
+  kmonad:
+    from: ~/.config/kmonad/
+    files:
+      - "*"
+  qutebrowser:
+    from: ~/.config/qutebrowser/
+    files:
+      - config.py
+  lazygit:
+    from: ~/.config/lazygit/
+    files:
+      - config.yml
+  tmux:
+    from: ~/
+    files:
+      - .tmux.conf
+

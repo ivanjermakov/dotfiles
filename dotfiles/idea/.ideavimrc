@@ -70,3 +70,6 @@ set surround
 
 nunmap s
 set sneak
+
+set relativenumber
+set number
