@@ -1,3 +1,6 @@
+set number
+set relativenumber
+
 set clipboard+=unnamed
 
 " virtual edit
@@ -66,10 +69,15 @@ nmap gu :action ShowUsages<cr>
 nmap gi :action GotoImplementation<cr>
 nmap gs :action GotoSuperMethod<cr>
 
+unmap s
 set surround
-
-nunmap s
-set sneak
-
-set relativenumber
-set number
+vmap ( <Plug>VSurround)
+vmap ) <Plug>VSurround(
+vmap [ <Plug>VSurround]
+vmap ] <Plug>VSurround[
+vmap { <Plug>VSurround}
+vmap } <Plug>VSurround{
+vmap < <Plug>VSurround>
+vmap > <Plug>VSurround<
+vmap ' <Plug>VSurround'
+vmap " <Plug>VSurround"

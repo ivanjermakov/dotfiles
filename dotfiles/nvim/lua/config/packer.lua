@@ -8,10 +8,10 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use {"catppuccin/nvim", as = "catppuccin"}
 
-    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use 'nvim-treesitter/playground'
     use 'nois-lang/nois.vim'
 
     use {
@@ -37,6 +37,13 @@ return require('packer').startup(function(use)
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
+        end
+    }
+
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
         end
     }
 
