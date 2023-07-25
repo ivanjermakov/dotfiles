@@ -17,3 +17,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 
 # env
 source ~/.env
+
+# opam configuration
+[[ ! -r /home/ivan/.opam/opam-init/init.zsh ]] || source /home/ivan/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

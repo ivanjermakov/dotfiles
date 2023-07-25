@@ -30,8 +30,6 @@ noremap k j
 " navigation
 map I <c-u>zz
 map K <c-d>zz
-map J gg
-map L G
 
 " use angle brackets to indent current line
 nnoremap < <<
@@ -69,6 +67,7 @@ nmap gu :action ShowUsages<cr>
 nmap gi :action GotoImplementation<cr>
 nmap gs :action GotoSuperMethod<cr>
 
+
 unmap s
 set surround
 vmap ( <Plug>VSurround)
@@ -77,7 +76,7 @@ vmap [ <Plug>VSurround]
 vmap ] <Plug>VSurround[
 vmap { <Plug>VSurround}
 vmap } <Plug>VSurround{
-vmap < <Plug>VSurround>
-vmap > <Plug>VSurround<
 vmap ' <Plug>VSurround'
 vmap " <Plug>VSurround"
+
+set ideajoin

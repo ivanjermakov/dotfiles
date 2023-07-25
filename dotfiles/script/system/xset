@@ -3,7 +3,7 @@
 # disable screen timeout and screensaver
 xset s off
 xset -dpms
-xset s noblank
+xset dpms 0 0 0
 
 # set keyboard delay and repeat
 export DISPLAY=":0"
