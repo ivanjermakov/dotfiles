@@ -81,7 +81,7 @@ dotfiles/:
     files:
       - config.conf
   firefox:
-    from: ~/.mozilla/firefox/p9xhtcus.default-release/chrome/
+    from: ~/.mozilla/firefox/dsv24n09.default-release/chrome/
     files:
       - userChrome.css
   newsboat:

@@ -1,27 +1,50 @@
-local lsp = require("lsp-zero")
-
-lsp.preset("recommended")
+local lsp = require("lsp-zero").preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
+    "tsserver",
+    "rust_analyzer",
 })
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
-  if client.name == "eslint" then
-      vim.cmd.LspStop('eslint')
-      return
-  end
+    -- disable semantic tokens since they mess up theme highting
+    client.server_capabilities.semanticTokensProvider = nil
 
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "<c-q>", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "<f3>", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "<f2>", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader><cr>", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>l", vim.lsp.buf.format)
+    vim.keymap.set("n", "<c-q>", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<f2>", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "<f14>", vim.diagnostic.goto_prev, opts) -- <s-f2>
+    vim.keymap.set("n", "<m-cr>", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<f6>", vim.lsp.buf.rename, opts)
+    vim.keymap.set(
+        "n",
+        "<leader>o",
+        function()
+            vim.lsp.buf.execute_command({
+                command = "_typescript.organizeImports",
+                arguments = { vim.api.nvim_buf_get_name(0) },
+                title = ""
+            })
+        end,
+        opts
+    )
+
+    -- enable selected reference highlighting across the buffer
+    if client.server_capabilities.documentHighlightProvider then
+        vim.api.nvim_create_autocmd("CursorHold", {
+            pattern = { "<buffer>" },
+            callback = function()
+                vim.lsp.buf.document_highlight()
+            end
+        })
+        vim.api.nvim_create_autocmd("CursorMoved", {
+            pattern = { "<buffer>" },
+            callback = function()
+                vim.lsp.buf.clear_references()
+            end
+        })
+    end
 end)
 
 lsp.set_preferences({
@@ -30,9 +53,20 @@ lsp.set_preferences({
     sign_icons = {}
 })
 
-lsp.setup()
-
 vim.diagnostic.config({
     virtual_text = false,
 })
 
+require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+local cmp = require 'cmp'
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
+    }
+})
+
+lsp.setup()
