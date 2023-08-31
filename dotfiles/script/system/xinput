@@ -9,5 +9,6 @@ xinput set-prop "Logitech G703 LIGHTSPEED Wireless Gaming Mouse w/ HERO" "libinp
 xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Tapping Enabled" "1"
 xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Natural Scrolling Enabled" "1"
 xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Accel Speed" "0.2"
+xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad"   "libinput Scrolling Pixel Distance" "40"
 
 xinput set-prop "Ploopy Corporation Trackball Nano Mouse" "libinput Accel Profile Enabled" 0, 1
