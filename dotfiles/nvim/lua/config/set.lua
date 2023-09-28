@@ -27,7 +27,8 @@ vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.opt.cmdheight = 0
+vim.opt.ruler = false
+vim.opt.cmdheight = 1
 vim.opt.laststatus = 0
 vim.opt.statusline = " "
 vim.opt.shortmess = vim.opt.shortmess + "lmwsI"
@@ -38,3 +39,5 @@ vim.opt.mouse = ""
 vim.opt.cursorline = true
 
 vim.opt.colorcolumn = "120"
+
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

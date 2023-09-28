@@ -22,6 +22,13 @@ require("lazy").setup({
     "ivanjermakov/telescope-file-structure.nvim",
 
     {
+        'rmagatti/auto-session',
+        opts = {
+            log_level = "error",
+        }
+    },
+
+    {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.2",
         dependencies = { { "nvim-lua/plenary.nvim" } }
@@ -101,7 +108,23 @@ require("lazy").setup({
         end
     },
 
-    "shortcuts/no-neck-pain.nvim",
+    {
+        "shortcuts/no-neck-pain.nvim",
+        config = function()
+            require("no-neck-pain").setup({
+                width = 140,
+                autocmds = {
+                    enableOnVimEnter = true,
+                    enableOnTabEnter = true
+                },
+                buffers = {
+                    right = {
+                        enabled = false
+                    }
+                }
+            })
+        end
+    },
 
     "mfussenegger/nvim-dap",
     {
@@ -136,6 +159,7 @@ require("lazy").setup({
 
     {
         "folke/flash.nvim",
+        enabled = false,
         config = function()
             require("flash").setup({
                 label = {
@@ -161,19 +185,6 @@ require("lazy").setup({
                 NormalFloat = { link = 'NormalFloat' },
                 FloatBorder = { link = 'FloatBorder' },
             }
-        }
-    }
-})
-
-require("no-neck-pain").setup({
-    width = 140,
-    autocmds = {
-        enableOnVimEnter = true,
-        enableOnTabEnter = true
-    },
-    buffers = {
-        right = {
-            enabled = false
         }
     }
 })
