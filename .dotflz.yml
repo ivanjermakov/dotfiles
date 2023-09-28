@@ -110,7 +110,7 @@ dotfiles/:
     files:
       - .tmux.conf
   alacritty:
-    from: ~/config/alacritty
+    from: ~/.config/alacritty/
     files:
       - alacritty.yml
 
