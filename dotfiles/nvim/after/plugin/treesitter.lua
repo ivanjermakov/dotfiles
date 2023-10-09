@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "javascript", "typescript", "c", "lua", "rust" },
+    ensure_installed = { "javascript", "typescript", "c", "lua", "rust", "http", "json" },
     sync_install = true,
     indent = { enable = true },
     highlight = {
@@ -13,6 +13,20 @@ require("nvim-treesitter.configs").setup({
             node_incremental = "<c-w>",
             scope_incremental = false,
             node_decremental = ",",
+        },
+    },
+})
+
+require 'nvim-treesitter.configs'.setup({
+    textobjects = {
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>s"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>S"] = "@parameter.inner",
+            },
         },
     },
 })
