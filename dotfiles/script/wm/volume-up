@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-amixer -D pulse sset Master 5%+
-notify-send -u low "Volume: `amixer -D pulse sget Master | grep '\(Left\|Mono\):' | awk -F'[][]' '{ print $2 }' | tr -d '\n'`"
+pactl set-sink-volume 0 +5% +5%
+notify-send -u low "Volume: `pactl get-sink-volume 0 | grep Volume | awk '{ print $5 }'`"
