@@ -20,6 +20,8 @@ vim.keymap.set({ "v" }, "<", "<gv")
 
 vim.keymap.set({ "n", "v" }, "y", [["+y]])
 vim.keymap.set("v", "p", [["_dP]])
+vim.keymap.set("v", "d", [["_d]])
+vim.keymap.set({"n", "v"}, "c", [["_c]])
 
 vim.keymap.set("i", "<c-c>", "<Esc>")
 
@@ -60,6 +62,21 @@ vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
 vim.keymap.set("n", "<f12>", [[<c-\><c-n>]])
 
 vim.keymap.set("n", "<leader>n", ":NoNeckPain<cr>")
-vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<cr>")
+vim.keymap.set("n", "<leader>gb", function() require("gitsigns").blame_line() end)
+vim.keymap.set("n", "<leader>gd", function()
+    for _ = 1, 2 do require("gitsigns").preview_hunk() end
+end)
 
 vim.keymap.set("n", "<leader>hr", function() require("rest-nvim").run() end)
+
+vim.keymap.set("n", "gl", function()
+    local f = vim.fn.expand("<cfile>")
+    if #f ~= 0 then
+        local cursor = vim.api.nvim_win_get_cursor(0)
+        local bufnr = vim.api.nvim_get_current_buf()
+        require("toggleterm").toggle(0)
+        vim.api.nvim_win_set_buf(0, bufnr)
+        vim.api.nvim_win_set_cursor(0, cursor)
+        vim.cmd('norm! gF')
+    end
+end)
