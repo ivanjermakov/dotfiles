@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-pactl set-sink-volume 0 +5% +5%
+pactl set-sink-volume 0 +5%
 notify-send -u low "Volume: `pactl get-sink-volume 0 | grep Volume | awk '{ print $5 }'`"

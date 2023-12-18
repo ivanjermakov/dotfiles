@@ -53,6 +53,7 @@ require("lazy").setup({
     "nvim-treesitter/playground",
 
     "nois-lang/nois.vim",
+    "purescript-contrib/purescript-vim",
 
     {
         "VonHeikemen/lsp-zero.nvim",
@@ -106,9 +107,9 @@ require("lazy").setup({
     },
 
     {
-        "norcalli/nvim-colorizer.lua",
+        "NvChad/nvim-colorizer.lua",
         config = function()
-            require("colorizer").setup(nil)
+            require("colorizer").setup()
         end
     },
 

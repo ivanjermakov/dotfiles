@@ -3,6 +3,7 @@ local lsp = require("lsp-zero").preset("recommended")
 lsp.ensure_installed({
     "tsserver",
     "rust_analyzer",
+    "purescriptls",
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -85,6 +86,16 @@ lspconfig.rust_analyzer.setup {
                     enable = true,
                 },
             },
+            completion = {
+                snippets = "none"
+            }
+        },
+    },
+}
+lspconfig.purescriptls.setup {
+    settings = {
+        purescript = {
+            formatter = "purs-tidy",
         },
     },
 }
