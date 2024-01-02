@@ -77,8 +77,7 @@ vim.keymap.set("n", "gl", function()
         require("toggleterm").toggle(0)
         vim.api.nvim_win_set_buf(0, bufnr)
         vim.api.nvim_win_set_cursor(0, cursor)
-        vim.cmd('norm! gF')
+        vim.cmd("norm! gF")
     end
 end)
 
-vim.keymap.set("n", "<leader>p", ":silent !prettier --write %<cr>", { silent = true })

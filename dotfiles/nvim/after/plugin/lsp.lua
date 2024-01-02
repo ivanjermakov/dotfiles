@@ -12,6 +12,10 @@ lsp.on_attach(function(client, bufnr)
     -- disable semantic tokens since they mess up theme highting
     client.server_capabilities.semanticTokensProvider = nil
 
+    if client.name == "tsserver" or client.name == "html" or client.name == "cssls" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
+
     vim.keymap.set("n", "<leader>l", vim.lsp.buf.format)
     vim.keymap.set("n", "<c-q>", function()
         for _ = 1, 2 do vim.lsp.buf.hover() end
@@ -72,13 +76,13 @@ local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 lspconfig.rust_analyzer.setup {
     settings = {
-        ['rust-analyzer'] = {
+        ["rust-analyzer"] = {
             assist = {
                 importEnforceGranularity = true,
-                importPrefix = 'crate',
+                importPrefix = "crate",
             },
             checkOnSave = {
-                command = 'clippy',
+                command = "clippy",
             },
             diagnostics = {
                 enable = true,
@@ -99,17 +103,6 @@ lspconfig.purescriptls.setup {
         },
     },
 }
-
-local cmp = require 'cmp'
-cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-        ['<cr>'] = cmp.mapping.confirm({ select = true }),
-        ['<m-cr>'] = cmp.mapping.complete({ reason = cmp.ContextReason.Auto }),
-    }),
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    }
-})
 
 lsp.setup()
 
