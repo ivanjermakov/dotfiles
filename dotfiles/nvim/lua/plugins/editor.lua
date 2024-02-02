@@ -11,8 +11,8 @@ return {
         config = function()
             require("mini.comment").setup({
                 mappings = {
-                    comment_line = '<c-/>',
-                    comment_visual = '<c-/>',
+                    comment_line = '<c-_>',
+                    comment_visual = '<c-_>',
                 }
             })
         end
@@ -48,4 +48,24 @@ return {
             char = "│"
         }
     },
+    {
+        "Wansmer/sibling-swap.nvim",
+        config = function()
+            require('sibling-swap').setup({
+                keymaps = {
+                    ['<m-.>'] = 'swap_with_right',
+                    ['<m-,>'] = 'swap_with_left',
+                },
+            })
+        end
+    },
+    {
+        "ggandor/leap.nvim",
+        config = function()
+            local leap = require("leap")
+            leap.opts.safe_labels = "sfnut"
+            leap.opts.labels = "sfnjklhodweimbuyvrgtaqpcxz"
+            vim.keymap.set({ 'n', 'x', 'o' }, 'm', function() leap.leap({ target_windows = { vim.fn.win_getid() } }) end)
+        end
+    }
 }

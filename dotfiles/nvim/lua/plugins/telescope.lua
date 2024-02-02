@@ -9,6 +9,10 @@ return {
             local fb_actions = telescope.extensions.file_browser.actions
             telescope.setup({
                 defaults = {
+                    layout_config = {
+                        height = { padding = 0 },
+                        width = { padding = 0 },
+                    },
                     sorting_strategy = "ascending",
                     mappings = {
                         n = {
@@ -20,7 +24,6 @@ return {
                         },
                         i = {
                             ["<s-del>"] = actions.delete_buffer,
-                            ["<right>"] = actions.select_default,
                             ["<esc>"] = actions.close,
                             ["<m-up>"] = actions.cycle_history_prev,
                             ["<m-down>"] = actions.cycle_history_next,
@@ -44,8 +47,8 @@ return {
             telescope.load_extension("file_browser")
             vim.keymap.set("n", "<m-f>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", { noremap = true })
 
-            telescope.load_extension("file_structure")
-            vim.keymap.set("n", "<leader>f", ":Telescope file_structure<CR>", { noremap = true })
+            telescope.load_extension("aerial")
+            vim.keymap.set("n", "<leader>f", ":Telescope aerial<CR>", { noremap = true })
 
             local builtin = require("telescope.builtin")
             vim.keymap.set(
@@ -65,7 +68,9 @@ return {
     },
     {
         "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        lazy = true
     },
     {
         "folke/todo-comments.nvim",
@@ -95,5 +100,9 @@ return {
         end
     },
     { "nvim-telescope/telescope-ui-select.nvim" },
-    { "ivanjermakov/telescope-file-structure.nvim" },
+    {
+        'stevearc/aerial.nvim',
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {},
+    }
 }

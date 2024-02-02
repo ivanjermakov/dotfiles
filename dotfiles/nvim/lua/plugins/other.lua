@@ -1,11 +1,5 @@
 return {
     {
-        "rmagatti/auto-session",
-        opts = {
-            log_level = "error",
-        }
-    },
-    {
         "stevearc/dressing.nvim",
         config = function()
             require("dressing").setup({
@@ -66,12 +60,14 @@ return {
         config = function()
             require("plant").setup({
                 create = function(key)
+                    vim.cmd(":terminal")
+                    -- vim.schedule(function()
+                        vim.o.buflisted = false
+                        -- vim.cmd(":set nobuflisted")
+                    -- end)
                     if key == 2 then
-                        vim.cmd(":terminal lg")
-                    else
-                        vim.cmd(":terminal")
+                        vim.api.nvim_input("lg<cr>")
                     end
-                    vim.cmd(":setlocal nobuflisted")
                     return vim.api.nvim_get_current_buf()
                 end
             })

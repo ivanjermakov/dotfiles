@@ -1,10 +1,3 @@
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "*" },
-    callback = function()
-        -- vim.opt.cindent = true
-    end
-})
-
 vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
     pattern = { "*" },
     nested = true,
@@ -20,6 +13,23 @@ vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
 vim.api.nvim_create_autocmd("TermOpen", {
     pattern = { "*" },
     callback = function()
-        vim.cmd(":startinsert")
+        vim.opt_local.relativenumber = false
+        vim.opt_local.number = false
+    end
+})
+
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+    pattern = { "*" },
+    callback = function()
+        if vim.opt.buftype:get() == "terminal" then
+            vim.cmd(":startinsert")
+        end
+    end
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    pattern = { "*" },
+    callback = function()
+        vim.cmd('clearjumps')
     end
 })

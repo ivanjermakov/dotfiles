@@ -7,6 +7,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+    dev = {
+        path = "/D/project"
+    },
     change_detection = {
         notify = false
     },

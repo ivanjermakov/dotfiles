@@ -18,24 +18,18 @@ return {
                         node_decremental = ",",
                     },
                 },
-                textobjects = {
-                    swap = {
-                        enable = true,
-                        swap_next = {
-                            ["<leader>s"] = "@parameter.inner",
-                        },
-                        swap_previous = {
-                            ["<leader>S"] = "@parameter.inner",
-                        },
-                    },
-                },
-
             })
+            local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+            parser_config.typescript = {
+                install_info = {
+                    url = "/D/project/clone/tree-sitter-typescript/typescript",
+                    files = { "src/parser.c", "src/scanner.c" },
+                },
+            }
         end
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "nvim-treesitter/nvim-treesitter" }
     },
-    { "nvim-treesitter/playground" },
 }

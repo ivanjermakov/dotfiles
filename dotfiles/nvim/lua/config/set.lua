@@ -29,10 +29,11 @@ vim.opt.number = true
 
 vim.opt.ruler = false
 vim.opt.showcmd = false
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.statusline = " "
 vim.opt.shortmess = vim.opt.shortmess + "lmwsI"
+vim.opt.showmode = false
 vim.opt.fillchars = "eob: "
 
 vim.opt.mouse = ""
@@ -51,3 +52,8 @@ vim.opt.ttimeoutlen = 0
 vim.g.no_man_maps = true
 
 vim.g.editorconfig = false
+
+vim.diagnostic.config({
+    virtual_text = false,
+})
+

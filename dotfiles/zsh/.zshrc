@@ -1,22 +1,22 @@
-export ZSH="/home/ivan/.oh-my-zsh"
-
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
 CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 PS1="%{%F{green}%}%n%{%f%}@%{%F{magenta}%}%m %{%F{blue}%}%~%{%f%}%(!.#.$) "
 ZSH_DISABLE_COMPFIX="true"
 
-plugins=(
-		git
-		zsh-autosuggestions
-)
+setopt autocd
 
-source $ZSH/oh-my-zsh.sh
+autoload -U compinit; compinit
 
-# zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+# https://stackoverflow.com/a/8645267/8662097
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
-# env
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaa"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source ~/.env
 
-# opam configuration
-[[ ! -r /home/ivan/.opam/opam-init/init.zsh ]] || source /home/ivan/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
