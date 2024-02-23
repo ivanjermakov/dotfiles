@@ -7,6 +7,7 @@ PS1="%{%F{green}%}%n%{%f%}@%{%F{magenta}%}%m %{%F{blue}%}%~%{%f%}%(!.#.$) "
 ZSH_DISABLE_COMPFIX="true"
 
 setopt autocd
+setopt HIST_IGNORE_ALL_DUPS
 
 autoload -U compinit; compinit
 
@@ -14,9 +15,13 @@ autoload -U compinit; compinit
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
+bindkey '^R' history-incremental-search-backward
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaa"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaaaaa"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.env
 
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

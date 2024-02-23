@@ -1,3 +1,5 @@
+local var = require("config.var")
+
 local function get_highest_severity(bufnr)
     local diags = vim.diagnostic.get(bufnr)
     local highest = vim.diagnostic.severity.HINT
@@ -19,6 +21,7 @@ local on_attach = function(args)
         client.server_capabilities.semanticTokensProvider = nil
     end
 
+    -- handled by biome
     if client.name == "tsserver" or client.name == "html" or client.name == "cssls" then
         client.server_capabilities.documentFormattingProvider = false
     end
@@ -37,20 +40,13 @@ local on_attach = function(args)
         function() vim.diagnostic.goto_prev({ severity = get_highest_severity(0) }) end,
         opts
     ) -- <s-f2>
+    vim.keymap.set(
+        "n", "<f25>",
+        function() vim.diagnostic.goto_next() end,
+        opts
+    ) -- <c-f1>
     vim.keymap.set("n", "<m-cr>", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<f6>", vim.lsp.buf.rename, opts)
-    vim.keymap.set(
-        "n",
-        "<leader>o",
-        function()
-            vim.lsp.buf.execute_command({
-                command = "_typescript.organizeImports",
-                arguments = { vim.api.nvim_buf_get_name(0) },
-                title = ""
-            })
-        end,
-        opts
-    )
 
     -- enable selected reference highlighting across the buffer
     vim.api.nvim_create_autocmd("CursorHold", {
@@ -122,7 +118,8 @@ local servers = {
         },
     },
     biome = {
-        enabled = false
+        -- enabled = false,
+        cmd = { var.dev_path .. "/clone/biome/target/release/biome", "lsp-proxy" }
     }
 }
 
@@ -145,13 +142,14 @@ mason_lspconfig.setup_handlers({
             on_attach = on_attach,
             settings = server,
             filetypes = server.filetypes,
+            cmd = server.cmd,
         })
     end,
 })
 
 local cmp = require('cmp')
 local luasnip = require('luasnip')
-require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load({ exclude = { "all" } })
 luasnip.config.setup({})
 
 cmp.setup {

@@ -1,3 +1,7 @@
+local var = require("config.var")
+
+vim.api.nvim_command("set runtimepath^=" .. var.dev_path .. "/*")
+
 vim.opt.number = true
 vim.opt.ignorecase = true
 
@@ -15,6 +19,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
 
 vim.opt.scrolloff = 8
 
@@ -56,4 +61,3 @@ vim.g.editorconfig = false
 vim.diagnostic.config({
     virtual_text = false,
 })
-
