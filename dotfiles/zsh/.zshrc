@@ -11,6 +11,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 autoload -U compinit; compinit
 
+bindkey -e
 # https://stackoverflow.com/a/8645267/8662097
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
@@ -21,7 +22,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaaaaa"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.env
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
