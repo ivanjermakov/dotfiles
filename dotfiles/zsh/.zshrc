@@ -22,4 +22,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaaaaa"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.env
-
