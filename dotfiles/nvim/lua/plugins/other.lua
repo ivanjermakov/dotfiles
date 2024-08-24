@@ -40,6 +40,7 @@ return {
     },
     {
         "folke/neodev.nvim",
+        enabled = false,
         opts = {}
     },
     {
@@ -90,5 +91,13 @@ return {
             vim.keymap.set({ "n", "t" }, "<f11>", function() require("plant").open(2) end)
             vim.keymap.set({ "n", "t" }, "<f12>", function() require("plant").open(3) end)
         end
+    },
+    {
+        'stevearc/oil.nvim',
+        opts = {
+            view_options = {
+                show_hidden = true
+            }
+        },
     }
 }

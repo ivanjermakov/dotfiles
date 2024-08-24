@@ -1,0 +1,3 @@
+-- waiting for bugfix: https://github.com/stevearc/oil.nvim/issues/398
+-- vim.opt.number = false
+-- vim.opt.relativenumber = false

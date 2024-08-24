@@ -7,8 +7,6 @@ return {
     { "saadparwaiz1/cmp_luasnip" },
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
     {
         "hrsh7th/nvim-cmp",
         config = function()
@@ -53,7 +51,7 @@ return {
                             '--formatter-enabled=true',
                             '--organize-imports-enabled=true',
                             '--skip-errors',
-                            '$FILENAME',
+                            '--stdin-file-path=$FILENAME',
                         },
                     }),
                 }
