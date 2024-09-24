@@ -113,4 +113,8 @@ dotfiles/:
     from: ~/.config/alacritty/
     files:
       - alacritty.yml
+  vimium:
+    from: ~/
+    files:
+      - vimium.json
 

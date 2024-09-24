@@ -1,0 +1,19 @@
+#!/bin/bash
+
+MAC="00:A4:1C:04:E1:9D"
+
+bluetoothctl power on
+
+bluetoothctl disconnect C4:0B:31:D4:3F:57
+
+while true; do
+    STATUS=$(bluetoothctl info $MAC | grep "Connected: yes")
+
+    if [ -z "$STATUS" ]; then
+        break
+    fi
+
+    sleep 1
+done
+
+bluetoothctl connect C4:0B:31:D4:3F:57

@@ -141,4 +141,6 @@ map yf :!echo %c:p | xclip -sel clipboard %i<cr>
 " statusline format
 set stl="%= %A %10u:%-7g %15s %20d"
 
+set timefmt=%y-%m-%d\ %H:%M
+
 map x :wincmd x<cr>
