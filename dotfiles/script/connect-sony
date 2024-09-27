@@ -4,7 +4,7 @@ MAC="00:A4:1C:04:E1:9D"
 
 bluetoothctl power on
 
-bluetoothctl disconnect C4:0B:31:D4:3F:57
+bluetoothctl disconnect $MAC
 
 while true; do
     STATUS=$(bluetoothctl info $MAC | grep "Connected: yes")
@@ -16,4 +16,4 @@ while true; do
     sleep 1
 done
 
-bluetoothctl connect C4:0B:31:D4:3F:57
+bluetoothctl connect $MAC
