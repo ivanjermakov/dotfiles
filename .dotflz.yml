@@ -112,7 +112,7 @@ dotfiles/:
   alacritty:
     from: ~/.config/alacritty/
     files:
-      - alacritty.yml
+      - alacritty.toml
   vimium:
     from: ~/
     files:
