@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
+/home/ivan/.script/displays
 i8kfan 0 0
 hsetroot -solid "#222222"

@@ -1,19 +1,13 @@
 #!/bin/sh
 
-# xrandr's name for the external monitor connection
-DEFAULT=eDP-1-1
+INTERNAL=$(xrandr --query | grep ' connected' | grep -E '^eDP' | cut -d' ' -f1)
+EXTERNAL=$(xrandr --query | grep ' connected' | grep -E '^(HDMI|DP)' | cut -d' ' -f1)
 
-# if monitor found
-if (xrandr --query | grep -q "^DP-1-1 connected"); then
-    echo "detected DP-1-1"
-	xrandr --output "$DEFAULT" --off
-	xrandr --output "DP-1-1" --auto --primary
-elif (xrandr --query | grep -q "^HDMI-1-1 connected"); then
-	echo "detected HDMI-1-1"
-	xrandr --output "$DEFAULT" --off
-	xrandr --output "HDMI-1-1" --auto --primary
+if [ "$EXTERNAL" ]; then
+    echo "detected external $EXTERNAL"
+	xrandr --output $EXTERNAL --auto --primary --output $INTERNAL --off
 else
-	echo "detected $DEFAULT"
-	xrandr --output "$DEFAULT" --auto --primary
+	echo "detected internal $INTERNAL only"
+	xrandr --output "$INTERNAL" --auto --primary
 	xrdb -merge ~/.Xresources4k
 fi

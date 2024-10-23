@@ -7,12 +7,11 @@ return {
     },
     {
         'echasnovski/mini.comment',
-        version = '*',
         config = function()
             require("mini.comment").setup({
                 mappings = {
-                    comment_line = '<c-_>',
-                    comment_visual = '<c-_>',
+                    comment_line = '<c-/>',
+                    comment_visual = '<c-/>',
                 }
             })
         end
@@ -25,12 +24,11 @@ return {
     },
     {
         "NvChad/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end
+        opts = {}
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        enabled = false, -- bad perf on big files
         main = "ibl",
         opts = {
             indent = {
@@ -43,7 +41,17 @@ return {
         }
     },
     {
+        "ecthelionvi/NeoColumn.nvim",
+        opts = {
+            fg_color = vim.fn.synIDattr(vim.fn.hlID("ColorColumn"), "fg#"),
+            bg_color = vim.fn.synIDattr(vim.fn.hlID("ColorColumn"), "bg#"),
+            always_on = true,
+            NeoColumn = "120"
+        }
+    },
+    {
         "lukas-reineke/virt-column.nvim",
+        enabled = false, -- NeoColumn.nvim is more performant
         opts = {
             char = "│"
         }
@@ -83,7 +91,6 @@ return {
     {
         "okuuva/auto-save.nvim",
         opts = {
-            execution_message = { enabled = false },
             debounce_delay = 100,
             condition = function(buf)
                 local fn = vim.fn
@@ -95,5 +102,5 @@ return {
                 return false
             end
         }
-    }
+    },
 }

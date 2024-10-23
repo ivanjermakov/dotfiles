@@ -33,3 +33,11 @@
     max-width: 300px !important;
     overflow: hidden;
 }
+
+#alltabs-button {
+    display: none !important;
+}
+
+#navigator-toolbox {
+    border-bottom: none !important;
+}
