@@ -6,12 +6,12 @@ return {
         end
     },
     {
-        'echasnovski/mini.comment',
+        "echasnovski/mini.comment",
         config = function()
             require("mini.comment").setup({
                 mappings = {
-                    comment_line = '<c-/>',
-                    comment_visual = '<c-/>',
+                    comment_line = "<c-/>",
+                    comment_visual = "<c-/>",
                 }
             })
         end
@@ -43,6 +43,7 @@ return {
     {
         "ecthelionvi/NeoColumn.nvim",
         opts = {
+            excluded_ft = { "" },
             fg_color = vim.fn.synIDattr(vim.fn.hlID("ColorColumn"), "fg#"),
             bg_color = vim.fn.synIDattr(vim.fn.hlID("ColorColumn"), "bg#"),
             always_on = true,
@@ -59,10 +60,10 @@ return {
     {
         "Wansmer/sibling-swap.nvim",
         config = function()
-            require('sibling-swap').setup({
+            require("sibling-swap").setup({
                 keymaps = {
-                    ['<m-.>'] = 'swap_with_right',
-                    ['<m-,>'] = 'swap_with_left',
+                    ["<m-.>"] = "swap_with_right",
+                    ["<m-,>"] = "swap_with_left",
                 },
             })
         end
@@ -73,7 +74,7 @@ return {
             local leap = require("leap")
             leap.opts.safe_labels = "sfnut"
             leap.opts.labels = "sfnjklhodweimbuyvrgtaqpcxz"
-            vim.keymap.set({ 'n', 'x', 'o' }, 'm', function() leap.leap({ target_windows = { vim.fn.win_getid() } }) end)
+            vim.keymap.set({ "n", "x", "o" }, "m", function() leap.leap({ target_windows = { vim.fn.win_getid() } }) end)
         end
     },
     {
@@ -96,7 +97,7 @@ return {
                 local fn = vim.fn
                 local utils = require("auto-save.utils.data")
 
-                if utils.not_in(fn.getbufvar(buf, "&filetype"), { 'oil' }) then
+                if utils.not_in(fn.getbufvar(buf, "&filetype"), { "oil" }) then
                     return true
                 end
                 return false
