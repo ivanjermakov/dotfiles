@@ -78,24 +78,24 @@ text = "#303446"
 TERM = "alacritty"
 
 [font]
-size = 14.1
+size = 14
 
 [font.bold]
-family = "Hack"
+family = "MapleMono"
 
 [font.bold_italic]
-family = "Hack"
+family = "MapleMono"
 
 [font.italic]
-family = "Hack"
+family = "MapleMono"
 style = "Italic"
 
 [font.normal]
-family = "Hack"
+family = "MapleMono"
 
 [font.offset]
 x = 0
-y = 0
+y = -2
 
 [window]
 decorations = "None"
