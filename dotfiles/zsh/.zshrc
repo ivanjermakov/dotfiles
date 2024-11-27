@@ -26,3 +26,6 @@ zle -N edit-command-line
 bindkey "^e" edit-command-line
 
 source ~/.env
+
+# bun completions
+[ -s "/home/ivan/.bun/_bun" ] && source "/home/ivan/.bun/_bun"
