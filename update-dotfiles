@@ -3,8 +3,8 @@
 # exit on error
 set -e
 
-dotflz verify .dotflz.yml
-dotflz copy -c .dotflz.yml
+confs check
+confs sync -v
 git add .
 git commit -am "update"
 git pull

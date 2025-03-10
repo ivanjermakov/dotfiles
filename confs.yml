@@ -1,0 +1,108 @@
+dotfiles:
+  home:
+    root: ~/
+    files:
+      - .Xresources*
+      - .bashrc
+      - .xprofile
+      - .vimrc
+  script:
+    root: ~/.script/
+    files:
+      - "*"
+      - wm/*
+      - system/*
+  fonts:
+    root: ~/.config/fontconfig/
+    files:
+      - fonts.conf
+  picom:
+    root: ~/.config/
+    files:
+      - picom.conf
+  i3:
+    root: ~/.config/i3/
+    files:
+      - config
+  zsh:
+    root: ~/
+    files:
+      - .zshrc
+      - .zshenv
+      - .env
+  urxvt:
+    root: ~/.config/urxvt/
+    files:
+      - "*"
+      - themes/*
+  vim:
+    root: ~/.vim/init/
+    files:
+      - "*"
+  nvim:
+    root: ~/.config/nvim/
+    files:
+      - "**/*"
+  idea:
+    root: ~/
+    files:
+      - .ideavimrc
+  htop:
+    root: ~/.config/htop/
+    files:
+      - htoprc
+  vifm:
+    root: ~/.config/vifm/
+    files:
+      - vifmrc
+      - colors/*
+  zathura:
+    root: ~/.config/zathura/
+    files:
+      - zathurarc
+  feh:
+    root: ~/.config/feh/
+    files:
+      - keys
+  dunst:
+    root: ~/.config/dunst/
+    files:
+      - dunstrc
+  neofetch:
+    root: ~/.config/neofetch/
+    files:
+      - config.conf
+  firefox:
+    root: ~/.mozilla/firefox/dsv24n09.default-release/chrome/
+    files:
+      - userChrome.css
+  mpv:
+    root: ~/.config/mpv/
+    files:
+      - mpv.conf
+      - input.conf
+  kmonad:
+    root: ~/.config/kmonad/
+    files:
+      - "*"
+  qutebrowser:
+    root: ~/.config/qutebrowser/
+    files:
+      - config.py
+  lazygit:
+    root: ~/.config/lazygit/
+    files:
+      - config.yml
+  tmux:
+    root: ~/
+    files:
+      - .tmux.conf
+  alacritty:
+    root: ~/.config/alacritty/
+    files:
+      - alacritty.toml
+  vimium:
+    root: ~/
+    files:
+      - vimium.json
+
