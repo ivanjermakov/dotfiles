@@ -27,7 +27,8 @@ return {
                             ["<m-up>"] = actions.cycle_history_prev,
                             ["<m-down>"] = actions.cycle_history_next,
                         }
-                    }
+                    },
+                    border = false
                 },
             })
 

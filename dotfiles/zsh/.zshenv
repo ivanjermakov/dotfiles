@@ -10,10 +10,6 @@ alias v='nvim'
 alias d='du -hs'
 alias df='df -h'
 
-alias gits='git status'
-alias gitp='git pull'
-alias gitc='git commit -a'
-
 alias lg='lazygit'
 
 alias reboot="sudo systemctl reboot"
@@ -24,4 +20,4 @@ alias yt-dlpf='yt-dlp -w -N 4 -f "bestvideo[ext=webm][height<=1440]+bestaudio/be
 
 alias vifm='vifmrun'
 
-alias google-chrome-stable='google-chrome-stable --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT''
+alias google-chrome-stable='google-chrome-stable --disable-infobars --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT''

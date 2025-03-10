@@ -1,4 +1,5 @@
 local var = require("config.var")
+local fastaction = require("fastaction")
 
 local function get_highest_severity(bufnr)
     local diags = vim.diagnostic.get(bufnr)
@@ -17,9 +18,9 @@ local on_attach = function(args)
     local client = vim.lsp.get_client_by_id(args.id)
 
     -- disable semantic tokens since they mess up theme highlighting
-    if client.server_capabilities ~= nil and client.server_capabilities.semanticTokensProvider ~= nil then
-        client.server_capabilities.semanticTokensProvider = nil
-    end
+    -- if client.server_capabilities ~= nil and client.server_capabilities.semanticTokensProvider ~= nil then
+    --     client.server_capabilities.semanticTokensProvider = nil
+    -- end
 
     -- handled by biome
     if client.name == "ts_ls" or client.name == "html" or client.name == "cssls" then
@@ -45,7 +46,7 @@ local on_attach = function(args)
         function() vim.diagnostic.goto_next() end,
         opts
     ) -- <c-f1>
-    vim.keymap.set("n", "<m-cr>", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<m-cr>", function() fastaction.code_action() end, opts)
     vim.keymap.set("n", "<f6>", vim.lsp.buf.rename, opts)
 
     -- enable selected reference highlighting across the buffer
@@ -113,15 +114,11 @@ local servers = {
         }
     },
     biome = {
-        -- enabled = false,
         cmd = { var.dev_path .. "/clone/biome/target/release/biome", "lsp-proxy" }
     },
     typos_lsp = {
-        -- enabled = false,
-        settings = {
-            init_options = {
-                diagnosticSeverity = "warning"
-            }
+        init_options = {
+            diagnosticSeverity = "Hint"
         }
     },
     hls = {},
@@ -130,10 +127,13 @@ local servers = {
     },
     cssls = {},
     glsl_analyzer = {},
+    clojure_lsp = {},
+    zls = {},
 }
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.semanticTokens = nil
 for name, server in pairs(servers) do
     if (server.enabled ~= false) then
         lspconfig[name].setup({
