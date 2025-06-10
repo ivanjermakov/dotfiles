@@ -33,19 +33,21 @@ local on_attach = function(args)
     end, opts)
     vim.keymap.set(
         "n", "<f2>",
-        function() vim.diagnostic.goto_next({ severity = get_highest_severity(0) }) end,
+        function() vim.diagnostic.jump({ count = 1, float = true, severity = get_highest_severity(0) }) end,
         opts
     )
+    -- <s-f2>
     vim.keymap.set(
         "n", "<f14>",
-        function() vim.diagnostic.goto_prev({ severity = get_highest_severity(0) }) end,
+        function() vim.diagnostic.jump({ count = -1, float = true, severity = get_highest_severity(0) }) end,
         opts
-    ) -- <s-f2>
+    )
+    -- <c-f1>
     vim.keymap.set(
         "n", "<f25>",
-        function() vim.diagnostic.goto_next() end,
+        function() vim.diagnostic.jump({ count = 1, float = true }) end,
         opts
-    ) -- <c-f1>
+    )
     vim.keymap.set("n", "<m-cr>", function() fastaction.code_action() end, opts)
     vim.keymap.set("n", "<f6>", vim.lsp.buf.rename, opts)
 
@@ -114,7 +116,7 @@ local servers = {
         }
     },
     biome = {
-        cmd = { var.dev_path .. "/clone/biome/target/release/biome", "lsp-proxy" }
+        cmd = { "biome", "lsp-proxy" }
     },
     typos_lsp = {
         init_options = {
@@ -131,12 +133,13 @@ local servers = {
     zls = {},
 }
 
-local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.semanticTokens = nil
+capabilities.textDocument.completion.completionItem.snippetSupport = false
 for name, server in pairs(servers) do
     if (server.enabled ~= false) then
-        lspconfig[name].setup({
+        vim.lsp.enable(name)
+        vim.lsp.config(name, {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = server.settings,

@@ -4,16 +4,10 @@ return {
     { "hrsh7th/cmp-nvim-lua" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
-    { "saadparwaiz1/cmp_luasnip" },
-    { "L3MON4D3/LuaSnip" },
-    { "rafamadriz/friendly-snippets" },
     {
         "hrsh7th/nvim-cmp",
         config = function()
             local cmp = require('cmp')
-            local luasnip = require('luasnip')
-            require('luasnip.loaders.from_vscode').lazy_load({ exclude = { "all" } })
-            luasnip.config.setup({})
 
             cmp.setup {
                 completion = {
@@ -23,14 +17,8 @@ return {
                     ["<cr>"] = cmp.mapping.confirm({ select = true }),
                     ["<m-cr>"] = cmp.mapping.complete({ reason = cmp.ContextReason.Auto }),
                 }),
-                snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
                 sources = {
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
                     { name = 'path' },
                 },
             }
@@ -55,13 +43,13 @@ return {
                             "graphql",
                         },
                         args = {
-                            'check',
-                            '--apply',
-                            '--linter-enabled=true',
-                            '--formatter-enabled=true',
-                            '--organize-imports-enabled=true',
-                            '--skip-errors',
-                            '--stdin-file-path=$FILENAME',
+                            "check",
+                            "--apply",
+                            "--linter-enabled=true",
+                            "--formatter-enabled=true",
+                            "--organize-imports-enabled=true",
+                            "--skip-errors",
+                            "--stdin-file-path=$FILENAME",
                         },
                     }),
                 }

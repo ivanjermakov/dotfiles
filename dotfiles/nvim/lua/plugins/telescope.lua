@@ -1,7 +1,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.5",
+        tag = "0.1.8",
         dependencies = { { "nvim-lua/plenary.nvim" } },
         config = function()
             local telescope = require("telescope")
@@ -28,7 +28,8 @@ return {
                             ["<m-down>"] = actions.cycle_history_next,
                         }
                     },
-                    border = false
+                    -- border = false,
+                    borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
                 },
             })
 
@@ -74,9 +75,8 @@ return {
             vim.keymap.set({ "n", "i" }, "<m-6>", ":TodoTelescope<cr>")
         end
     },
-    { "nvim-telescope/telescope-ui-select.nvim" },
     {
-        'stevearc/aerial.nvim',
+        "stevearc/aerial.nvim",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {},
     }

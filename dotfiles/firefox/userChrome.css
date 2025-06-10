@@ -110,3 +110,7 @@
 #navigator-toolbox {
     border-bottom: none !important;
 }
+
+#navigator-toolbox[fullscreenShouldAnimate] {
+  transition: none !important;
+}
