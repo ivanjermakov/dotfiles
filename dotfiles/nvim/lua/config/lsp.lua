@@ -108,13 +108,6 @@ local servers = {
             },
         }
     },
-    purescriptls = {
-        settings = {
-            purescript = {
-                formatter = "purs-tidy",
-            },
-        }
-    },
     biome = {
         cmd = { "biome", "lsp-proxy" }
     },
@@ -124,18 +117,25 @@ local servers = {
         }
     },
     hls = {},
-    gleam = {
-        cmd = { var.dev_path .. "/clone/gleam/target/release/gleam", "lsp" }
-    },
+    gleam = {},
     cssls = {},
-    glsl_analyzer = {},
-    clojure_lsp = {},
-    zls = {},
+    zls = {
+        settings = {
+            enable_build_on_save = true,
+            build_on_save_step = "check",
+            enable_snippets = false,
+            enable_argument_placeholders = false,
+            warn_style = true,
+        }
+    },
+    clangd = {},
 }
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 capabilities.textDocument.semanticTokens = nil
 capabilities.textDocument.completion.completionItem.snippetSupport = false
+-- completionItem.labelDetails act as snippets inserting crap at cmp accept
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = false
 for name, server in pairs(servers) do
     if (server.enabled ~= false) then
         vim.lsp.enable(name)

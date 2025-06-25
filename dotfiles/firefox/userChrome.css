@@ -114,3 +114,7 @@
 #navigator-toolbox[fullscreenShouldAnimate] {
   transition: none !important;
 }
+
+#urlbar-searchmode-switcher {
+    display: none !important;
+}

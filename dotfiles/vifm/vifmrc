@@ -52,6 +52,7 @@ filextype *.arw feh -. -d -Z --conversion-timeout 1 --draw-exif --start-at %f
 filetype *.zip,*.jar,*.war
 	\ unzip %c
 filetype *.rar unrar x %c
+filetype *.tar.gz tar xvf %c
 filetype *.iso
 	\ {Mount with fuseiso}
 	\ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
