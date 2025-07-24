@@ -12,6 +12,7 @@ setopt HIST_IGNORE_ALL_DUPS
 autoload -U compinit; compinit
 
 bindkey -e
+
 # https://stackoverflow.com/a/8645267/8662097
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
@@ -27,5 +28,6 @@ bindkey "^e" edit-command-line
 
 source ~/.env
 
-# bun completions
-[ -s "/home/ivan/.bun/_bun" ] && source "/home/ivan/.bun/_bun"
+# https://stackoverflow.com/a/16728429/8662097
+stty stop undef
+stty start undef
