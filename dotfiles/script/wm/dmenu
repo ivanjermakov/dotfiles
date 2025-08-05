@@ -1,3 +1,0 @@
-#!/usr/bin/zsh
-
-notify-send "$(dmenu_run -c -i -h 30 -fn "Hack-16" -l 5 -nb "black" -nf "white" -sb "#222" -sf "white" -bw 3)"

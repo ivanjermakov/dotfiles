@@ -1,4 +1,0 @@
-#! /bin/sh
-
-# init keychain for id_rsa
-eval $(keychain --eval --quiet id_rsa)

@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-set -m
-
-setxkbmap -layout us
-xrandr --output eDP-1-1 --auto --primary
-systemctl suspend

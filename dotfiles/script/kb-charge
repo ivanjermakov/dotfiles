@@ -1,4 +1,0 @@
-#!/bin/sh
-
-SSID=C9:08:85:1C:61:35
-bluetoothctl info $SSID | grep "Battery Percentage" | grep -Po "(?<=\().*(?=\))"

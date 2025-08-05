@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if pidof $1>/dev/null; then
-    echo "$1 is running"
-else
-	`$2`
-fi

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-ddccontrol dev:/dev/i2c-8 -r 0x10 -w $1

@@ -1,6 +1,0 @@
-require("config.remap")
-require("config.set")
-require("config.autocmd")
-require("config.lazy")
-require("config.lsp")
-require("config.neovide")

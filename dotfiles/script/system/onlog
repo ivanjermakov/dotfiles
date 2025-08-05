@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-/home/ivan/.script/displays
-i8kfan 0 0
-hsetroot -solid "#222222"
-
-sudo -u '#1000' XDG_RUNTIME_DIR=/run/user/1000 pactl set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic
-sudo -u '#1000' XDG_RUNTIME_DIR=/run/user/1000 pactl set-source-volume alsa_input.pci-0000_00_1f.3.analog-stereo 100%
