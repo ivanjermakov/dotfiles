@@ -75,7 +75,15 @@ local angularls_cmd = {
 }
 local servers = {
     jsonls = {},
-    lua_ls = {},
+    lua_ls = {
+        settings = {
+            Lua = {
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true)
+                }
+            }
+        }
+    },
     angularls = {
         cmd = angularls_cmd,
         on_new_config = function(new_config)
@@ -128,12 +136,11 @@ local servers = {
             warn_style = true,
         }
     },
-    clangd = {},
 }
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 capabilities.textDocument.semanticTokens = nil
-capabilities.textDocument.completion.completionItem.snippetSupport = false
+-- capabilities.textDocument.completion.completionItem.snippetSupport = false
 -- completionItem.labelDetails act as snippets inserting crap at cmp accept
 capabilities.textDocument.completion.completionItem.labelDetailsSupport = false
 for name, server in pairs(servers) do

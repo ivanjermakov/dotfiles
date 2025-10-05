@@ -145,3 +145,7 @@ set stl="%= %A %10u:%-7g %15s %20d"
 set timefmt=%y-%m-%d\ %H:%M
 
 map x :wincmd x<cr>
+
+autocmd DirEnter ~/Downloads setlocal sort=mtime
+autocmd DirEnter /D/Download setlocal sort=mtime
+autocmd DirEnter /D/Download/yt-dlp setlocal sort=mtime
